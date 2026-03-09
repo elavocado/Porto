@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Mich | Mena Dawod</title>
+
+    <meta name="description"
+        content="Erfahren Sie mehr über meinen Weg als .NET Blazor / MAUI Developer: Von Ägypten nach Deutschland und zur Ausbildung als Fachinformatiker.">
+    <meta property="og:image" content="assets/profile.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Nunito:wght@400;600;700&family=Sora:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { bg: 'var(--bg-color)', surface: 'var(--surface-color)', border: 'var(--border-color)' },
+                        primary: { DEFAULT: 'var(--primary-color)', glow: 'var(--shadow-color)' },
+                        accent: { DEFAULT: 'var(--accent-color)' },
+                        text: { DEFAULT: 'var(--text-color)', muted: 'var(--text-muted)' },
+                        success: { DEFAULT: '#2ECC71', bg: 'rgba(46, 204, 113, 0.12)' },
+                        'on-primary': 'var(--on-primary)'
+                    },
+                    fontFamily: { sora: ['Sora', 'sans-serif'], nunito: ['Nunito', 'sans-serif'], mono: ['"Fira Code"', 'monospace'] },
+                    maxWidth: { 'content': '1100px' }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/globals.css">
+
+    <!-- Theme Manager -->
+    <script>
+            (function () {
+                const savedTheme = localStorage.getItem('theme');
+                const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+                if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
+
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
+        <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html" class="text-text-muted transition-colors hover:text-primary">Home</a>
+                <a href="about.html" class="text-text-DEFAULT transition-colors hover:text-primary">Über Mich</a>
+                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary">Projekte</a>
+                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
+            </div>
+
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                <span class="theme-toggle__track">
+                    <span class="theme-toggle__thumb">
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </span>
+                </span>
+            </button>
+
+            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
+            <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
+                <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2">Home</a>
+                <a href="about.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2">Über Mich</a>
+                <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2">Projekte</a>
+                <a href="certificates.html"
+                    class="text-text-muted hover:text-primary transition-colors py-2">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full pb-20">
+
+        <section class="py-20 md:py-32 fade-up">
+            <div class="max-w-content mx-auto px-6 text-center">
+                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6">Über Mich</h1>
+                <p class="text-xl text-text-muted max-w-2xl mx-auto">Von Kairo nach Deutschland, mein Weg in die
+                    Softwareentwicklung.</p>
+            </div>
+        </section>
+
+
+        <section class="py-16 max-w-content mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5 fade-up stagger-1">
+                    <div
+                        class="relative w-full aspect-[2/3] rounded-2xl overflow-hidden border-2 border-primary/30 profile-glow group transition-all duration-500">
+                        <img src="assets/profile.png" alt="Mena Dawod"
+                            class="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    </div>
+                </div>
+
+                <div
+                    class="md:col-span-7 space-y-8 pl-0 md:pl-8 border-l-2 border-transparent relative fade-up stagger-2 before:content-[''] before:absolute before:left-[-2px] before:top-0 before:h-full before:w-[2px] before:bg-gradient-to-b before:from-primary before:to-transparent">
+                    <div class="p-6 bg-navy-surface/50 rounded-r-xl">
+                        <h3 class="font-sora text-text-DEFAULT text-xl font-semibold mb-3">Die Anfänge</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            Meine Begeisterung für Technologie begann in Ägypten, lange bevor ich wusste, dass man
+                            daraus eine Karriere machen kann. Ich erlebte die Nokia-Ära, hielt die ersten Touchscreens
+                            in den Händen, und die Nacht, in der ich endlich den Audiotreiber meines PCs zum Laufen
+                            brachte, fühlte sich an wie ein persönlicher Sieg. Mein erster echter Meilenstein? Das
+                            Aufrüsten meines RAMs auf 126 MB.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-navy-surface/50 rounded-r-xl">
+                        <h3 class="font-sora text-text-DEFAULT text-xl font-semibold mb-3">Technische Praxis, TechniForm
+                            GmbH
+                            (2017–2023)</h3>
+                        <p class="text-text-muted leading-relaxed mb-4">
+                            2013 kam ich nach Deutschland und fing bei Null an, keine Arbeitserlaubnis, die Sprache im
+                            Selbststudium gelernt. Bei TechniForm fand ich 2017 meinen ersten echten technischen
+                            Einstieg und
+                            entwickelte mich in nur 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter mit
+                            Verantwortung für ein Team von 10 Personen.
+                        </p>
+                        <p class="text-text-muted leading-relaxed">
+                            Als Verfahrensmechaniker übernahm ich die Programmierung von Roboteranlagen, die Optimierung
+                            von Fertigungsprozessen sowie die selbstständige Fehlerdiagnose und -behebung an komplexen
+                            Maschinen. Diese Erfahrung schärfte mein systematisches Denken, dieselbe Denkweise, die ich
+                            heute im Code anwende.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">Roboterprogrammierung</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">Prozessoptimierung</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">Fehlerdiagnose</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">Schichtleitung
+                                · 10 Personen</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-navy-surface/50 rounded-r-xl">
+                        <h3 class="font-sora text-text-DEFAULT text-xl font-semibold mb-3">Der Karrierewechsel,
+                            Softwareentwicklung bei Karl Mayer (2023–2026)</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            2023 fand ich das, wonach ich immer gesucht hatte: eine verkürzte Ausbildung zum
+                            Fachinformatiker für Anwendungsentwicklung bei Karl Mayer, einem Weltmarktführer im
+                            Textilmaschinenbau. Im Januar 2026 schloss ich ab, mit einer Berufsschulnote von 1,0 und 99
+                            von 100 Punkten in meinem IHK-Projekt (Gesamtnote 1,9 / 87 %).
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">C#
+                                · Blazor · .NET</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">MVVM</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">EF
+                                Core</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium rounded-full border border-success/30 text-success bg-success-bg">IHK-Abschluss
+                                1,9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-24 bg-navy-surface/30 border-y border-navy-border">
+            <div class="max-w-content mx-auto px-6">
+                <div class="text-center mb-16 fade-up">
+                    <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4">Technische Fähigkeiten</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Core Stack -->
+                    <div
+                        class="p-8 bg-navy-surface/50 border border-navy-border rounded-2xl hover:border-primary/30 transition-all duration-300 fade-up stagger-1">
+                        <h3 class="font-mono text-sm uppercase text-text-muted tracking-wide mb-6">Core Stack</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">C#</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">.NET
+                                Core</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Blazor
+                                Server</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Blazor
+                                WebAssembly</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">MAUI
+                                / Blazor Hybrid</span>
+                        </div>
+                    </div>
+
+                    <!-- Architecture & Patterns -->
+                    <div
+                        class="p-8 bg-navy-surface/50 border border-navy-border rounded-2xl hover:border-primary/30 transition-all duration-300 fade-up stagger-2">
+                        <h3 class="font-mono text-sm uppercase text-text-muted tracking-wide mb-6">Architecture &
+                            Patterns</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">MVVM</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Dependency
+                                Injection</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">OOP</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">REST
+                                API</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Clean
+                                Architecture</span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div
+                        class="p-8 bg-navy-surface/50 border border-navy-border rounded-2xl hover:border-primary/30 transition-all duration-300 fade-up stagger-3">
+                        <h3 class="font-mono text-sm uppercase text-text-muted tracking-wide mb-6">Database</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">SQLite</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">SQL</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">EF
+                                Core</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Tooling -->
+                    <div
+                        class="p-8 bg-navy-surface/50 border border-navy-border rounded-2xl hover:border-primary/30 transition-all duration-300 fade-up stagger-4">
+                        <h3 class="font-mono text-sm uppercase text-text-muted tracking-wide mb-6">DevOps & Tooling</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Git
+                                / Bitbucket</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">GitLab
+                                CI/CD</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Docker</span>
+                            <span
+                                class="px-4 py-2 bg-navy-surface border border-navy-border text-text-muted rounded-lg text-sm font-medium">Jira
+                                / Confluence</span>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="py-24 max-w-content mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4">Mein Werdegang</h2>
+            </div>
+
+            <div
+                class="relative w-full max-w-3xl mx-auto before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-navy-border before:to-transparent">
+
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active fade-up stagger-1 mb-12">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-primary bg-navy-bg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_20px_rgba(139,92,246,0.4)] relative z-10 transition-transform group-hover:scale-110">
+                        <div class="w-3 h-3 bg-primary rounded-full"></div>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/50 border border-navy-border p-6 rounded-xl hover:border-primary/50 transition-colors shadow-lg">
+                        <div class="font-mono text-primary text-sm font-bold mb-1">Januar 2026</div>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">IHK Zertifizierung</h3>
+                        <p class="text-text-muted text-sm mt-2">Fachinformatiker für Anwendungsentwicklung</p>
+                        <div class="mt-4 pt-4 border-t border-navy-border/50 text-sm">
+                            <ul class="space-y-1 text-success font-medium">
+                                <li>• IHK Abschluss: Gut (87 Pkt.)</li>
+                                <li>• Projektarbeit: Sehr gut (99/100)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up stagger-2 mb-12">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-navy-border bg-navy-bg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-transform group-hover:scale-110 group-hover:border-primary/50">
+                        <div class="w-3 h-3 bg-navy-border group-hover:bg-primary/50 rounded-full transition-colors">
+                        </div>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
+                        <div class="font-mono text-text-muted text-sm font-bold mb-1">2023 – 2026</div>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Karl Mayer GmbH</h3>
+                        <p class="text-text-muted text-sm mt-1 mb-2 italic">Weltmarktführer Textilmaschinenbau</p>
+                        <p class="text-text-muted text-sm mt-2">Auszubildender Fachinformatiker AE. Entwicklung von
+                            produktiver Software für Industriemaschinen.</p>
+                    </div>
+                </div>
+
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up stagger-3 mb-12">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-navy-border bg-navy-bg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-transform group-hover:scale-110 group-hover:border-primary/50">
+                        <div class="w-3 h-3 bg-navy-border group-hover:bg-primary/50 rounded-full transition-colors">
+                        </div>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
+                        <div class="font-mono text-text-muted text-sm font-bold mb-1">2017 – 2023</div>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">TechniForm GmbH</h3>
+                        <p class="text-text-muted text-sm mt-2">Produktionsmitarbeiter → Schichtleiter →
+                            Verfahrensmechaniker. Leitung eines Teams von bis zu 10 Mitarbeitern.</p>
+                    </div>
+                </div>
+
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up stagger-4 mb-12">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-navy-border bg-navy-bg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-transform group-hover:scale-110 group-hover:border-primary/50">
+                        <div class="w-3 h-3 bg-navy-border group-hover:bg-primary/50 rounded-full transition-colors">
+                        </div>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
+                        <div class="font-mono text-text-muted text-sm font-bold mb-1">2013 – 2017</div>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Ankunft in Deutschland</h3>
+                        <p class="text-text-muted text-sm mt-2">Spracherwerb, Orientierung, Bewältigung bürokratischer
+                            Prozesse.</p>
+                    </div>
+                </div>
+
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up stagger-5">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-navy-border bg-navy-bg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-transform group-hover:scale-110 group-hover:border-primary/50">
+                        <div class="w-3 h-3 bg-navy-border group-hover:bg-primary/50 rounded-full transition-colors">
+                        </div>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
+                        <div class="font-mono text-text-muted text-sm font-bold mb-1">2013</div>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Aufbruch aus Ägypten</h3>
+                        <p class="text-text-muted text-sm mt-2">Cairo University, Jura (Auswanderung im letzten
+                            Semester).</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="py-24 border-t border-navy-border fade-up">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-6">Möchten Sie das Gesamtbild sehen?</h2>
+                <p class="text-text-muted mb-10">Laden Sie meinen vollständigen Lebenslauf herunter, mit allen Details
+                    zu meiner Erfahrung und Historie.</p>
+                <a href="docs/cv-mena-dawod.pdf" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 bg-primary hover:bg-blue-500 text-on-primary font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+                    <i data-lucide="download" class="w-5 h-5"></i> Vollständigen CV herunterladen (PDF)
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="bg-navy-bg border-t border-navy-border pt-16 pb-8">
+        <div class="max-w-content mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
+                <div class="text-center md:text-left">
+                    <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
+                    <div class="text-text-muted text-sm ml-1">.NET / Blazor / MAUI Developer</div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="GitHub"><i
+                            data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="LinkedIn"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="Xing">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path
+                                d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
+                <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
+                <div class="flex gap-4">
+                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>lucide.createIcons();</script>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        toggle.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
