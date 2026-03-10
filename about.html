@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+    })();
+</script>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Mich | Mena Dawod</title>
+    <title data-i18n="about.title">Über Mich | Mena Dawod</title>
 
     <meta name="description"
         content="Erfahren Sie mehr über meinen Weg als .NET Blazor / MAUI Developer: Von Ägypten nach Deutschland und zur Ausbildung als Fachinformatiker.">
@@ -41,19 +47,9 @@
 
     <link rel="stylesheet" href="css/globals.css">
 
-    <!-- Theme Manager -->
-    <script>
-            (function () {
-                const savedTheme = localStorage.getItem('theme');
-                const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-
-                if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                }
-            })();
     </script>
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
 </head>
 
 <body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
@@ -63,61 +59,89 @@
         <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
             <div class="hidden md:flex items-center gap-8 font-medium">
-                <a href="index.html" class="text-text-muted transition-colors hover:text-primary">Home</a>
-                <a href="about.html" class="text-text-DEFAULT transition-colors hover:text-primary">Über Mich</a>
-                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary">Projekte</a>
-                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
+                <a href="index.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-text-DEFAULT transition-colors hover:text-primary"
+                    data-i18n="nav.about">Über Mich</a>
+                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.projects">Projekte</a>
+                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.certificates">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.contact">Kontakt</a>
             </div>
 
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="en">EN</button>
+                    <div class="w-px h-3 bg-navy-border"></div>
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="de">DE</button>
+                </div>
 
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-                <span class="theme-toggle__track">
-                    <span class="theme-toggle__thumb">
-                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb">
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
                     </span>
-                </span>
-            </button>
+                </button>
 
-            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
-            <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
-                <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2">Home</a>
-                <a href="about.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2">Über Mich</a>
-                <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2">Projekte</a>
-                <a href="certificates.html"
-                    class="text-text-muted hover:text-primary transition-colors py-2">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2">Kontakt</a>
+                <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-        </div>
+
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
+                <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
+                    <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2"
+                        data-i18n="nav.about">Über Mich</a>
+                    <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.projects">Projekte</a>
+                    <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.certificates">Zertifikate</a>
+                    <a href="index.html"
+                        class="inline-flex items-center gap-2 text-primary hover:text-accent transition-all mb-12 font-medium group"
+                        data-i18n="common.back">
+                        <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                        Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
     </nav>
 
     <main class="w-full pb-20">
 
         <section class="py-20 md:py-32 fade-up">
             <div class="max-w-content mx-auto px-6 text-center">
-                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6">Über Mich</h1>
-                <p class="text-xl text-text-muted max-w-2xl mx-auto">Von Kairo nach Deutschland, mein Weg in die
+                <div class="font-mono text-accent text-sm font-medium mb-4 tracking-wider uppercase"
+                    data-i18n="about.subtitle">// story</div>
+                <h1 class="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-text-DEFAULT mb-6"
+                    data-i18n="about.title">
+                    Über Mich
+                </h1>
+                <p class="text-xl text-text-muted max-w-2xl mx-auto" data-i18n="about.desc">Von Kairo nach Deutschland,
+                    mein Weg in die
                     Softwareentwicklung.</p>
             </div>
         </section>
@@ -135,14 +159,17 @@
 
                 <div
                     class="md:col-span-7 space-y-8 pl-0 md:pl-8 border-l-2 border-transparent relative fade-up stagger-2 before:content-[''] before:absolute before:left-[-2px] before:top-0 before:h-full before:w-[2px] before:bg-gradient-to-b before:from-primary before:to-transparent">
-                    <div class="p-6 bg-navy-surface/50 rounded-r-xl">
-                        <h3 class="font-sora text-text-DEFAULT text-xl font-semibold mb-3">Die Anfänge</h3>
-                        <p class="text-text-muted leading-relaxed">
-                            Meine Begeisterung für Technologie begann in Ägypten, lange bevor ich wusste, dass man
-                            daraus eine Karriere machen kann. Ich erlebte die Nokia-Ära, hielt die ersten Touchscreens
-                            in den Händen, und die Nacht, in der ich endlich den Audiotreiber meines PCs zum Laufen
-                            brachte, fühlte sich an wie ein persönlicher Sieg. Mein erster echter Meilenstein? Das
-                            Aufrüsten meines RAMs auf 126 MB.
+                    <div class="lg:col-span-3 space-y-6 text-lg text-text-muted leading-relaxed">
+                        <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-4" data-i18n="about.intro.title">
+                            Die Anfänge</h2>
+                        <p data-i18n="about.intro.p1">
+                            Mein Weg in die Softwareentwicklung begann 2022. Ich habe mich bewusst für einen Weg
+                            entschieden, der theoretische Tiefe mit praktischer Anwendung verbindet.
+                        </p>
+                        <p data-i18n="about.intro.p2">
+                            Als Quereinsteiger habe ich meine 3-jährige Ausbildung zum Fachinformatiker für
+                            Anwendungsentwicklung in nur 2,5 Jahren erfolgreich verkürzt und mit der Gesamtnote "Gut"
+                            abgeschlossen.
                         </p>
                     </div>
 
@@ -207,7 +234,12 @@
         <section class="py-24 bg-navy-surface/30 border-y border-navy-border">
             <div class="max-w-content mx-auto px-6">
                 <div class="text-center mb-16 fade-up">
-                    <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4">Technische Fähigkeiten</h2>
+                    <div class="font-mono text-accent text-sm font-medium mb-4 tracking-wider uppercase"
+                        data-i18n="about.skills.subtitle">
+                        // tech-stack</div>
+                    <h2 class="font-sora text-3xl md:text-4xl font-bold text-text-DEFAULT"
+                        data-i18n="about.skills.title">Technische Fähigkeiten
+                    </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -294,7 +326,8 @@
 
         <section class="py-24 max-w-content mx-auto px-6">
             <div class="text-center mb-20 fade-up">
-                <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4">Mein Werdegang</h2>
+                <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4" data-i18n="about.career.title">Mein
+                    Werdegang</h2>
             </div>
 
             <div
@@ -310,12 +343,15 @@
                     <div
                         class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/50 border border-navy-border p-6 rounded-xl hover:border-primary/50 transition-colors shadow-lg">
                         <div class="font-mono text-primary text-sm font-bold mb-1">Januar 2026</div>
-                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">IHK Zertifizierung</h3>
-                        <p class="text-text-muted text-sm mt-2">Fachinformatiker für Anwendungsentwicklung</p>
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg"
+                            data-i18n="about.career.items.ihk.title">IHK Zertifizierung</h3>
+                        <p class="text-text-muted text-sm mt-2" data-i18n="about.career.items.ihk.desc">Fachinformatiker
+                            für Anwendungsentwicklung</p>
                         <div class="mt-4 pt-4 border-t border-navy-border/50 text-sm">
                             <ul class="space-y-1 text-success font-medium">
-                                <li>• IHK Abschluss: Gut (87 Pkt.)</li>
-                                <li>• Projektarbeit: Sehr gut (99/100)</li>
+                                <li data-i18n="about.career.items.ihk.stats.overall">• IHK Abschluss: Gut (87 Pkt.)</li>
+                                <li data-i18n="about.career.items.ihk.stats.project">• Projektarbeit: Sehr gut (99/100)
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -333,8 +369,10 @@
                         class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
                         <div class="font-mono text-text-muted text-sm font-bold mb-1">2023 – 2026</div>
                         <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Karl Mayer GmbH</h3>
-                        <p class="text-text-muted text-sm mt-1 mb-2 italic">Weltmarktführer Textilmaschinenbau</p>
-                        <p class="text-text-muted text-sm mt-2">Auszubildender Fachinformatiker AE. Entwicklung von
+                        <p class="text-text-muted text-sm mt-1 mb-2 italic" data-i18n="about.career.items.km.sub">
+                            Weltmarktführer Textilmaschinenbau</p>
+                        <p class="text-text-muted text-sm mt-2" data-i18n="about.career.items.km.desc">Auszubildender
+                            Fachinformatiker AE. Entwicklung von
                             produktiver Software für Industriemaschinen.</p>
                     </div>
                 </div>
@@ -351,7 +389,8 @@
                         class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
                         <div class="font-mono text-text-muted text-sm font-bold mb-1">2017 – 2023</div>
                         <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">TechniForm GmbH</h3>
-                        <p class="text-text-muted text-sm mt-2">Produktionsmitarbeiter → Schichtleiter →
+                        <p class="text-text-muted text-sm mt-2" data-i18n="about.career.items.tf.desc">
+                            Produktionsmitarbeiter → Schichtleiter →
                             Verfahrensmechaniker. Leitung eines Teams von bis zu 10 Mitarbeitern.</p>
                     </div>
                 </div>
@@ -367,8 +406,10 @@
                     <div
                         class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
                         <div class="font-mono text-text-muted text-sm font-bold mb-1">2013 – 2017</div>
-                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Ankunft in Deutschland</h3>
-                        <p class="text-text-muted text-sm mt-2">Spracherwerb, Orientierung, Bewältigung bürokratischer
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg"
+                            data-i18n="about.career.items.de.title">Ankunft in Deutschland</h3>
+                        <p class="text-text-muted text-sm mt-2" data-i18n="about.career.items.de.desc">Spracherwerb,
+                            Orientierung, Bewältigung bürokratischer
                             Prozesse.</p>
                     </div>
                 </div>
@@ -384,23 +425,27 @@
                     <div
                         class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-navy-surface/30 border border-navy-border p-6 rounded-xl hover:bg-navy-surface/50 transition-colors shadow-lg">
                         <div class="font-mono text-text-muted text-sm font-bold mb-1">2013</div>
-                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg">Aufbruch aus Ägypten</h3>
-                        <p class="text-text-muted text-sm mt-2">Cairo University, Jura (Auswanderung im letzten
+                        <h3 class="font-sora font-semibold text-text-DEFAULT text-lg"
+                            data-i18n="about.career.items.eg.title">Aufbruch aus Ägypten</h3>
+                        <p class="text-text-muted text-sm mt-2" data-i18n="about.career.items.eg.desc">Cairo University,
+                            Jura (Auswanderung im letzten
                             Semester).</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
 
         <section class="py-24 border-t border-navy-border fade-up">
             <div class="max-w-3xl mx-auto px-6 text-center">
-                <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-6">Möchten Sie das Gesamtbild sehen?</h2>
-                <p class="text-text-muted mb-10">Laden Sie meinen vollständigen Lebenslauf herunter, mit allen Details
+                <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-6" data-i18n="about.cta.title">Möchten Sie
+                    das Gesamtbild sehen?</h2>
+                <p class="text-text-muted mb-10" data-i18n="about.cta.desc">Laden Sie meinen vollständigen Lebenslauf
+                    herunter, mit allen Details
                     zu meiner Erfahrung und Historie.</p>
                 <a href="docs/cv-mena-dawod.pdf" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-primary hover:bg-blue-500 text-on-primary font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+                    class="inline-flex items-center gap-2 bg-primary hover:bg-blue-500 text-on-primary font-semibold px-8 py-4 rounded-lg transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+                    data-i18n="about.cta.btn">
                     <i data-lucide="download" class="w-5 h-5"></i> Vollständigen CV herunterladen (PDF)
                 </a>
             </div>
@@ -414,7 +459,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
                 <div class="text-center md:text-left">
                     <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
-                    <div class="text-text-muted text-sm ml-1">.NET / Blazor / MAUI Developer</div>
+                    <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
+                    </div>
                 </div>
                 <div class="flex gap-4">
                     <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
@@ -436,8 +482,10 @@
                 class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
                 <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
                 <div class="flex gap-4">
-                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors">Impressum</a>
-                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors">Datenschutz</a>
+                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.impressum">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.privacy">Datenschutz</a>
                 </div>
             </div>
         </div>

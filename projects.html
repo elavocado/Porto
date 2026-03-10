@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+    })();
+</script>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekte | Mena Dawod</title>
+    <title data-i18n="nav.projects">Projekte | Mena Dawod</title>
 
     <meta name="description"
         content="Portfolio-Projekte von Mena Dawod, inklusive .NET MAUI & Blazor Enterprise-Software sowie moderne Full-Stack Web Applikationen.">
@@ -43,20 +49,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="css/globals.css">
-
-    <!-- Theme Manager -->
-    <script>
-            (function () {
-                const savedTheme = localStorage.getItem('theme');
-                const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-
-                if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                }
-            })();
-    </script>
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
 </head>
 
 <body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
@@ -66,61 +60,80 @@
         <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
             <div class="hidden md:flex items-center gap-8 font-medium">
-                <a href="index.html" class="text-text-muted transition-colors hover:text-primary">Home</a>
-                <a href="about.html" class="text-text-muted transition-colors hover:text-primary">Über Mich</a>
-                <a href="projects.html" class="text-text-DEFAULT transition-colors hover:text-primary">Projekte</a>
-                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
+                <a href="index.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.about">Über Mich</a>
+                <a href="projects.html" class="text-text-DEFAULT transition-colors hover:text-primary"
+                    data-i18n="nav.projects">Projekte</a>
+                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.certificates">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.contact">Kontakt</a>
             </div>
 
 
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-                <span class="theme-toggle__track">
-                    <span class="theme-toggle__thumb">
-                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="en">EN</button>
+                    <div class="w-px h-3 bg-navy-border"></div>
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="de">DE</button>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb">
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
                     </span>
-                </span>
-            </button>
+                </button>
 
-            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
-            <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
-                <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2">Home</a>
-                <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2">Über Mich</a>
-                <a href="projects.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2">Projekte</a>
-                <a href="certificates.html"
-                    class="text-text-muted hover:text-primary transition-colors py-2">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2">Kontakt</a>
+                <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-        </div>
+
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
+                <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
+                    <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.about">Über Mich</a>
+                    <a href="projects.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2"
+                        data-i18n="nav.projects">Projekte</a>
+                    <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.certificates">Zertifikate</a>
+                    <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.contact">Kontakt</a>
+                </div>
+            </div>
     </nav>
 
     <main class="w-full pb-20">
 
         <section class="py-20 md:py-32 fade-up">
             <div class="max-w-content mx-auto px-6 text-center">
-                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6">Ausgewählte Projekte</h1>
-                <p class="text-xl text-text-muted max-w-2xl mx-auto">
+                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6" data-i18n="projects.title">
+                    Ausgewählte Projekte</h1>
+                <p class="text-xl text-text-muted max-w-2xl mx-auto" data-i18n="projects.subtitle">
                     Ein Einblick in meine Softwareprojekte: Von industriellen Enterprise-Lösungen bis hin zu innovativen
                     Eigenentwicklungen aus verschiedenen Phasen meiner Laufbahn.
                 </p>
@@ -135,33 +148,41 @@
                 <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2"
+                            data-i18n="projects.items.modernization.badge">
                             <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span> Hauptprojekt
                         </span>
-                        <span class="text-sm font-medium text-text-muted">Ausbildung Karl Mayer</span>
+                        <span class="text-sm font-medium text-text-muted"
+                            data-i18n="projects.items.modernization.sub">Ausbildung Karl Mayer</span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Modernisierung einer
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.modernization.title">Modernisierung einer
                         Legacy-Anwendung mit C# Blazor</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed"
+                        data-i18n="projects.items.modernization.desc">
                         Vollständige Migration der Anwendungslogik von <strong
                             class="text-text-DEFAULT">JavaScript/jQuery nach C# und Blazor</strong> – unter Beibehaltung
                         des bestehenden High-End UI-Designs.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Realisierung einer <strong class="text-text-DEFAULT">Single-Page-App</strong> auf Basis der
+                        <li data-i18n="projects.items.modernization.points.0">Realisierung einer <strong
+                                class="text-text-DEFAULT">Single-Page-App</strong> auf Basis der
                             MVVM-Architektur</li>
-                        <li>Implementierung der <strong class="text-text-DEFAULT">NATS-Kommunikation</strong> für
+                        <li data-i18n="projects.items.modernization.points.1">Implementierung der <strong
+                                class="text-text-DEFAULT">NATS-Kommunikation</strong> für
                             Echtzeit-Datenverkehr</li>
-                        <li>Einsatz von <strong class="text-text-DEFAULT">Dependency Injection</strong> und Interfaces
+                        <li data-i18n="projects.items.modernization.points.2">Einsatz von <strong
+                                class="text-text-DEFAULT">Dependency Injection</strong> und Interfaces
                             zur Entkoppelung</li>
-                        <li>Konsequente Anwendung <strong class="text-text-DEFAULT">objektorientierter
+                        <li data-i18n="projects.items.modernization.points.3">Konsequente Anwendung <strong
+                                class="text-text-DEFAULT">objektorientierter
                                 Prinzipien</strong></li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.modernization.result">
                         Ergebnis: Eine moderne, strukturierte und zukunftssichere Anwendung, die nun als skalierbare
                         Plattform für verschiedene Maschinentypen dient.
                     </p>
@@ -196,30 +217,33 @@
                 <div class="lg:col-span-7 order-2 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2"
+                            data-i18n="projects.items.feature.badge">
                             Production Feature
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Entwicklung eines kundenspezifischen
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.feature.title">Entwicklung eines kundenspezifischen
                         Features</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.feature.desc">
                         Eigenständige Analyse von <strong class="text-text-DEFAULT">Fremdcode</strong> und vollständige
                         Feature-Implementierung innerhalb von zwei Wochen – bereits erfolgreich freigegeben und im
                         Live-Betrieb.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Analyse und präzise Anpassung komplexer <strong
+                        <li data-i18n="projects.items.feature.points.0">Analyse und präzise Anpassung komplexer <strong
                                 class="text-text-DEFAULT">Drittanbieter-Logik</strong></li>
-                        <li>Entwicklung einer <strong class="text-text-DEFAULT">zentralen Steuerung</strong> für
+                        <li data-i18n="projects.items.feature.points.1">Entwicklung einer <strong
+                                class="text-text-DEFAULT">zentralen Steuerung</strong> für
                             Maschinen-Parameter im Frontend</li>
-                        <li>Optimierung der Performance durch Reduktion unnötiger <strong
-                                class="text-text-DEFAULT">Backend-Requests</strong></li>
+                        <li data-i18n="projects.items.feature.points.2">Optimierung der Performance durch Reduktion
+                            unnötiger <strong class="text-text-DEFAULT">Backend-Requests</strong></li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.feature.result">
                         Ergebnis: Erfolgreiche Produktivsetzung mit hoher Stakeholder-Zufriedenheit und direkter
                         Zeitersparnis für Endkunden.
                     </p>
@@ -255,29 +279,34 @@
                 <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.portal.badge">
                             Full-Stack Web App
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Parameter-Informationsportal im
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.portal.title">Parameter-Informationsportal im
                         Intranet</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.portal.desc">
                         <strong class="text-text-DEFAULT">Eigeninitiative:</strong> Identifikation einer Lücke im
                         Entwicklungsprozess und selbstständige Konzeption sowie Umsetzung einer zentralen
                         Informationslösung.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Implementierung einer <strong class="text-text-DEFAULT">Hochleistungs-Suchfunktion</strong>
+                        <li data-i18n="projects.items.portal.points.0">Implementierung einer <strong
+                                class="text-text-DEFAULT">Hochleistungs-Suchfunktion</strong>
                             für > 5.000 Parameter</li>
-                        <li>Visualisierung von Meta-Informationen (ID, Min/Max-Werte, Lese-/Schreibrechte)</li>
-                        <li>Entwicklung einer <strong class="text-text-DEFAULT">Kollaborations-Ebene</strong> durch
+                        <li data-i18n="projects.items.portal.points.1">Visualisierung von Meta-Informationen (ID,
+                            Min/Max-Werte, Lese-/Schreibrechte)</li>
+                        <li data-i18n="projects.items.portal.points.2">Entwicklung einer <strong
+                                class="text-text-DEFAULT">Kollaborations-Ebene</strong> durch
                             integrierte Kommentarfunktionen</li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.portal.result">
                         Ergebnis: Massive Beschleunigung des Workflows für Entwickler und Servicemitarbeiter durch den
                         Wegfall manueller Dokumentensuche.
                     </p>
@@ -314,30 +343,35 @@
                 <div class="lg:col-span-7 order-2 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.database.badge">
                             Database Design
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Parameter-Datenbank mit SQLite und
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.database.title">Parameter-Datenbank mit SQLite und
                         EF-Core</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.database.desc">
                         Design und Aufbau einer performanten <strong class="text-text-DEFAULT">zentralen
                             Datenhaltung</strong> zur Ablösung papierbasierter oder unstrukturierter
                         Dokumentationslisten.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Entwurf des relationalen Schemas via <strong class="text-text-DEFAULT">Entity Framework Core
+                        <li data-i18n="projects.items.database.points.0">Entwurf des relationalen Schemas via <strong
+                                class="text-text-DEFAULT">Entity Framework Core
                                 (Code First)</strong></li>
-                        <li>Effiziente Persistierung von über <strong class="text-text-DEFAULT">5.000
+                        <li data-i18n="projects.items.database.points.1">Effiziente Persistierung von über <strong
+                                class="text-text-DEFAULT">5.000
                                 Maschinenparametern</strong></li>
-                        <li>Gewährleistung der <strong class="text-text-DEFAULT">Datenintegrität</strong> für das
+                        <li data-i18n="projects.items.database.points.2">Gewährleistung der <strong
+                                class="text-text-DEFAULT">Datenintegrität</strong> für das
                             angeschlossene Informationsportal</li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.database.result">
                         Ergebnis: Eine strukturierte und erweiterbare Datenbasis, die als „Single Source of Truth“ für
                         das gesamte System dient.
                     </p>
@@ -373,29 +407,32 @@
                 <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.conversion.badge">
                             Automation Tool
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Lokalisierungsdaten-Konvertierung
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.conversion.title">Lokalisierungsdaten-Konvertierung
                         (JSON → RESX)</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.conversion.desc">
                         <strong class="text-text-DEFAULT">Automatisierung der Lokalisierung:</strong> Entwicklung eines
                         Tools zur fehlerfreien Transformation von Altdaten in das moderne .NET-Format.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Programmgesteuerte Analyse komplexer <strong
+                        <li data-i18n="projects.items.conversion.points.0">Programmgesteuerte Analyse komplexer <strong
                                 class="text-text-DEFAULT">JSON-Strukturen</strong> (27 Sprachen)</li>
-                        <li>Automatisierte Generierung von <strong
+                        <li data-i18n="projects.items.conversion.points.1">Automatisierte Generierung von <strong
                                 class="text-text-DEFAULT">RESX-Ressourcendateien</strong></li>
-                        <li>Integrierte <strong class="text-text-DEFAULT">Konsistenz-Validierung</strong> der
+                        <li data-i18n="projects.items.conversion.points.2">Integrierte <strong
+                                class="text-text-DEFAULT">Konsistenz-Validierung</strong> der
                             übersetzten Strings</li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.conversion.result">
                         Ergebnis: 27 Sprachen automatisch migriert – manueller Aufwand von mehreren Arbeitstagen auf
                         wenige Minuten reduziert.
                     </p>
@@ -431,29 +468,36 @@
                 <div class="lg:col-span-7 order-2 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full flex items-center gap-2"
+                            data-i18n="projects.items.tonnenwecker.badge">
                             <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span> App Development
                         </span>
-                        <span class="text-sm font-medium text-text-muted">Limeshain</span>
+                        <span class="text-sm font-medium text-text-muted"
+                            data-i18n="projects.items.tonnenwecker.sub">Limeshain</span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">TonnenWecker – Limeshain</h2>
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.tonnenwecker.title">TonnenWecker – Limeshain</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed"
+                        data-i18n="projects.items.tonnenwecker.desc">
                         Konzeption und Entwicklung einer <strong class="text-text-DEFAULT">mobilen Anwendung</strong>
                         zur Digitalisierung kommunaler Services für die Gemeinde Limeshain.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Plattformübergreifende Entwicklung mit <strong class="text-text-DEFAULT">.NET MAUI</strong>
-                            (Android/iOS)</li>
-                        <li>Implementierung zuverlässiger <strong
+                        <li data-i18n="projects.items.tonnenwecker.points.0">Plattformübergreifende Entwicklung mit
+                            <strong class="text-text-DEFAULT">.NET MAUI</strong>
+                            (Android/iOS)
+                        </li>
+                        <li data-i18n="projects.items.tonnenwecker.points.1">Implementierung zuverlässiger <strong
                                 class="text-text-DEFAULT">Push-Benachrichtigungen</strong> für Abfuhrtermine</li>
-                        <li>Maximale Offline-Verfügbarkeit durch intelligentes <strong class="text-text-DEFAULT">lokales
+                        <li data-i18n="projects.items.tonnenwecker.points.2">Maximale Offline-Verfügbarkeit durch
+                            intelligentes <strong class="text-text-DEFAULT">lokales
                                 Caching</strong></li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.tonnenwecker.result">
                         Ergebnis: Ein praktischer Alltagsbegleiter, der die Bürgerbindung stärkt und verpasste
                         Abfuhrtermine zuverlässig verhindert.
                     </p>
@@ -490,29 +534,32 @@
                 <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.barcode.badge">
                             Workflow Optimization
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Automatisierte
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.barcode.title">Automatisierte
                         Chargennummer-Erfassung</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.barcode.desc">
                         <strong class="text-text-DEFAULT">Prozessoptimierung in der Maskenproduktion:</strong>
                         Vollständige Automatisierung der manuellen Erfassung fehlerhafter Palettenrollen.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Entwicklung eines spezialisierten Web-Tools für <strong
-                                class="text-text-DEFAULT">Barcode-Scanner</strong></li>
-                        <li>Implementierung eines intelligenten Parsers für komplexe <strong
-                                class="text-text-DEFAULT">Barcode-Strings</strong></li>
-                        <li>Automatisierte Erstellung druckoptimierter Listen zur <strong
-                                class="text-text-DEFAULT">Systembereinigung</strong></li>
+                        <li data-i18n="projects.items.barcode.points.0">Entwicklung eines spezialisierten Web-Tools für
+                            <strong class="text-text-DEFAULT">Barcode-Scanner</strong>
+                        </li>
+                        <li data-i18n="projects.items.barcode.points.1">Implementierung eines intelligenten Parsers für
+                            komplexe <strong class="text-text-DEFAULT">Barcode-Strings</strong></li>
+                        <li data-i18n="projects.items.barcode.points.2">Automatisierte Erstellung druckoptimierter
+                            Listen zur <strong class="text-text-DEFAULT">Systembereinigung</strong></li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.barcode.result">
                         Ergebnis: Die Erfassungszeit pro Palette wurde von ca. 30 Minuten auf unter 5 Minuten reduziert
                         (83% Zeitersparnis).
                     </p>
@@ -548,28 +595,32 @@
                 <div class="lg:col-span-7 order-2 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.calculator.badge">
                             Productivity Tool
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Praktischer Farb-Calculator für
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.calculator.title">Praktischer Farb-Calculator für
                         Kunststoffteile</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.calculator.desc">
                         <strong class="text-text-DEFAULT">Digitalisierung von Werkstatt-Formeln:</strong> Entwicklung
                         eines mobilen Tools zur präzisen Berechnung von Farbanteilen direkt in der Fertigung.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Mathematische Modellierung produktionstechnischer <strong
-                                class="text-text-DEFAULT">Mischformeln</strong></li>
-                        <li>Mobile-First Umsetzung für den flexiblen Einsatz an der Maschine</li>
-                        <li>Entwurf einer minimalistischen UI für <strong class="text-text-DEFAULT">fehlerfreie
+                        <li data-i18n="projects.items.calculator.points.0">Mathematische Modellierung
+                            produktionstechnischer <strong class="text-text-DEFAULT">Mischformeln</strong></li>
+                        <li data-i18n="projects.items.calculator.points.1">Mobile-First Umsetzung für den flexiblen
+                            Einsatz an der Maschine</li>
+                        <li data-i18n="projects.items.calculator.points.2">Entwurf einer minimalistischen UI für <strong
+                                class="text-text-DEFAULT">fehlerfreie
                                 Eingaben</strong> unter Zeitdruck</li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.calculator.result">
                         Ergebnis: Täglich im Produktionseinsatz – ersetzt die fehleranfällige manuelle Berechnung per
                         Taschenrechner vollständig.
                     </p>
@@ -604,29 +655,34 @@
                 <div class="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="projects.items.portfolio.badge">
                             Personal Brand
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4">Portfolio-Webseite mit HTML, CSS &
+                    <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-4"
+                        data-i18n="projects.items.portfolio.title">Portfolio-Webseite mit HTML, CSS &
                         JavaScript</h2>
 
-                    <p class="text-text-muted text-lg mb-6 leading-relaxed">
+                    <p class="text-text-muted text-lg mb-6 leading-relaxed" data-i18n="projects.items.portfolio.desc">
                         Design und Entwicklung einer <strong class="text-text-DEFAULT">modernen digitalen
                             Visitenkarte</strong> zur professionellen Präsentation technischer Expertise und Projekte.
                     </p>
 
                     <ul class="text-text-muted text-md mb-6 space-y-2 list-outside list-disc ml-6">
-                        <li>Fokus auf <strong class="text-text-DEFAULT">Tailwind CSS</strong> für höchste Performance
+                        <li data-i18n="projects.items.portfolio.points.0">Fokus auf <strong
+                                class="text-text-DEFAULT">Tailwind CSS</strong> für höchste Performance
                             und modulares Design</li>
-                        <li>Implementierung <strong class="text-text-DEFAULT">dynamischer Animationen</strong> und
+                        <li data-i18n="projects.items.portfolio.points.1">Implementierung <strong
+                                class="text-text-DEFAULT">dynamischer Animationen</strong> und
                             interaktiver UI-Elemente</li>
-                        <li>Automatisierte <strong class="text-text-DEFAULT">CI/CD-Workflows</strong> via GitHub und
+                        <li data-i18n="projects.items.portfolio.points.2">Automatisierte <strong
+                                class="text-text-DEFAULT">CI/CD-Workflows</strong> via GitHub und
                             Netlify</li>
                     </ul>
 
-                    <p class="text-success/90 text-md font-medium mb-8">
+                    <p class="text-success/90 text-md font-medium mb-8" data-i18n="projects.items.portfolio.result">
                         Ergebnis: Eine performante Online-Präsenz, die als zentraler Anlaufpunkt für meine berufliche
                         Identität dient.
                     </p>
@@ -667,7 +723,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
                 <div class="text-center md:text-left">
                     <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
-                    <div class="text-text-muted text-sm ml-1">.NET / Blazor / MAUI Developer</div>
+                    <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
+                    </div>
                 </div>
                 <div class="flex gap-4">
                     <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
@@ -689,8 +746,10 @@
                 class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
                 <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
                 <div class="flex gap-4">
-                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors">Impressum</a>
-                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors">Datenschutz</a>
+                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.impressum">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.privacy">Datenschutz</a>
                 </div>
             </div>
         </div>

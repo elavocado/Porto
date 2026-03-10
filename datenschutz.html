@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+    })();
+</script>
 
 <head>
     <meta charset="UTF-8">
@@ -52,6 +58,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/globals.css">
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
 
     <!-- Theme Manager -->
     <script>

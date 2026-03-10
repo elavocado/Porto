@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+    })();
+</script>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zertifikate & Referenzen | Mena Dawod</title>
+    <title data-i18n="certificates.title">Zertifikate & Referenzen | Mena Dawod</title>
 
     <meta name="description"
         content="Offizielle Zertifikate & Referenzen von Mena Dawod, .NET Blazor / MAUI Developer. IHK-Prüfungszeugnis und Arbeitszeugnisse.">
@@ -43,20 +49,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="css/globals.css">
-
-    <!-- Theme Manager -->
-    <script>
-            (function () {
-                const savedTheme = localStorage.getItem('theme');
-                const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-
-                if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                }
-            })();
-    </script>
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
 </head>
 
 <body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
@@ -66,63 +60,81 @@
         <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
             <div class="hidden md:flex items-center gap-8 font-medium">
-                <a href="index.html" class="text-text-muted transition-colors hover:text-primary">Home</a>
-                <a href="about.html" class="text-text-muted transition-colors hover:text-primary">Über Mich</a>
-                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary">Projekte</a>
-                <a href="certificates.html"
-                    class="text-text-DEFAULT transition-colors hover:text-primary">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
+                <a href="index.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.about">Über Mich</a>
+                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.projects">Projekte</a>
+                <a href="certificates.html" class="text-text-DEFAULT transition-colors hover:text-primary"
+                    data-i18n="nav.certificates">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
+                    data-i18n="nav.contact">Kontakt</a>
             </div>
 
 
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-                <span class="theme-toggle__track">
-                    <span class="theme-toggle__thumb">
-                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="en">EN</button>
+                    <div class="w-px h-3 bg-navy-border"></div>
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="de">DE</button>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb">
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
                     </span>
-                </span>
-            </button>
+                </button>
 
-            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
-            <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
-                <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2">Home</a>
-                <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2">Über Mich</a>
-                <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2">Projekte</a>
-                <a href="certificates.html"
-                    class="text-text-DEFAULT hover:text-primary transition-colors py-2">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2">Kontakt</a>
+                <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-        </div>
+
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
+                <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
+                    <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.about">Über Mich</a>
+                    <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.projects">Projekte</a>
+                    <a href="certificates.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2"
+                        data-i18n="nav.certificates">Zertifikate</a>
+                    <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2"
+                        data-i18n="nav.contact">Kontakt</a>
+                </div>
+            </div>
     </nav>
 
     <main class="w-full pb-20">
 
         <section class="py-20 md:py-32 fade-up">
             <div class="max-w-content mx-auto px-6 text-center">
-                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6">Zertifikate & Referenzen
+                <h1 class="font-sora text-5xl md:text-6xl font-bold text-text-DEFAULT mb-6"
+                    data-i18n="certificates.title">Zertifikate & Referenzen
                 </h1>
-                <p class="text-xl text-text-muted max-w-2xl mx-auto">
+                <p class="text-xl text-text-muted max-w-2xl mx-auto" data-i18n="certificates.subtitle">
                     Verifizierte Nachweise meiner Qualifikationen und bisherigen Leistungen.
                     Klicken Sie auf ein Zertifikat, um das Originaldokument einzusehen.
                 </p>
@@ -145,34 +157,41 @@
                             <i data-lucide="landmark" class="w-8 h-8 text-text-DEFAULT"></i>
                         </div>
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="certificates.items.ihk.badge">
                             Gut · 87 Punkte
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative">IHK Prüfungszeugnis</h2>
-                    <div class="text-sm font-medium text-text-muted mb-6">IHK Offenbach am Main · Jan 2026</div>
+                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative"
+                        data-i18n="certificates.items.ihk.title">IHK Prüfungszeugnis</h2>
+                    <div class="text-sm font-medium text-text-muted mb-6" data-i18n="certificates.items.ihk.org">IHK
+                        Offenbach am Main · Jan 2026</div>
 
                     <ul class="space-y-3 mb-8 flex-grow">
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Gesamtnote: <strong class="text-text-DEFAULT">Gut (87 Punkte / Note
+                            <span data-i18n="certificates.items.ihk.points.0">Gesamtnote: <strong
+                                    class="text-text-DEFAULT">Gut (87 Punkte / Note
                                     1,9)</strong></span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Betriebliche Projektarbeit: <strong class="text-text-DEFAULT">Sehr gut
+                            <span data-i18n="certificates.items.ihk.points.1">Betriebliche Projektarbeit: <strong
+                                    class="text-text-DEFAULT">Sehr gut
                                     (99/100)</strong></span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Qualifikationsniveau: EQR/NQR Level 4</span>
+                            <span data-i18n="certificates.items.ihk.points.2">Qualifikationsniveau: EQR/NQR Level
+                                4</span>
                         </li>
                     </ul>
 
                     <a href="docs/ihk-zeugnis.pdf" target="_blank" rel="noopener noreferrer"
                         class="w-full text-center bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-on-primary font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> Zertifikat ansehen (PDF)
+                        <i data-lucide="file-text" class="w-5 h-5"></i> <span
+                            data-i18n="certificates.view_pdf">Zertifikat ansehen (PDF)</span>
                     </a>
                 </article>
 
@@ -188,34 +207,41 @@
                             <i data-lucide="graduation-cap" class="w-8 h-8 text-text-DEFAULT"></i>
                         </div>
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="certificates.items.school.badge">
                             Gesamtnote: 1,0
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative">Abschlusszeugnis der
+                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative"
+                        data-i18n="certificates.items.school.title">Abschlusszeugnis der
                         Berufsschule
                     </h2>
-                    <div class="text-sm font-medium text-text-muted mb-6">August-Bebel-Schule Offenbach · Jan 2026</div>
+                    <div class="text-sm font-medium text-text-muted mb-6" data-i18n="certificates.items.school.org">
+                        August-Bebel-Schule Offenbach · Jan 2026</div>
 
                     <ul class="space-y-3 mb-8 flex-grow">
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Gesamtnote: <strong class="text-text-DEFAULT">1,0 (Eins Komma Null)</strong></span>
+                            <span data-i18n="certificates.items.school.points.0">Gesamtnote: <strong
+                                    class="text-text-DEFAULT">1,0 (Eins Komma Null)</strong></span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Alle Fächer: <strong class="text-text-DEFAULT">Sehr gut</strong></span>
+                            <span data-i18n="certificates.items.school.points.1">Alle Fächer: <strong
+                                    class="text-text-DEFAULT">Sehr gut</strong></span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="check-circle-2" class="w-5 h-5 text-success shrink-0"></i>
-                            <span>Berufsbezogener Unterricht: <strong class="text-text-DEFAULT">Sehr gut</strong></span>
+                            <span data-i18n="certificates.items.school.points.2">Berufsbezogener Unterricht: <strong
+                                    class="text-text-DEFAULT">Sehr gut</strong></span>
                         </li>
                     </ul>
 
                     <a href="docs/berufsschule-zeugnis.pdf" target="_blank" rel="noopener noreferrer"
                         class="w-full text-center bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-on-primary font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> Zertifikat ansehen (PDF)
+                        <i data-lucide="file-text" class="w-5 h-5"></i> <span
+                            data-i18n="certificates.view_pdf">Zertifikat ansehen (PDF)</span>
                     </a>
                 </article>
 
@@ -231,33 +257,40 @@
                             <i data-lucide="building-2" class="w-8 h-8 text-text-DEFAULT"></i>
                         </div>
                         <span
-                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-success-bg border border-success/30 text-success text-xs font-mono font-bold rounded-full"
+                            data-i18n="certificates.items.karlmayer.badge">
                             Karl Mayer · Weltmarktführer
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative">Zwischenzeugnis</h2>
-                    <div class="text-sm font-medium text-text-muted mb-6">KARL MAYER Textilmaschinenfabrik GmbH · Jul
+                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative"
+                        data-i18n="certificates.items.karlmayer.title">Zwischenzeugnis</h2>
+                    <div class="text-sm font-medium text-text-muted mb-6" data-i18n="certificates.items.karlmayer.org">
+                        KARL MAYER Textilmaschinenfabrik GmbH · Jul
                         2025</div>
 
                     <ul class="space-y-3 mb-8 flex-grow">
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="quote" class="w-5 h-5 text-success shrink-0"></i>
-                            <span class="italic">"Hervorragendes und umfassendes Fachwissen"</span>
+                            <span class="italic" data-i18n="certificates.items.karlmayer.points.0">"Hervorragendes und
+                                umfassendes Fachwissen"</span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="quote" class="w-5 h-5 text-success shrink-0"></i>
-                            <span class="italic">"Äußerst zuverlässig und genießt unser absolutes Vertrauen"</span>
+                            <span class="italic" data-i18n="certificates.items.karlmayer.points.1">"Äußerst zuverlässig
+                                und genießt unser absolutes Vertrauen"</span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="quote" class="w-5 h-5 text-success shrink-0"></i>
-                            <span class="italic">Alle Aufgaben "zu vollster Zufriedenheit" erledigt</span>
+                            <span class="italic" data-i18n="certificates.items.karlmayer.points.2">Alle Aufgaben "zu
+                                vollster Zufriedenheit" erledigt</span>
                         </li>
                     </ul>
 
                     <a href="docs/zwischenzeugnis-karl-mayer.pdf" target="_blank" rel="noopener noreferrer"
                         class="w-full text-center bg-navy-bg hover:bg-navy-border border border-navy-border text-text-DEFAULT font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> Referenz ansehen (PDF)
+                        <i data-lucide="file-text" class="w-5 h-5"></i> <span data-i18n="certificates.view_ref">Referenz
+                            ansehen (PDF)</span>
                     </a>
                 </article>
 
@@ -273,32 +306,39 @@
                             <i data-lucide="file-spreadsheet" class="w-8 h-8 text-text-DEFAULT"></i>
                         </div>
                         <span
-                            class="px-3 py-1 bg-navy-bg border border-navy-border text-text-muted text-xs font-mono font-bold rounded-full">
+                            class="px-3 py-1 bg-navy-bg border border-navy-border text-text-muted text-xs font-mono font-bold rounded-full"
+                            data-i18n="certificates.items.techniform.badge">
                             TechniForm · 2017–2023
                         </span>
                     </div>
 
-                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative">Arbeitszeugnis</h2>
-                    <div class="text-sm font-medium text-text-muted mb-6">TechniForm GmbH · Apr 2023</div>
+                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-2 relative"
+                        data-i18n="certificates.items.techniform.title">Arbeitszeugnis</h2>
+                    <div class="text-sm font-medium text-text-muted mb-6" data-i18n="certificates.items.techniform.org">
+                        TechniForm GmbH · Apr 2023</div>
 
                     <ul class="space-y-3 mb-8 flex-grow">
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="quote" class="w-5 h-5 text-text-muted shrink-0"></i>
-                            <span class="italic">"Stets ein sehr aktiver Mitarbeiter"</span>
+                            <span class="italic" data-i18n="certificates.items.techniform.points.0">"Stets ein sehr
+                                aktiver Mitarbeiter"</span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="quote" class="w-5 h-5 text-text-muted shrink-0"></i>
-                            <span class="italic">"Weit überdurchschnittlich engagiert"</span>
+                            <span class="italic" data-i18n="certificates.items.techniform.points.1">"Weit
+                                überdurchschnittlich engagiert"</span>
                         </li>
                         <li class="flex items-start gap-3 text-text-muted">
                             <i data-lucide="users" class="w-5 h-5 text-text-muted shrink-0"></i>
-                            <span>Führung eines Teams als Schichtleitervertreter (~10 Mitarbeiter)</span>
+                            <span data-i18n="certificates.items.techniform.points.2">Führung eines Teams als
+                                Schichtleitervertreter (~10 Mitarbeiter)</span>
                         </li>
                     </ul>
 
                     <a href="docs/arbeitszeugnis-techniform.pdf" target="_blank" rel="noopener noreferrer"
                         class="w-full text-center bg-navy-bg hover:bg-navy-border border border-navy-border text-text-DEFAULT font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> Referenz ansehen (PDF)
+                        <i data-lucide="file-text" class="w-5 h-5"></i> <span data-i18n="certificates.view_ref">Referenz
+                            ansehen (PDF)</span>
                     </a>
                 </article>
 
@@ -313,7 +353,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
                 <div class="text-center md:text-left">
                     <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
-                    <div class="text-text-muted text-sm ml-1">.NET / Blazor / MAUI Developer</div>
+                    <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
+                    </div>
                 </div>
                 <div class="flex gap-4">
                     <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
@@ -335,8 +376,10 @@
                 class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
                 <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
                 <div class="flex gap-4">
-                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors">Impressum</a>
-                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors">Datenschutz</a>
+                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.impressum">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.privacy">Datenschutz</a>
                 </div>
             </div>
         </div>

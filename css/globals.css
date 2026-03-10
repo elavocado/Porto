@@ -219,6 +219,7 @@ body {
 }
 
 
+
 .theme-toggle {
     background: none;
     border: none;
@@ -275,4 +276,40 @@ body {
 
 [data-theme="light"] .icon-moon {
     display: none;
+}
+
+/* --- Language Switch Styles --- */
+/* Prevent Flash of Untranslated Content (FOUT) */
+[data-i18n] {
+    opacity: 0;
+}
+
+body.i18n-ready [data-i18n] {
+    opacity: 1;
+}
+
+/* Specific handling for intro which has its own visibility logic */
+#intro-overlay [data-i18n] {
+    opacity: 1;
+}
+
+.lang-switch {
+    position: relative;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.lang-switch.is-active {
+    background-color: var(--primary-color) !important;
+    color: var(--on-primary) !important;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+[data-theme="light"] .lang-switch.is-active {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+.lang-switch:not(.is-active):hover {
+    color: var(--primary-color);
 }

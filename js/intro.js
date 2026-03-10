@@ -31,16 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-    const lines = [
-        { text: "Starte Portfolio-System v2.0.26...", status: "ok" },
-        { text: "Lade C# .NET Blazor — Blazor.Hybrid.Runtime", status: "ok" },
-        { text: "Mounting: /projects /skills /contact", status: "ok" },
-        { text: "MVVM-Pattern geladen — DI Container bereit", status: "ok" },
-        { text: "Git-Branch: main — letzter Commit: heute", status: "info" },
-        { text: "TonnenWecker.Limeshain → APK bereit", status: "ok" },
-        { text: "Alle Systeme betriebsbereit. Willkommen.", status: "ok" }
+    // Use translations for boot lines
+    const bootLines = window.i18n.getTranslation('intro.boot') || [
+        "Starte Portfolio-System v2.0.26...",
+        "Lade C# .NET Blazor — Blazor.Hybrid.Runtime",
+        "Mounting: /projects /skills /contact",
+        "MVVM-Pattern geladen — DI Container bereit",
+        "Git-Branch: main — letzter Commit: heute",
+        "TonnenWecker.Limeshain → APK bereit",
+        "Alle Systeme betriebsbereit. Willkommen."
     ];
+
+    const lines = bootLines.map((text, i) => ({
+        text,
+        status: i === 4 ? "info" : "ok"
+    }));
 
     lines.forEach((line, index) => {
         const div = document.createElement('div');
@@ -56,17 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     setInterval(() => {
-        introName.classList.add('glitching');
-        setTimeout(() => introName.classList.remove('glitching'), 500);
+        if (introName) {
+            introName.classList.add('glitching');
+            setTimeout(() => introName.classList.remove('glitching'), 500);
+        }
     }, 6000);
 
     setTimeout(() => {
-        introName.classList.add('glitching');
-        setTimeout(() => introName.classList.remove('glitching'), 500);
+        if (introName) {
+            introName.classList.add('glitching');
+            setTimeout(() => introName.classList.remove('glitching'), 500);
+        }
     }, 3500);
 
 
-    const roles = [
+    // Use translations for roles
+    const roles = window.i18n.getTranslation('intro.roles') || [
         "Blazor Developer",
         "MAUI Hybrid Entwickler",
         "C# Enthusiast",
@@ -78,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let typeSpeed = 100;
 
     function typeRole() {
+        if (!roleText) return;
         const currentRole = roles[currentRoleIndex];
 
         if (isDeleting) {
@@ -110,17 +121,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressDuration = 1600; // 1.6s from 4s start
     const startTime = 4000;
 
+    // Update progress labels translation
+    const progressLabel = document.querySelector('.progress-labels span:first-child');
+    if (progressLabel) {
+        progressLabel.textContent = window.i18n.getTranslation('intro.loading') || "INITIALISIERUNG";
+    }
+
     function updateProgress() {
         if (progress < 100) {
             progress += Math.random() * 5;
             if (progress > 100) progress = 100;
 
-            progressFill.style.width = `${progress}%`;
-            progressPercent.textContent = `${Math.floor(progress) === 100 ? 100 : Math.floor(progress)}%`;
+            if (progressFill) progressFill.style.width = `${progress}%`;
+            if (progressPercent) progressPercent.textContent = `${Math.floor(progress) === 100 ? 100 : Math.floor(progress)}%`;
 
             if (progress >= 100) {
                 const enterBtn = document.querySelector('.enter-btn');
-                if (enterBtn) enterBtn.classList.add('visible');
+                if (enterBtn) {
+                    enterBtn.classList.add('visible');
+                    enterBtn.textContent = window.i18n.getTranslation('intro.enter') || "[ CLICK HERE TO ENTER ]";
+                }
                 return;
             }
 
@@ -208,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const skipHint = document.createElement('div');
         skipHint.className = 'skip-hint';
         skipHint.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-size:10px; color:var(--text-muted); opacity:0; transition:opacity 0.5s; letter-spacing:0.2em; text-transform:uppercase; z-index:100; pointer-events:none;';
-        skipHint.textContent = '[ Click anywhere to enter ]';
+        skipHint.textContent = window.i18n.getTranslation('intro.skip') || '[ Click anywhere to enter ]';
         overlay.appendChild(skipHint);
         setTimeout(() => skipHint.style.opacity = '1', 100);
     }, 800);
