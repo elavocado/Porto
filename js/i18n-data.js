@@ -10,6 +10,7 @@ const translations = {
         index: {
             hero: {
                 subtitle: "< .NET / Blazor / MAUI Developer />",
+                name: "Mena Dawod",
                 title: "Software Developer",
                 badge: {
                     ihk: "IHK Grade: Good (87 Pts.)",
@@ -339,6 +340,7 @@ const translations = {
         index: {
             hero: {
                 subtitle: "< .NET / Blazor / MAUI Developer />",
+                name: "Mena Dawod",
                 title: "Fachinformatiker für Anwendungsentwicklung",
                 badge: {
                     ihk: "IHK Abschluss: Gut (87 Pkt.)",
