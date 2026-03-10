@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+    })();
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz | Mena Dawod</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Datenschutzerklärung von Mena Dawod gemäß DSGVO.">
+    <meta property="og:title" content="Datenschutz | Mena Dawod">
+    <meta property="og:description" content="Datenschutzerklärung gemäß DSGVO.">
+    <meta property="og:image" content="assets/profile.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Nunito:wght@400;600;700&family=Sora:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { bg: 'var(--bg-color)', surface: 'var(--surface-color)', border: 'var(--border-color)' },
+                        primary: { DEFAULT: 'var(--primary-color)', glow: 'var(--shadow-color)' },
+                        accent: { DEFAULT: 'var(--accent-color)' },
+                        text: { DEFAULT: 'var(--text-color)', muted: 'var(--text-muted)' },
+                        success: { DEFAULT: '#2ECC71', bg: 'rgba(46, 204, 113, 0.12)' },
+                        'on-primary': 'var(--on-primary)'
+                    },
+                    fontFamily: {
+                        sora: ['Sora', 'sans-serif'],
+                        nunito: ['Nunito', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                    },
+                    maxWidth: {
+                        'content': '1100px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/globals.css">
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <!-- Theme Manager -->
+    <script>
+            (function () {
+                const savedTheme = localStorage.getItem('theme');
+                const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+                if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
+        <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html" class="text-text-muted transition-colors hover:text-primary">Home</a>
+                <a href="about.html" class="text-text-muted transition-colors hover:text-primary">Über Mich</a>
+                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary">Projekte</a>
+                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                <span class="theme-toggle__track">
+                    <span class="theme-toggle__thumb">
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </span>
+                </span>
+            </button>
+
+            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
+            <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
+                <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2">Home</a>
+                <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2">Über Mich</a>
+                <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2">Projekte</a>
+                <a href="certificates.html"
+                    class="text-text-muted hover:text-primary transition-colors py-2">Zertifikate</a>
+                <a href="contact.html" class="text-text-muted hover:text-primary transition-colors py-2">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full pb-20">
+        <!-- Header Section -->
+        <section class="py-16 md:py-24 fade-up">
+            <div class="max-w-3xl mx-auto px-6">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-primary hover:text-accent transition-all mb-12 font-medium group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    Zurück zur Startseite
+                </a>
+
+                <div class="font-mono text-accent text-sm font-medium mb-4 tracking-wider uppercase">// privacy</div>
+                <h1 class="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-text-DEFAULT mb-6">
+                    Datenschutzerklärung
+                </h1>
+                <p class="text-xl text-text-muted font-medium">Gemäß DSGVO / Art. 13 DSGVO</p>
+            </div>
+        </section>
+
+        <!-- Main Privacy Content -->
+        <section class="max-w-3xl mx-auto px-6">
+
+            <!-- Highlight Box -->
+            <div
+                class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-16 fade-up stagger-1 shadow-lg shadow-primary/5">
+                <div class="flex gap-5">
+                    <div class="p-3 bg-primary/10 rounded-xl border border-primary/20 h-fit">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-primary shrink-0"></i>
+                    </div>
+                    <p class="text-text-DEFAULT leading-relaxed text-lg">
+                        <strong class="text-text-DEFAULT">Kurzfassung:</strong> Diese Website ist ein rein statisches
+                        Portfolio. Es werden keine personenbezogenen Daten aktiv gesammelt, keine Cookies gesetzt und
+                        keine Tracking-Tools eingesetzt.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-16">
+                <!-- 1. Verantwortlicher -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">1.</span> Verantwortlicher
+                    </h2>
+                    <div class="bg-navy-surface border border-navy-border rounded-2xl p-8 space-y-6 shadow-inner">
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-navy-border/50 pb-6 text-lg">
+                            <span class="text-text-muted text-sm uppercase tracking-widest font-semibold">Name</span>
+                            <span class="text-text-DEFAULT font-medium">Mena Magdy Nabeh Dawod</span>
+                        </div>
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-navy-border/50 pb-6 text-lg">
+                            <span class="text-text-muted text-sm uppercase tracking-widest font-semibold">Adresse</span>
+                            <span class="text-text-DEFAULT font-medium">Meisenring 14A, 63694 Limeshain</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-lg">
+                            <span class="text-text-muted text-sm uppercase tracking-widest font-semibold">E-Mail</span>
+                            <a href="mailto:dawod.mena@gmail.com"
+                                class="text-primary hover:text-accent font-semibold transition-colors underline decoration-primary/30 underline-offset-4">dawod.mena@gmail.com</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. Welche Daten werden verarbeitet? -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">2.</span> Welche Daten werden verarbeitet?
+                    </h2>
+                    <div class="text-text-muted leading-relaxed space-y-6 text-lg">
+                        <p>Beim Besuch dieser Website werden durch den Hosting-Anbieter <span
+                                class="text-text-DEFAULT">Netlify</span> technisch bedingt folgende Daten in Server-Logs
+                            gespeichert:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="p-4 bg-navy-surface/50 border border-navy-border rounded-xl flex items-center gap-3">
+                                <i data-lucide="hash" class="w-5 h-5 text-accent"></i>
+                                <span class="text-text-DEFAULT text-sm">IP-Adresse (anonymisiert)</span>
+                            </div>
+                            <div
+                                class="p-4 bg-navy-surface/50 border border-navy-border rounded-xl flex items-center gap-3">
+                                <i data-lucide="clock" class="w-5 h-5 text-accent"></i>
+                                <span class="text-text-DEFAULT text-sm">Datum und Uhrzeit</span>
+                            </div>
+                            <div
+                                class="p-4 bg-navy-surface/50 border border-navy-border rounded-xl flex items-center gap-3">
+                                <i data-lucide="file-code" class="w-5 h-5 text-accent"></i>
+                                <span class="text-text-DEFAULT text-sm">Aufgerufene URL / Datei</span>
+                            </div>
+                            <div
+                                class="p-4 bg-navy-surface/50 border border-navy-border rounded-xl flex items-center gap-3">
+                                <i data-lucide="chrome" class="w-5 h-5 text-accent"></i>
+                                <span class="text-text-DEFAULT text-sm">Browser & Betriebssystem</span>
+                            </div>
+                        </div>
+                        <p>Diese Daten werden ausschließlich zur technischen Bereitstellung der Website verwendet und
+                            nicht mit anderen Daten zusammengeführt.</p>
+                    </div>
+                </article>
+
+                <!-- 3. Cookies & Tracking -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">3.</span> Cookies & Tracking
+                    </h2>
+                    <div class="flex gap-6 items-start">
+                        <div class="p-3 bg-success/10 rounded-full border border-success/30 hidden sm:block">
+                            <i data-lucide="cookie-x" class="w-6 h-6 text-success"></i>
+                        </div>
+                        <p class="text-text-muted leading-relaxed text-lg">
+                            Diese Website verwendet <span class="text-text-DEFAULT font-medium">keine Cookies</span> und
+                            setzt
+                            keine Tracking- oder Analysetools (z. B. Google Analytics) ein. Es erfolgt keine Weitergabe
+                            von Daten an Dritte zu Werbezwecken.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 4. Externe Ressourcen -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">4.</span> Externe Ressourcen
+                    </h2>
+                    <p class="text-text-muted leading-relaxed text-lg mb-6">
+                        Diese Website kann Schriftarten und Ressourcen von <span class="text-text-DEFAULT">Google
+                            Fonts</span>
+                        laden. Dabei wird Ihre IP-Adresse an Google-Server übermittelt.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://policies.google.com/privacy" target="_blank"
+                            class="flex-1 p-4 bg-navy-surface border border-navy-border rounded-xl hover:border-primary transition-all group">
+                            <div class="text-xs text-text-muted uppercase tracking-widest mb-2 font-bold">Google
+                                Datenschutz</div>
+                            <div class="text-text-DEFAULT font-medium flex items-center justify-between">
+                                policies.google.com <i data-lucide="external-link"
+                                    class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.netlify.com/privacy/" target="_blank"
+                            class="flex-1 p-4 bg-navy-surface border border-navy-border rounded-xl hover:border-primary transition-all group">
+                            <div class="text-xs text-text-muted uppercase tracking-widest mb-2 font-bold">Netlify
+                                Datenschutz</div>
+                            <div class="text-text-DEFAULT font-medium flex items-center justify-between">
+                                netlify.com <i data-lucide="external-link"
+                                    class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 5. Kontaktaufnahme -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">5.</span> Kontaktaufnahme per E-Mail
+                    </h2>
+                    <p class="text-text-muted leading-relaxed text-lg">
+                        Wenn Sie mich per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten ausschließlich
+                        zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Rechtsgrundlage ist
+                        <span class="text-text-DEFAULT font-medium">Art. 6 Abs. 1 lit. f DSGVO</span>.
+                    </p>
+                </article>
+
+                <!-- 6. Ihre Rechte (DSGVO) -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">6.</span> Ihre Rechte (DSGVO)
+                    </h2>
+                    <p class="text-text-muted text-lg mb-8 leading-relaxed">Sie haben gemäß der
+                        Datenschutz-Grundverordnung (DSGVO) folgende umfassende Rechte gegenüber dem Verantwortlichen:
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr mb-8">
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                15</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Auskunftsrecht</h3>
+                                <p class="text-text-muted text-sm">Bestätigung & Kopie der Daten verlangen.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                16</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Berichtigung</h3>
+                                <p class="text-text-muted text-sm">Unverzügliche Korrektur falscher Daten.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                17</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Löschung</h3>
+                                <p class="text-text-muted text-sm">Das „Recht auf Vergessenwerden“.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                18</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Einschränkung</h3>
+                                <p class="text-text-muted text-sm">Verarbeitung vorrübergehend pausieren.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                21</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Widerspruch</h3>
+                                <p class="text-text-muted text-sm">Gegen die Verarbeitung Einspruch erheben.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-5 bg-navy-surface/30 border border-navy-border rounded-2xl flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 text-xs font-mono">
+                                77</div>
+                            <div>
+                                <h3 class="text-text-DEFAULT font-bold mb-1">Beschwerde</h3>
+                                <p class="text-text-muted text-sm">Recht bei der Aufsichtsbehörde.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-muted text-center pt-4">Bei Fragen zu Ihren Rechten kontaktieren Sie mich bitte
+                        unter: <br class="sm:hidden">
+                        <a href="mailto:dawod.mena@gmail.com"
+                            class="text-primary font-bold hover:text-accent transition-colors block sm:inline-block mt-2 sm:mt-0">dawod.mena@gmail.com</a>
+                    </p>
+                </article>
+
+                <!-- 7. Aufsichtsbehörde -->
+                <article class="fade-up">
+                    <h2
+                        class="font-sora text-2xl md:text-3xl font-bold text-text-DEFAULT mb-8 flex items-baseline gap-4">
+                        <span class="text-primary font-mono text-xl">7.</span> Aufsichtsbehörde
+                    </h2>
+                    <div
+                        class="bg-navy-surface border border-navy-border rounded-2xl p-8 relative overflow-hidden group">
+                        <div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="landmark" class="w-48 h-48 text-text-DEFAULT"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <p class="text-text-DEFAULT font-bold text-xl mb-2">Der Hessische Beauftragte für
+                                Datenschutz und
+                                Informationsfreiheit</p>
+                            <div class="flex items-start gap-3 text-text-muted mb-6">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                                <span>Gustav-Stresemann-Ring 1, 65189 Wiesbaden</span>
+                            </div>
+                            <a href="https://www.datenschutz.hessen.de" target="_blank"
+                                class="inline-flex items-center gap-2 bg-navy-bg border border-navy-border hover:border-primary text-primary hover:text-text-DEFAULT px-6 py-3 rounded-xl transition-all font-semibold">
+                                <i data-lucide="globe" class="w-4 h-4"></i> www.datenschutz.hessen.de
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Footer Note -->
+            <div class="mt-32 pt-10 border-t border-navy-surface text-center flex flex-col items-center gap-4">
+                <div class="w-10 h-1 bg-primary/20 rounded-full"></div>
+                <div class="text-text-muted text-xs uppercase tracking-[0.2em] font-bold">
+                    Stand der Datenschutzerklärung: <span class="text-text-DEFAULT">März 2026</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-bg border-t border-navy-border pt-20 pb-10">
+        <div class="max-w-content mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-10">
+                <div class="text-center md:text-left">
+                    <div class="font-sora font-bold text-3xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
+                    <div class="text-text-muted text-sm ml-1">.NET / Blazor / MAUI Developer</div>
+                </div>
+                <!-- Social Links -->
+                <div class="flex gap-5">
+                    <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-xl bg-navy-surface border border-navy-border flex items-center justify-center text-text-muted hover:text-text-DEFAULT hover:border-primary transition-all group"
+                        aria-label="GitHub">
+                        <i data-lucide="github" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-xl bg-navy-surface border border-navy-border flex items-center justify-center text-text-muted hover:text-text-DEFAULT hover:border-primary transition-all group"
+                        aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
+                        class="w-12 h-12 rounded-xl bg-navy-surface border border-navy-border flex items-center justify-center text-text-muted hover:text-text-DEFAULT hover:border-primary transition-all group"
+                        aria-label="Xing">
+                        <svg viewBox="0 0 24 24" fill="currentColor"
+                            class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            <path
+                                d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-6">
+                <div class="font-medium">&copy; 2026 Mena Dawod &middot; <span
+                        class="text-text-DEFAULT">menadawod.de</span></div>
+                <div class="flex gap-8 font-bold uppercase tracking-widest">
+                    <a href="impressum.html" class="hover:text-primary transition-colors">Impressum</a>
+                    <a href="datenschutz.html"
+                        class="text-text-DEFAULT hover:text-primary transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <!-- Theme Toggle Script -->
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        toggle.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

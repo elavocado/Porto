@@ -1,0 +1,553 @@
+/* Cinematic Intro Styles */
+
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', monospace;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.8s ease;
+}
+
+#intro-overlay.hidden {
+    transform: scale(1.1);
+    filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Background Grid */
+.intro-grid {
+    position: absolute;
+    inset: -100px;
+    background-image:
+        linear-gradient(to right, var(--accent-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--accent-color) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.04;
+    animation: grid-scroll 8s linear infinite;
+    pointer-events: none;
+    transform: translate(var(--parallax-x, 0), var(--parallax-y, 0));
+    will-change: transform, background-position;
+}
+
+@keyframes grid-scroll {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 48px;
+    }
+}
+
+/* Scanlines Effect */
+.intro-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0,
+            rgba(0, 0, 0, 0.05) 0.5px,
+            transparent 1px);
+    pointer-events: none;
+}
+
+/* Vignette Effect */
+.intro-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+}
+
+/* Corner Brackets */
+.corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--accent-color);
+    opacity: 0;
+    animation: fade-in 0.5s forwards 2.4s;
+}
+
+.corner-tl {
+    top: 40px;
+    left: 40px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-tr {
+    top: 40px;
+    right: 40px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-bl {
+    bottom: 40px;
+    left: 40px;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-br {
+    bottom: 40px;
+    right: 40px;
+    border-left: none;
+    border-top: none;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scan Beam */
+.scan-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+    opacity: 0.5;
+    animation: scan-move 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes scan-move {
+    0% {
+        transform: translateY(-10vh);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+/* Boot Lines */
+.boot-lines {
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+}
+
+.boot-line {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.boot-line[data-status="ok"] span:first-child {
+    color: var(--accent-color);
+}
+
+.boot-line[data-status="info"] span:first-child {
+    color: var(--primary-color);
+}
+
+.boot-line.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+/* Center Stage */
+.center-content {
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    letter-spacing: 0.3em;
+    opacity: 0;
+    animation: fade-in-up 0.8s forwards 2.6s;
+    margin-bottom: 8px;
+}
+
+.intro-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 10vw, 120px);
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: scale(0.9) blur(10px);
+    animation: name-reveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 2.9s;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+@keyframes name-reveal {
+    to {
+        opacity: 1;
+        transform: scale(1) blur(0);
+    }
+}
+
+/* Glitch Effect */
+.intro-name::before,
+.intro-name::after {
+    content: "MENA DAWOD";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    clip-path: inset(45% 0 45% 0);
+    opacity: 0;
+}
+
+.intro-name.glitching::before {
+    opacity: 0.8;
+    left: -2px;
+    text-shadow: 2px 0 #ff00ff;
+    animation: glitch-anim 0.3s infinite;
+}
+
+.intro-name.glitching::after {
+    opacity: 0.8;
+    left: 2px;
+    text-shadow: -2px 0 #00ffff;
+    animation: glitch-anim2 0.3s infinite;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip-path: inset(10% 0 60% 0);
+    }
+
+    20% {
+        clip-path: inset(40% 0 10% 0);
+    }
+
+    40% {
+        clip-path: inset(80% 0 5% 0);
+    }
+
+    60% {
+        clip-path: inset(20% 0 40% 0);
+    }
+
+    80% {
+        clip-path: inset(50% 0 20% 0);
+    }
+
+    100% {
+        clip-path: inset(10% 0 60% 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip-path: inset(50% 0 20% 0);
+    }
+
+    20% {
+        clip-path: inset(10% 0 60% 0);
+    }
+
+    40% {
+        clip-path: inset(20% 0 40% 0);
+    }
+
+    60% {
+        clip-path: inset(80% 0 5% 0);
+    }
+
+    80% {
+        clip-path: inset(40% 0 10% 0);
+    }
+
+    100% {
+        clip-path: inset(50% 0 20% 0);
+    }
+}
+
+.intro-divider {
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    opacity: 0.5;
+    margin: 12px 0;
+    animation: width-expand 0.8s forwards 3.4s;
+}
+
+@keyframes width-expand {
+    to {
+        width: 300px;
+    }
+}
+
+.intro-title {
+    font-size: 16px;
+    color: var(--text-color);
+    opacity: 0;
+    animation: fade-in 0.5s forwards 3.4s;
+    margin-bottom: 12px;
+}
+
+.intro-role-container {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    color: var(--accent-color);
+}
+
+.intro-cursor {
+    width: 2px;
+    height: 18px;
+    background: var(--primary-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 280px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fade-in 0.5s forwards 4s;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+}
+
+.progress-track {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--gradient);
+    box-shadow: 0 0 10px var(--accent-color);
+    transition: width 0.1s linear;
+}
+
+/* Action Buttons */
+.enter-btn {
+    margin-top: 50px;
+    background: transparent;
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    color: var(--text-color);
+    padding: 12px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 10px var(--accent-color);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.enter-btn.visible {
+    pointer-events: auto;
+    animation:
+        button-reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+        button-glow-blink 2s ease-in-out infinite 0.6s;
+}
+
+.enter-btn:hover {
+    border-color: var(--accent-color);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 30px var(--accent-color);
+    transform: scale(1.05);
+}
+
+.enter-btn:hover::before {
+    opacity: 0.2;
+}
+
+@keyframes button-reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes button-glow-blink {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+#matrix-canvas {
+    position: absolute;
+    inset: -5% -5%;
+    width: 110%;
+    height: 110%;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform;
+}
+
+/* Custom Cursor */
+#intro-cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    box-shadow: 0 0 10px var(--accent-color);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+/* Light Mode Adjustment */
+[data-theme="light"] .intro-grid {
+    opacity: 0.08;
+}
+
+[data-theme="light"] .intro-scanlines {
+    background: repeating-linear-gradient(to bottom,
+            transparent 0,
+            rgba(0, 0, 0, 0.03) 0.5px,
+            transparent 1px);
+}
+
+[data-theme="light"] .intro-name::before,
+[data-theme="light"] .intro-name::after {
+    background: var(--bg-color);
+    /* Still works because --bg-color is updated */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .boot-lines {
+        top: 8%;
+        left: 5%;
+        font-size: 10px;
+    }
+
+    .corner {
+        width: 40px;
+        height: 40px;
+    }
+
+    .corner-tl {
+        top: 20px;
+        left: 20px;
+    }
+
+    .corner-tr {
+        top: 20px;
+        right: 20px;
+    }
+
+    .corner-bl {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .corner-br {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Body state for homepage reveal */
+body.intro-active {
+    overflow: hidden;
+}
+
+body.content-fade-in main,
+body.content-fade-in nav,
+body.content-fade-in footer {
+    opacity: 1 !important;
+    transition: opacity 1.5s ease;
+}
+
+main,
+nav,
+footer {
+    opacity: 0;
+}

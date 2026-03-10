@@ -1,0 +1,315 @@
+:root {
+    --bg-color: #0d1128;
+    --surface-color: #131630;
+    --primary-color: #8b5cf6;
+    --accent-color: #22d3ee;
+    --border-color: rgba(139, 92, 246, 0.2);
+    --border-hover: rgba(139, 92, 246, 0.5);
+    --scrollbar-bg: #131630;
+    --scrollbar-thumb: #1e1b4b;
+    --gradient: linear-gradient(135deg, #8b5cf6, #22d3ee);
+    --text-color: #E8EDF5;
+    --text-muted: #7A9BBF;
+    --shadow-color: rgba(139, 92, 246, 0.25);
+    --on-primary: #ffffff;
+}
+
+[data-theme="light"] {
+    --bg-color: #f5f3ff;
+
+    --surface-color: #ffffff;
+    --primary-color: #6d28d9;
+
+    --accent-color: #3b9eff;
+
+    --border-color: #ddd6fe;
+
+    --border-hover: #c4b5fd;
+
+    --text-color: #000000;
+
+    --text-muted: #4b5563;
+
+    --shadow-color: rgba(109, 40, 217, 0.2);
+    --gradient: linear-gradient(135deg, #6d28d9, #3b9eff);
+    --scrollbar-bg: #f5f3ff;
+    --scrollbar-thumb: #ddd6fe;
+    --on-primary: #ffffff;
+    --section-border: #e9e4ff;
+}
+
+/* Redundant global borders removed to avoid duplication with explicit utility classes */
+
+
+[data-theme="light"] .bg-navy-surface {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .bg-navy-surface\/50 {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+}
+
+
+[data-theme="light"] .bg-success-bg {
+    background-color: #eff7ff !important;
+    border-color: #3b9eff !important;
+}
+
+[data-theme="light"] .border-success\/30 {
+    border-color: #3b9eff !important;
+}
+
+[data-theme="light"] .text-success {
+    color: #1a4e7a !important;
+}
+
+
+[data-theme="light"] .font-mono.text-primary,
+[data-theme="light"] .bg-success,
+[data-theme="light"] i.text-primary,
+[data-theme="light"] svg.text-primary,
+[data-theme="light"] i.text-success,
+[data-theme="light"] svg.text-success,
+[data-theme="light"] .hover\:text-primary:hover,
+[data-theme="light"] .border-primary\/30 {
+    color: #3b9eff !important;
+}
+
+[data-theme="light"] .bg-success,
+[data-theme="light"] .bg-success.animate-pulse {
+    background-color: #3b9eff !important;
+}
+
+[data-theme="light"] .before\:from-primary:before {
+    background-image: linear-gradient(to bottom, #3b9eff, transparent) !important;
+}
+
+[data-theme="light"] .border-primary\/30 {
+    border-color: rgba(59, 158, 255, 0.3) !important;
+}
+
+[data-theme="light"] .p-4 .text-primary,
+[data-theme="light"] .p-3 .text-primary {
+    color: #3b9eff !important;
+}
+
+[data-theme="light"] .text-success\/90 {
+    color: #1a4e7a !important;
+    font-weight: 600;
+}
+
+*,
+*::before,
+*::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+
+.marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+    animation: scroll 40s linear infinite;
+
+    width: max-content;
+}
+
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 15px var(--shadow-color),
+            0 0 30px var(--shadow-color);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px var(--shadow-color),
+            0 0 60px var(--shadow-color),
+            0 0 80px rgba(139, 92, 246, 0.1);
+        transform: scale(1.02);
+    }
+}
+
+.profile-glow {
+    animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle__track {
+    width: 52px;
+    height: 28px;
+    background: var(--gradient);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    transition: background 0.35s ease;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle__thumb {
+    width: 22px;
+    height: 22px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: #7c3aed;
+    transform: translateX(0);
+}
+
+
+.icon-sun {
+    display: none;
+}
+
+.icon-moon {
+    display: block;
+}
+
+
+[data-theme="light"] .theme-toggle__thumb {
+    transform: translateX(24px);
+    color: #3b9eff;
+}
+
+[data-theme="light"] .icon-sun {
+    display: block;
+}
+
+[data-theme="light"] .icon-moon {
+    display: none;
+}
+
+/* --- Language Switch Styles --- */
+/* Prevent Flash of Untranslated Content (FOUT) */
+[data-i18n] {
+    opacity: 0;
+}
+
+body.i18n-ready [data-i18n] {
+    opacity: 1;
+}
+
+/* Specific handling for intro which has its own visibility logic */
+#intro-overlay [data-i18n] {
+    opacity: 1;
+}
+
+.lang-switch {
+    position: relative;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.lang-switch.is-active {
+    background-color: var(--primary-color) !important;
+    color: var(--on-primary) !important;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+[data-theme="light"] .lang-switch.is-active {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+.lang-switch:not(.is-active):hover {
+    color: var(--primary-color);
+}
