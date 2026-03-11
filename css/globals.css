@@ -442,7 +442,7 @@ body.menu-open #mobile-menu-btn .hamburger-inner::after {
 }
 
 @media (min-width: 768px) {
-    #mobile-menu, #menu-backdrop {
+    #mobile-menu, #menu-backdrop, #mobile-menu-btn {
         display: none !important;
     }
     #app-wrapper {
