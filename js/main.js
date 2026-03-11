@@ -28,10 +28,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    const backdrop = document.getElementById('menu-backdrop');
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const toggleMenu = (show) => {
+            const isOpen = show !== undefined ? show : !body.classList.contains('menu-open');
+            body.classList.toggle('menu-open', isOpen);
+            
+            // Re-render lucide icons if needed, or handle icons manually
+            // But we are using CSS for the hamburger now
+        };
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        if (backdrop) {
+            backdrop.addEventListener('click', () => toggleMenu(false));
+        }
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && body.classList.contains('menu-open')) {
+                toggleMenu(false);
+            }
         });
     }
 

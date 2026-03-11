@@ -60,8 +60,48 @@
     <script src="js/i18n.js"></script>
 </head>
 
-<body
-    class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20 flex flex-col min-h-screen">
+<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20 flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="md:hidden">
+        <div class="flex items-center justify-between mb-10">
+            <span class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</span>
+        </div>
+        <div class="flex flex-col gap-6 font-medium">
+            <a href="index.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.home">
+                <i data-lucide="home" class="w-5 h-5"></i> Home
+            </a>
+            <a href="about.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.about">
+                <i data-lucide="user" class="w-5 h-5"></i> Über Mich
+            </a>
+            <a href="projects.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.projects">
+                <i data-lucide="code-2" class="w-5 h-5"></i> Projekte
+            </a>
+            <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.certificates">
+                <i data-lucide="award" class="w-5 h-5"></i> Zertifikate
+            </a>
+            <a href="contact.html" class="text-text-DEFAULT hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.contact">
+                <i data-lucide="mail" class="w-5 h-5"></i> Kontakt
+            </a>
+        </div>
+
+        <div class="mt-auto pt-10 border-t border-navy-border flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/elavocado" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://linkedin.com/in/menadawod/" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="menu-backdrop" class="md:hidden"></div>
+
+    <div id="app-wrapper" class="flex flex-col min-h-screen">
+
 
 
     <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
@@ -114,25 +154,13 @@
                 </button>
 
                 <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
             </div>
 
-            <div id="mobile-menu"
-                class="hidden md:hidden bg-navy-surface border-b border-navy-border absolute w-full left-0 top-20 shadow-2xl">
-                <div class="flex flex-col px-6 py-4 gap-4 pb-6 font-medium">
-                    <a href="index.html" class="text-text-muted hover:text-primary transition-colors py-2"
-                        data-i18n="nav.home">Home</a>
-                    <a href="about.html" class="text-text-muted hover:text-primary transition-colors py-2"
-                        data-i18n="nav.about">Über Mich</a>
-                    <a href="projects.html" class="text-text-muted hover:text-primary transition-colors py-2"
-                        data-i18n="nav.projects">Projekte</a>
-                    <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors py-2"
-                        data-i18n="nav.certificates">Zertifikate</a>
-                    <a href="contact.html" class="text-text-DEFAULT hover:text-primary transition-colors py-2"
-                        data-i18n="nav.contact">Kontakt</a>
-                </div>
-            </div>
+
     </nav>
 
     <main class="w-full flex-grow flex items-center pb-20 pt-20">
@@ -278,6 +306,7 @@
         });
     </script>
     <script src="js/main.js"></script>
+    </div>
 </body>
 
 </html>
