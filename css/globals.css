@@ -339,7 +339,114 @@ body.i18n-ready [data-i18n] {
     }
 }
 
-@keyframes slideIn {
-    from { width: 0; opacity: 0; }
-    to { width: 100%; opacity: 1; }
-}
+/* --- Mobile Menu Push Effect --- */
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--surface-color);
+    z-index: 1000;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+body.menu-open #mobile-menu {
+    left: 0;
+}
+
+#app-wrapper {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.menu-open #app-wrapper {
+    transform: translateX(280px);
+}
+
+#menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+body.menu-open #menu-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Custom Hamburger Animation */
+#mobile-menu-btn {
+    position: relative;
+    z-index: 50;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mobile-menu-btn .hamburger-box {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    display: block;
+}
+
+#mobile-menu-btn .hamburger-inner {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0s 0.2s;
+}
+
+#mobile-menu-btn .hamburger-inner::before,
+#mobile-menu-btn .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+#mobile-menu-btn .hamburger-inner::before { top: -8px; }
+#mobile-menu-btn .hamburger-inner::after { bottom: -8px; }
+
+body.menu-open #mobile-menu-btn .hamburger-inner {
+    background-color: transparent !important;
+}
+
+body.menu-open #mobile-menu-btn .hamburger-inner::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+body.menu-open #mobile-menu-btn .hamburger-inner::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+    #mobile-menu, #menu-backdrop, #mobile-menu-btn {
+        display: none !important;
+    }
+    #app-wrapper {
+        transform: none !important;
+    }
+}
+

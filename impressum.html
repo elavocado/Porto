@@ -83,7 +83,48 @@
     </script>
 </head>
 
-<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20">
+<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20 overflow-x-hidden">
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="md:hidden">
+        <div class="flex items-center justify-between mb-10">
+            <span class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</span>
+        </div>
+        <div class="flex flex-col gap-6 font-medium">
+            <a href="index.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3">
+                <i data-lucide="home" class="w-5 h-5"></i> Home
+            </a>
+            <a href="about.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3">
+                <i data-lucide="user" class="w-5 h-5"></i> Über Mich
+            </a>
+            <a href="projects.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3">
+                <i data-lucide="code-2" class="w-5 h-5"></i> Projekte
+            </a>
+            <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3">
+                <i data-lucide="award" class="w-5 h-5"></i> Zertifikate
+            </a>
+            <a href="contact.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5"></i> Kontakt
+            </a>
+        </div>
+
+        <div class="mt-auto pt-10 border-t border-navy-border flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/elavocado" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://linkedin.com/in/menadawod/" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="menu-backdrop" class="md:hidden"></div>
+
+    <div id="app-wrapper">
+
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
@@ -97,32 +138,44 @@
                 <a href="contact.html" class="text-text-muted transition-colors hover:text-primary">Kontakt</a>
             </div>
 
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-                <span class="theme-toggle__track">
-                    <span class="theme-toggle__thumb">
-                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="en">EN</button>
+                    <div class="w-px h-3 bg-navy-border"></div>
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="de">DE</button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb">
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
                     </span>
-                </span>
-            </button>
+                </button>
+            </div>
 
             <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
             </button>
         </div>
     </nav>
@@ -281,6 +334,7 @@
         });
     </script>
     <script src="js/main.js"></script>
+    </div>
 </body>
 
 </html>
