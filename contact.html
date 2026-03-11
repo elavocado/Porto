@@ -4,6 +4,13 @@
     (function () {
         const lang = localStorage.getItem('lang') || 'de';
         document.documentElement.setAttribute('lang', lang);
+
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
     })();
 </script>
 
