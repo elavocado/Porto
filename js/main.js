@@ -60,4 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         marqueeContent.innerHTML += clone + clone;
     }
+
+    // Highlight Active Navigation Link
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+            link.classList.add('nav-link-active');
+            link.classList.remove('text-text-muted');
+        } else {
+            link.classList.remove('nav-link-active');
+        }
+    });
 });
