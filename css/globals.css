@@ -335,8 +335,31 @@ body.i18n-ready [data-i18n] {
         background: var(--primary-color);
         border-radius: 2px;
         box-shadow: 0 0 10px var(--shadow-color);
-        animation: slideIn 0.3s ease-out;
+        animation: slideIn 0.3s ease-out forwards;
     }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Specific styling for mobile menu active links */
+#mobile-menu a.nav-link-active {
+    background-color: var(--primary-color);
+    color: var(--on-primary) !important;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+#mobile-menu a.nav-link-active i {
+    color: var(--on-primary) !important;
 }
 
 /* --- Mobile Menu Push Effect --- */

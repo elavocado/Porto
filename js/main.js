@@ -90,11 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight Active Navigation Link
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentPath) {
+        // Simple match or index.html match for root paths
+        const isMatch = href === currentPath || 
+                       (currentPath === 'index.html' && href === './') ||
+                       (currentPath === 'index.html' && href === '/');
+
+        if (isMatch) {
             link.classList.add('nav-link-active');
             link.classList.remove('text-text-muted');
         } else {
