@@ -313,3 +313,33 @@ body.i18n-ready [data-i18n] {
 .lang-switch:not(.is-active):hover {
     color: var(--primary-color);
 }
+
+/* --- Navigation Highlighting --- */
+.nav-link-active {
+    color: var(--primary-color) !important;
+}
+
+/* Underline for Desktop Menu */
+@media (min-width: 768px) {
+    div.hidden.md\:flex a.nav-link-active {
+        position: relative;
+    }
+    
+    div.hidden.md\:flex a.nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 2px;
+        box-shadow: 0 0 10px var(--shadow-color);
+        animation: slideIn 0.3s ease-out;
+    }
+}
+
+@keyframes slideIn {
+    from { width: 0; opacity: 0; }
+    to { width: 100%; opacity: 1; }
+}
