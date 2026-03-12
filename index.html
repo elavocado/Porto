@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="index.hero.title">Mena Dawod, .NET Developer</title>
+    <title data-i18n="pageTitles.home">Mena Dawod | .NET Developer</title>
 
 
     <meta name="description"
@@ -85,7 +85,6 @@
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/intro.css">
 
-    </script>
     <script src="js/i18n-data.js"></script>
     <script src="js/i18n.js"></script>
 </head>
@@ -99,29 +98,41 @@
             <span class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</span>
         </div>
         <div class="flex flex-col gap-6 font-medium">
-            <a href="index.html" class="text-text-DEFAULT hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.home">
+            <a href="index.html"
+                class="text-text-DEFAULT hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.home">
                 <i data-lucide="home" class="w-5 h-5"></i> Home
             </a>
-            <a href="about.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.about">
+            <a href="about.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.about">
                 <i data-lucide="user" class="w-5 h-5"></i> Über Mich
             </a>
-            <a href="projects.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.projects">
+            <a href="projects.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.projects">
                 <i data-lucide="code-2" class="w-5 h-5"></i> Projekte
             </a>
-            <a href="certificates.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.certificates">
+            <a href="certificates.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.certificates">
                 <i data-lucide="award" class="w-5 h-5"></i> Zertifikate
             </a>
-            <a href="contact.html" class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3" data-i18n="nav.contact">
+            <a href="contact.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.contact">
                 <i data-lucide="mail" class="w-5 h-5"></i> Kontakt
             </a>
         </div>
 
         <div class="mt-auto pt-10 border-t border-navy-border flex flex-col gap-6">
             <div class="flex items-center gap-4">
-                <a href="https://github.com/elavocado" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                <a href="https://github.com/elavocado" target="_blank"
+                    class="text-text-muted hover:text-primary transition-colors">
                     <i data-lucide="github" class="w-6 h-6"></i>
                 </a>
-                <a href="https://linkedin.com/in/menadawod/" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                <a href="https://linkedin.com/in/menadawod/" target="_blank"
+                    class="text-text-muted hover:text-primary transition-colors">
                     <i data-lucide="linkedin" class="w-6 h-6"></i>
                 </a>
             </div>
@@ -135,503 +146,530 @@
 
 
 
-    <div id="intro-overlay">
-        <div class="intro-grid"></div>
-        <div class="intro-scanlines"></div>
-        <div class="intro-vignette"></div>
+        <div id="intro-overlay">
+            <div class="intro-grid"></div>
+            <div class="intro-scanlines"></div>
+            <div class="intro-vignette"></div>
 
 
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
 
 
-        <div class="scan-beam"></div>
+            <div class="scan-beam"></div>
 
 
-        <canvas id="matrix-canvas"></canvas>
+            <canvas id="matrix-canvas"></canvas>
 
 
-        <div class="boot-lines"></div>
+            <div class="boot-lines"></div>
 
 
-        <div class="center-content">
-            <div class="intro-label">Portfolio · 2026</div>
-            <h1 class="intro-name">MENA DAWOD</h1>
-            <div class="intro-divider"></div>
-            <div class="intro-title">Softwareentwickler C# / .NET</div>
+            <div class="center-content">
+                <div class="intro-label">Portfolio · 2026</div>
+                <h1 class="intro-name">MENA DAWOD</h1>
+                <div class="intro-divider"></div>
+                <div class="intro-title">Softwareentwickler C# / .NET</div>
 
-            <div class="intro-role-container">
-                <span class="intro-role-text"></span>
-                <span class="intro-cursor"></span>
-            </div>
-
-
-            <div class="progress-container">
-                <div class="progress-labels">
-                    <span>INITIALISIERUNG</span>
-                    <span class="progress-percent">0%</span>
+                <div class="intro-role-container">
+                    <span class="intro-role-text"></span>
+                    <span class="intro-cursor"></span>
                 </div>
-                <div class="progress-track">
-                    <div class="progress-fill"></div>
+
+
+                <div class="progress-container">
+                    <div class="progress-labels">
+                        <span>INITIALISIERUNG</span>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill"></div>
+                    </div>
                 </div>
+
+
+                <button class="enter-btn" onclick="enterSite()">[ CLICK HERE TO ENTER ]</button>
             </div>
-
-
-            <button class="enter-btn" onclick="enterSite()">[ CLICK HERE TO ENTER ]</button>
         </div>
-    </div>
 
 
-    <div id="intro-cursor"></div>
+        <div id="intro-cursor"></div>
 
 
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
-        <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
+            <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
 
-            <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
+                <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
 
 
-            <div class="hidden md:flex items-center gap-8 font-medium">
-                <a href="index.html" class="text-text-DEFAULT transition-colors hover:text-primary"
-                    data-i18n="nav.home">Home</a>
-                <a href="about.html" class="text-text-muted transition-colors hover:text-primary"
-                    data-i18n="nav.about">Über Mich</a>
-                <a href="projects.html" class="text-text-muted transition-colors hover:text-primary"
-                    data-i18n="nav.projects">Projekte</a>
-                <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary"
-                    data-i18n="nav.certificates">Zertifikate</a>
-                <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
-                    data-i18n="nav.contact">Kontakt</a>
-            </div>
+                <div class="hidden md:flex items-center gap-8 font-medium">
+                    <a href="index.html" class="text-text-DEFAULT transition-colors hover:text-primary"
+                        data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.about">Über Mich</a>
+                    <a href="projects.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.projects">Projekte</a>
+                    <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.certificates">Zertifikate</a>
+                    <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.contact">Kontakt</a>
+                </div>
 
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
-                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
-                        data-lang="en">EN</button>
-                    <div class="w-px h-3 bg-navy-border"></div>
-                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
-                        data-lang="de">DE</button>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                        <button
+                            class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                            data-lang="en">EN</button>
+                        <div class="w-px h-3 bg-navy-border"></div>
+                        <button
+                            class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                            data-lang="de">DE</button>
+                    </div>
+
+
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode"
+                        title="Toggle theme">
+                        <span class="theme-toggle__track">
+                            <span class="theme-toggle__thumb">
+                                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <circle cx="12" cy="12" r="5" />
+                                    <line x1="12" y1="1" x2="12" y2="3" />
+                                    <line x1="12" y1="21" x2="12" y2="23" />
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                    <line x1="1" y1="12" x2="3" y2="12" />
+                                    <line x1="21" y1="12" x2="23" y2="12" />
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                </svg>
+                                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
                 </div>
 
 
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-                    <span class="theme-toggle__track">
-                        <span class="theme-toggle__thumb">
-                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <circle cx="12" cy="12" r="5" />
-                                <line x1="12" y1="1" x2="12" y2="3" />
-                                <line x1="12" y1="21" x2="12" y2="23" />
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                                <line x1="1" y1="12" x2="3" y2="12" />
-                                <line x1="21" y1="12" x2="23" y2="12" />
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                            </svg>
-                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                            </svg>
-                        </span>
+                <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors"
+                    aria-label="Navigation umschalten">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
                     </span>
                 </button>
             </div>
 
 
-            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors"
-                aria-label="Navigation umschalten">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
+
+        </nav>
 
 
-
-    </nav>
-
-
-    <main class="w-full">
+        <main class="w-full">
 
 
-        <section class="min-h-screen pt-32 pb-20 flex items-center">
-            <div class="max-w-content mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-8 items-center">
+            <section class="min-h-screen pt-32 pb-20 flex items-center">
+                <div
+                    class="max-w-content mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-8 items-center">
 
 
-                <div class="lg:col-span-3 order-2 lg:order-1 fade-up">
-                    <div class="font-mono text-primary text-sm font-medium mb-4 stagger-1 inline-block"
-                        data-i18n="index.hero.subtitle">
-                        &lt; .NET / Blazor / MAUI Developer /&gt;
+                    <div class="lg:col-span-3 order-2 lg:order-1 fade-up">
+                        <div class="font-mono text-primary text-sm font-medium mb-4 stagger-1 inline-block"
+                            data-i18n="index.hero.subtitle">
+                            &lt; .NET / Blazor / MAUI Developer /&gt;
+                        </div>
+
+                        <h1 class="font-sora text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 stagger-2 text-text-DEFAULT"
+                            data-i18n="index.hero.name">
+                            Mena Dawod
+                        </h1>
+
+                        <h2 class="font-sora text-xl md:text-2xl text-text-muted font-medium mb-8 stagger-3"
+                            data-i18n="index.hero.title">
+                            Fachinformatiker für Anwendungsentwicklung
+                        </h2>
+
+
+                        <div class="flex flex-wrap gap-3 mb-8 stagger-4">
+                            <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
+                                data-i18n="index.hero.badge.ihk">
+                                <i data-lucide="trophy" class="w-4 h-4"></i> IHK Abschluss: Gut (87 Pkt.)
+                            </div>
+                            <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
+                                data-i18n="index.hero.badge.project">
+                                <i data-lucide="award" class="w-4 h-4"></i> Projektarbeit: Sehr gut (99/100)
+                            </div>
+                            <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
+                                data-i18n="index.hero.badge.school">
+                                <i data-lucide="graduation-cap" class="w-4 h-4"></i> Berufsschule: 1,0
+                            </div>
+                        </div>
+
+                        <p class="text-lg md:text-xl text-text-muted leading-relaxed mb-10 max-w-2xl stagger-4"
+                            data-i18n="index.hero.desc">
+                            Zertifizierter .NET, Blazor & MAUI Entwickler mit Produktionserfahrung bei Karl Mayer, einem
+                            Weltmarktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit
+                            sauberer Architektur und liefere echten Mehrwert für den Produktionsalltag.
+                        </p>
+
+
+                        <div class="flex flex-wrap items-center gap-4 mb-10 stagger-4">
+                            <a href="projects.html"
+                                class="bg-primary hover:bg-blue-500 text-on-primary font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
+                                data-i18n="index.hero.btn.projects">
+                                Projekte ansehen
+                            </a>
+                            <a href="docs/cv-mena-dawod.pdf" target="_blank" rel="noopener noreferrer"
+                                class="border border-navy-border hover:border-text-muted bg-navy-surface hover:bg-navy-border/50 text-text-DEFAULT font-semibold px-8 py-3.5 rounded-lg transition-all flex items-center gap-2"
+                                data-i18n="index.hero.btn.cv">
+                                <i data-lucide="download" class="w-5 h-5"></i> Lebenslauf PDF
+                            </a>
+                        </div>
+
+
+                        <div class="flex items-center gap-5 text-text-muted stagger-4">
+                            <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-primary transition-colors" title="GitHub" aria-label="GitHub Profil">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-primary transition-colors" title="LinkedIn"
+                                aria-label="LinkedIn Profil">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-primary transition-colors" title="Xing" aria-label="Xing Profil">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block">
+                                    <path
+                                        d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
+                                </svg>
+                            </a>
+                            <a href="https://youtube.com/@Foxflix" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-primary transition-colors" title="YouTube" aria-label="YouTube Kanal">
+                                <i data-lucide="youtube" class="w-6 h-6"></i>
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 class="font-sora text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 stagger-2 text-text-DEFAULT"
-                        data-i18n="index.hero.name">
-                        Mena Dawod
-                    </h1>
 
-                    <h2 class="font-sora text-xl md:text-2xl text-text-muted font-medium mb-8 stagger-3"
-                        data-i18n="index.hero.title">
-                        Fachinformatiker für Anwendungsentwicklung
-                    </h2>
-
-
-                    <div class="flex flex-wrap gap-3 mb-8 stagger-4">
-                        <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
-                            data-i18n="index.hero.badge.ihk">
-                            <i data-lucide="trophy" class="w-4 h-4"></i> IHK Abschluss: Gut (87 Pkt.)
+                    <div
+                        class="lg:col-span-2 order-1 lg:order-2 flex justify-center lg:justify-end relative fade-up stagger-1">
+                        <div
+                            class="relative z-10 w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-primary/30 profile-glow rotate-2 hover:rotate-0 transition-all duration-500">
+                            <img src="assets/profile.png" alt="Mena Dawod Profilbild"
+                                class="w-full h-full object-cover">
                         </div>
-                        <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
-                            data-i18n="index.hero.badge.project">
-                            <i data-lucide="award" class="w-4 h-4"></i> Projektarbeit: Sehr gut (99/100)
-                        </div>
-                        <div class="bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2"
-                            data-i18n="index.hero.badge.school">
-                            <i data-lucide="graduation-cap" class="w-4 h-4"></i> Berufsschule: 1,0
+
+
+                        <div
+                            class="absolute -bottom-6 -right-4 lg:-right-8 bg-navy-surface border border-navy-border p-4 rounded-xl shadow-xl z-20 hover:-translate-y-2 transition-transform">
+                            <div class="flex items-center gap-2 text-sm text-text-DEFAULT mb-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Limeshain, DE
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-success font-medium"
+                                data-i18n="index.status.availability">
+                                <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span> Open to work
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <p class="text-lg md:text-xl text-text-muted leading-relaxed mb-10 max-w-2xl stagger-4"
-                        data-i18n="index.hero.desc">
-                        Zertifizierter .NET, Blazor & MAUI Entwickler mit Produktionserfahrung bei Karl Mayer, einem
-                        Weltmarktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit
-                        sauberer Architektur und liefere echten Mehrwert für den Produktionsalltag.
+
+            <section class="py-12 border-y border-navy-border bg-navy-surface/30 fade-up">
+                <div class="max-w-content mx-auto px-6 mb-6">
+                    <h3 class="font-mono text-sm text-text-muted text-center uppercase tracking-widest"
+                        data-i18n="index.tech.title">Technologien im
+                        Einsatz</h3>
+                </div>
+
+                <div class="marquee-wrapper">
+                    <div class="marquee-content font-mono text-xl font-bold text-navy-border whitespace-nowrap">
+
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">C#</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">.NET
+                            Core</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Blazor</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">MVVM</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Docker</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">GitLab
+                            CI/CD</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">NATS</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Entity
+                            Framework</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">SQL</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">HTML5/CSS3</span>
+
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">C#</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">.NET
+                            Core</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Blazor</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">MVVM</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Docker</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">GitLab
+                            CI/CD</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">NATS</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Entity
+                            Framework</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">SQL</span>
+                        <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
+                        <span
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">HTML5/CSS3</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="py-24 max-w-content mx-auto px-6">
+                <div class="mb-16 fade-up">
+                    <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4" data-i18n="index.projects.title">
+                        Ausgewählte Projekte</h2>
+                    <p class="text-text-muted text-lg max-w-2xl" data-i18n="index.projects.subtitle">
+                        Ausgewählte Softwareprojekte: Von industriellen Anwendungen bis hin zu modernen
+                        Full-Stack-Lösungen.
                     </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 
-                    <div class="flex flex-wrap items-center gap-4 mb-10 stagger-4">
+                    <div
+                        class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-1">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
+                                <i data-lucide="cpu" class="w-6 h-6 text-primary animate-pulse"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2 py-1 rounded bg-navy-bg border border-navy-border text-text-muted uppercase"
+                                data-i18n="index.projects.badge">Featured</span>
+                        </div>
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3"
+                            data-i18n="index.projects.p1.title">
+                            Legacy-App Modernisierung</h3>
+                        <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p1.desc">
+                            Vollständige Migration der Anwendungslogik von JavaScript/jQuery nach C# und Blazor.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">C#
+                                Blazor</span>
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">MVVM</span>
+                        </div>
                         <a href="projects.html"
-                            class="bg-primary hover:bg-blue-500 text-on-primary font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
-                            data-i18n="index.hero.btn.projects">
-                            Projekte ansehen
-                        </a>
-                        <a href="docs/cv-mena-dawod.pdf" target="_blank" rel="noopener noreferrer"
-                            class="border border-navy-border hover:border-text-muted bg-navy-surface hover:bg-navy-border/50 text-text-DEFAULT font-semibold px-8 py-3.5 rounded-lg transition-all flex items-center gap-2"
-                            data-i18n="index.hero.btn.cv">
-                            <i data-lucide="download" class="w-5 h-5"></i> Lebenslauf PDF
+                            class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
+                            data-i18n="index.projects.btn">
+                            Projekt ansehen <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
 
 
-                    <div class="flex items-center gap-5 text-text-muted stagger-4">
+                    <div
+                        class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-2">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
+                                <i data-lucide="settings" class="w-6 h-6 text-primary animate-pulse"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3"
+                            data-i18n="index.projects.p2.title">
+                            Kundenspezifisches Feature</h3>
+                        <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p2.desc">
+                            Eigenständige Analyse von Fremdcode und vollständige Implementierung innerhalb von zwei
+                            Wochen.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">C#</span>
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">NATS</span>
+                        </div>
+                        <a href="projects.html"
+                            class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
+                            data-i18n="index.projects.btn">
+                            Projekt ansehen <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+
+                    <div
+                        class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-3">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
+                                <i data-lucide="search" class="w-6 h-6 text-primary animate-pulse"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3"
+                            data-i18n="index.projects.p3.title">
+                            Parameter-Informationsportal</h3>
+                        <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p3.desc">
+                            Zentrale Informationslösung zur Suche und Verwaltung von über 5.000 Maschinenparametern.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">ASP.NET
+                                Core</span>
+                            <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">SQLite</span>
+                        </div>
+                        <a href="projects.html"
+                            class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
+                            data-i18n="index.projects.btn">
+                            Projekt ansehen <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="mt-12 text-center fade-up stagger-4">
+                    <a href="projects.html"
+                        class="inline-flex items-center gap-2 border border-navy-border hover:border-primary px-6 py-3 rounded-lg text-text-DEFAULT font-semibold transition-colors"
+                        data-i18n="index.projects.btnAll">
+                        Alle Projekte ansehen
+                    </a>
+                </div>
+            </section>
+
+
+            <section class="py-20 border-t border-navy-border bg-navy-surface/50">
+                <div class="max-w-content mx-auto px-6">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+                        <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-1">
+                            <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">99/100</div>
+                            <div class="text-primary font-semibold mb-1" data-i18n="index.stats.ihk.title">IHK
+                                Projektarbeit
+                            </div>
+                            <div class="text-text-muted text-sm" data-i18n="index.stats.ihk.desc">Note "Sehr gut" im
+                                Abschlussprojekt.</div>
+                        </div>
+
+                        <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-2">
+                            <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">1,0</div>
+                            <div class="text-primary font-semibold mb-1" data-i18n="index.stats.school.title">
+                                Berufsschule
+                            </div>
+                            <div class="text-text-muted text-sm" data-i18n="index.stats.school.desc">Bestmögliche
+                                Abschlussnote.</div>
+                        </div>
+
+                        <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-3">
+                            <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">87%</div>
+                            <div class="text-primary font-semibold mb-1" data-i18n="index.stats.cert.title">IHK Zeugnis
+                            </div>
+                            <div class="text-text-muted text-sm" data-i18n="index.stats.cert.desc">Note 1,9 (Gut) im
+                                Gesamtergebnis.</div>
+                        </div>
+
+                        <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-4">
+                            <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">1,5 <span class="text-2xl"
+                                    data-i18n="index.stats.year">Jahre</span>
+                            </div>
+                            <div class="text-primary font-semibold mb-1" data-i18n="index.stats.exp.title">
+                                Produktions-Software</div>
+                            <div class="text-text-muted text-sm" data-i18n="index.stats.exp.desc">Entwicklung für Karl
+                                Mayer
+                                GmbH.</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer class="bg-navy-bg border-t border-navy-border pt-16 pb-8">
+            <div class="max-w-content mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
+
+                    <div class="text-center md:text-left">
+                        <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod
+                        </div>
+                        <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
                         <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-primary transition-colors" title="GitHub" aria-label="GitHub Profil">
-                            <i data-lucide="github" class="w-6 h-6"></i>
-                        </a>
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="GitHub"><i
+                                data-lucide="github" class="w-5 h-5"></i></a>
                         <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-primary transition-colors" title="LinkedIn" aria-label="LinkedIn Profil">
-                            <i data-lucide="linkedin" class="w-6 h-6"></i>
-                        </a>
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="LinkedIn"><i
+                                data-lucide="linkedin" class="w-5 h-5"></i></a>
                         <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-primary transition-colors" title="Xing" aria-label="Xing Profil">
-                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block">
+                            class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="Xing">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                                 <path
                                     d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
                             </svg>
                         </a>
-                        <a href="https://youtube.com/@Foxflix" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-primary transition-colors" title="YouTube" aria-label="YouTube Kanal">
-                            <i data-lucide="youtube" class="w-6 h-6"></i>
-                        </a>
                     </div>
                 </div>
-
 
                 <div
-                    class="lg:col-span-2 order-1 lg:order-2 flex justify-center lg:justify-end relative fade-up stagger-1">
-                    <div
-                        class="relative z-10 w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-primary/30 profile-glow rotate-2 hover:rotate-0 transition-all duration-500">
-                        <img src="assets/profile.png" alt="Mena Dawod Profilbild" class="w-full h-full object-cover">
-                    </div>
-
-
-                    <div
-                        class="absolute -bottom-6 -right-4 lg:-right-8 bg-navy-surface border border-navy-border p-4 rounded-xl shadow-xl z-20 hover:-translate-y-2 transition-transform">
-                        <div class="flex items-center gap-2 text-sm text-text-DEFAULT mb-2">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Limeshain, DE
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-success font-medium"
-                            data-i18n="index.status.availability">
-                            <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span> Open to work
-                        </div>
+                    class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
+                    <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
+                    <div class="flex gap-4">
+                        <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
+                            data-i18n="footer.impressum">Impressum</a>
+                        <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
+                            data-i18n="footer.privacy">Datenschutz</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </footer>
 
 
-        <section class="py-12 border-y border-navy-border bg-navy-surface/30 fade-up">
-            <div class="max-w-content mx-auto px-6 mb-6">
-                <h3 class="font-mono text-sm text-text-muted text-center uppercase tracking-widest"
-                    data-i18n="index.tech.title">Technologien im
-                    Einsatz</h3>
-            </div>
+        <script>
+            lucide.createIcons();
+        </script>
 
-            <div class="marquee-wrapper">
-                <div class="marquee-content font-mono text-xl font-bold text-navy-border whitespace-nowrap">
+        <script>
+            const toggle = document.getElementById('theme-toggle');
+            const root = document.documentElement;
 
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">C#</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">.NET
-                        Core</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Blazor</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">MVVM</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Docker</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">GitLab
-                        CI/CD</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">NATS</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Entity
-                        Framework</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">SQL</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span
-                        class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">HTML5/CSS3</span>
-
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">C#</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">.NET
-                        Core</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Blazor</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">MVVM</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Docker</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">GitLab
-                        CI/CD</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">NATS</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">Entity
-                        Framework</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">SQL</span>
-                    <span class="text-primary hover:text-text-DEFAULT transition-colors cursor-default">•</span>
-                    <span
-                        class="text-text-muted hover:text-text-DEFAULT transition-colors cursor-default">HTML5/CSS3</span>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="py-24 max-w-content mx-auto px-6">
-            <div class="mb-16 fade-up">
-                <h2 class="font-sora text-4xl font-bold text-text-DEFAULT mb-4" data-i18n="index.projects.title">
-                    Ausgewählte Projekte</h2>
-                <p class="text-text-muted text-lg max-w-2xl" data-i18n="index.projects.subtitle">
-                    Ausgewählte Softwareprojekte: Von industriellen Anwendungen bis hin zu modernen Full-Stack-Lösungen.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-                <div
-                    class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-1">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
-                            <i data-lucide="cpu" class="w-6 h-6 text-primary animate-pulse"></i>
-                        </div>
-                        <span
-                            class="text-xs font-mono px-2 py-1 rounded bg-navy-bg border border-navy-border text-text-muted uppercase"
-                            data-i18n="index.projects.badge">Featured</span>
-                    </div>
-                    <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3" data-i18n="index.projects.p1.title">
-                        Legacy-App Modernisierung</h3>
-                    <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p1.desc">
-                        Vollständige Migration der Anwendungslogik von JavaScript/jQuery nach C# und Blazor.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">C# Blazor</span>
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">MVVM</span>
-                    </div>
-                    <a href="projects.html"
-                        class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
-                        data-i18n="index.projects.btn">
-                        Projekt ansehen <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-
-                <div
-                    class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-2">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
-                            <i data-lucide="settings" class="w-6 h-6 text-primary animate-pulse"></i>
-                        </div>
-                    </div>
-                    <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3" data-i18n="index.projects.p2.title">
-                        Kundenspezifisches Feature</h3>
-                    <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p2.desc">
-                        Eigenständige Analyse von Fremdcode und vollständige Implementierung innerhalb von zwei Wochen.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">C#</span>
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">NATS</span>
-                    </div>
-                    <a href="projects.html"
-                        class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
-                        data-i18n="index.projects.btn">
-                        Projekt ansehen <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-
-                <div
-                    class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all flex flex-col h-full fade-up stagger-3">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-navy-bg rounded-lg border border-navy-border">
-                            <i data-lucide="search" class="w-6 h-6 text-primary animate-pulse"></i>
-                        </div>
-                    </div>
-                    <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-3" data-i18n="index.projects.p3.title">
-                        Parameter-Informationsportal</h3>
-                    <p class="text-text-muted text-sm mb-6 flex-grow" data-i18n="index.projects.p3.desc">
-                        Zentrale Informationslösung zur Suche und Verwaltung von über 5.000 Maschinenparametern.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">ASP.NET Core</span>
-                        <span class="font-mono text-xs text-success bg-success-bg px-2 py-1 rounded">SQLite</span>
-                    </div>
-                    <a href="projects.html"
-                        class="flex items-center gap-2 text-primary font-semibold text-sm hover:text-blue-400 group"
-                        data-i18n="index.projects.btn">
-                        Projekt ansehen <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="mt-12 text-center fade-up stagger-4">
-                <a href="projects.html"
-                    class="inline-flex items-center gap-2 border border-navy-border hover:border-primary px-6 py-3 rounded-lg text-text-DEFAULT font-semibold transition-colors"
-                    data-i18n="index.projects.btnAll">
-                    Alle Projekte ansehen
-                </a>
-            </div>
-        </section>
-
-
-        <section class="py-20 border-t border-navy-border bg-navy-surface/50">
-            <div class="max-w-content mx-auto px-6">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-1">
-                        <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">99/100</div>
-                        <div class="text-primary font-semibold mb-1" data-i18n="index.stats.ihk.title">IHK Projektarbeit
-                        </div>
-                        <div class="text-text-muted text-sm" data-i18n="index.stats.ihk.desc">Note "Sehr gut" im
-                            Abschlussprojekt.</div>
-                    </div>
-
-                    <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-2">
-                        <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">1,0</div>
-                        <div class="text-primary font-semibold mb-1" data-i18n="index.stats.school.title">Berufsschule
-                        </div>
-                        <div class="text-text-muted text-sm" data-i18n="index.stats.school.desc">Bestmögliche
-                            Abschlussnote.</div>
-                    </div>
-
-                    <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-3">
-                        <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">87%</div>
-                        <div class="text-primary font-semibold mb-1" data-i18n="index.stats.cert.title">IHK Zeugnis
-                        </div>
-                        <div class="text-text-muted text-sm" data-i18n="index.stats.cert.desc">Note 1,9 (Gut) im
-                            Gesamtergebnis.</div>
-                    </div>
-
-                    <div class="px-6 py-6 lg:py-0 text-center md:text-left fade-up stagger-4">
-                        <div class="font-sora text-4xl font-bold text-text-DEFAULT mb-2">1,5 <span class="text-2xl"
-                                data-i18n="index.stats.year">Jahre</span>
-                        </div>
-                        <div class="text-primary font-semibold mb-1" data-i18n="index.stats.exp.title">
-                            Produktions-Software</div>
-                        <div class="text-text-muted text-sm" data-i18n="index.stats.exp.desc">Entwicklung für Karl Mayer
-                            GmbH.</div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-
-    <footer class="bg-navy-bg border-t border-navy-border pt-16 pb-8">
-        <div class="max-w-content mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
-
-                <div class="text-center md:text-left">
-                    <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
-                    <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
-                    </div>
-                </div>
-
-                <div class="flex gap-4">
-                    <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
-                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="GitHub"><i
-                            data-lucide="github" class="w-5 h-5"></i></a>
-                    <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
-                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="LinkedIn"><i
-                            data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
-                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="Xing">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                            <path
-                                d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div
-                class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
-                <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
-                <div class="flex gap-4">
-                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
-                        data-i18n="footer.impressum">Impressum</a>
-                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
-                        data-i18n="footer.privacy">Datenschutz</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script>
-        lucide.createIcons();
-    </script>
-
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        const root = document.documentElement;
-
-        toggle.addEventListener('click', () => {
-            const isLight = root.getAttribute('data-theme') === 'light';
-            if (isLight) {
-                root.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                root.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
-    <script src="js/main.js"></script>
-    <script src="js/intro.js"></script>
+            toggle.addEventListener('click', () => {
+                const isLight = root.getAttribute('data-theme') === 'light';
+                if (isLight) {
+                    root.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    root.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        </script>
+        <script src="js/main.js"></script>
+        <script src="js/intro.js"></script>
     </div>
 </body>
 
