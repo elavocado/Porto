@@ -13,11 +13,11 @@ const translations = {
                 name: "Mena Dawod",
                 title: "Software Developer",
                 badge: {
-                    ihk: "IHK Grade: Good (87 Pts.)",
+                    ihk: "IHK Grade: Good (87 Points)",
                     project: "Project Work: Excellent (99/100)",
                     school: "Vocational School: 1.0"
                 },
-                desc: "Certified .NET, Blazor & MAUI developer with production experience at Karl Mayer, a global leader in textile machinery. I develop modern, scalable applications with clean architecture and deliver real value for daily production operations.",
+                desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments.",
                 btn: {
                     projects: "View Projects",
                     cv: "Download CV (PDF)"
@@ -32,7 +32,7 @@ const translations = {
             },
             projects: {
                 title: "Featured Projects",
-                subtitle: "Selected software projects: From industrial applications to modern full-stack solutions.",
+                subtitle: "Selected software projects — from industrial enterprise applications to modern full-stack solutions.",
                 badge: "Featured",
                 btn: "View Project",
                 btnAll: "View All Projects",
@@ -57,7 +57,7 @@ const translations = {
                 },
                 school: {
                     title: "Vocational School",
-                    desc: "Best possible final grade."
+                    desc: "Best possible final grade (1.0)."
                 },
                 cert: {
                     title: "IHK Certificate",
@@ -76,11 +76,11 @@ const translations = {
             intro: {
                 title: "The Beginnings",
                 p1: "My journey into software development began in 2022. I intentionally chose a path that combines theoretical depth with practical application.",
-                p2: "As a career changer, I successfully completed my 3-year vocational training as an 'Application Development Specialist' ahead of schedule in just 2.5 years, graduating with an overall grade of 'Good'.",
+                p2: "As a career changer, I successfully completed my 3-year vocational training as an 'IT Specialist for Application Development' ahead of schedule in just 2.5 years, graduating with an overall grade of 'Good'.",
                 tf: {
                     title: "Technical Practice, TechniForm GmbH (2017–2023)",
-                    p1: "In 2013, I came to Germany and started from scratch, with no work permit, and learned the language through self-study. At TechniForm, I found my first real technical entry in 2017 and developed from a production worker to a shift leader with responsibility for a team of 10 people in just 12 months.",
-                    p2: "As a process mechanic, I specialized in the programming of robot systems, the optimization of manufacturing processes, and independent fault diagnosis and rectification on complex machines. This experience sharpened my systematic thinking – the same mindset I apply in code today.",
+                    p1: "In 2013, I came to Germany and started from scratch, learning the language entirely through self-study while navigating the integration process independently. At TechniForm, I found my first real technical foothold in 2017 and advanced from a production worker to a shift leader with responsibility for a team of 10 people in just 12 months.",
+                    p2: "As a process mechanic, I specialized in robot programming, manufacturing process optimization, and independent fault diagnosis on complex machinery. This experience sharpened my systematic thinking — the same mindset I apply to code today.",
                     tag1: "Robot Programming",
                     tag2: "Process Optimization",
                     tag3: "Fault Diagnosis",
@@ -88,7 +88,7 @@ const translations = {
                 },
                 km: {
                     title: "Career Change, Software Development at Karl Mayer (2023–2026)",
-                    p: "In 2023, I found what I had always been looking for: a shortened apprenticeship as a Specialist for Application Development at Karl Mayer, a global market leader in textile machinery. I graduated in January 2026 with a vocational school grade of 1.0 and 99 out of 100 points in my IHK project (overall grade 1.9 / 87%).",
+                    p: "In 2023, I found exactly what I had been looking for: an accelerated apprenticeship at Karl Mayer, a global market leader in textile machinery. I graduated in January 2026 with a vocational school grade of 1.0 and 99/100 points in my IHK project (overall grade 1.9).",
                     tag1: "C# · Blazor · .NET",
                     tag2: "MVVM",
                     tag3: "EF Core",
@@ -112,7 +112,7 @@ const translations = {
                     ihk: {
                         date: "January 2026",
                         title: "IHK Certification",
-                        desc: "Specialist for Application Development",
+                        desc: "IT Specialist for Application Development",
                         stats: {
                             overall: "• IHK Grade: Good (87 Pts.)",
                             project: "• Project Work: Excellent (99/100)"
@@ -128,35 +128,35 @@ const translations = {
                     tf: {
                         date: "2017 – 2023",
                         company: "TechniForm GmbH",
-                        desc: "Production Worker → Shift Leader → Process Mechanic. Leading a team of up to 10 employees."
+                        desc: "Production Worker, Shift Leader, Process Mechanic. Led a team of up to 10 employees."
                     },
                     de: {
                         date: "2013 – 2017",
                         title: "Arrival in Germany",
-                        desc: "Language acquisition, orientation, overcoming bureaucratic processes."
+                        desc: "Language acquisition, cultural orientation, and navigating the integration process independently."
                     },
                     eg: {
                         date: "2013",
                         title: "Departure from Egypt",
-                        desc: "Cairo University, Law (Emigration in the last semester)."
+                        desc: "Cairo University, Law — emigrated in the final semester."
                     }
                 }
             },
             cta: {
                 title: "Want to see the full picture?",
-                desc: "Download my full CV for all the details on my experience and history.",
+                desc: "Download my full CV for complete details on my experience and professional background.",
                 btn: "Download Full CV (PDF)"
             }
         },
         projects: {
             title: "Selected Projects",
-            subtitle: "An insight into my software projects: From industrial enterprise solutions to innovative in-house developments from various phases of my career.",
+            subtitle: "An insight into my software projects — from industrial enterprise solutions to innovative in-house developments.",
             items: {
                 modernization: {
                     badge: "Main Project",
                     sub: "Vocational Training Karl Mayer",
                     title: "Modernizing a Legacy Application with C# Blazor",
-                    desc: "Complete migration of the application logic from <strong>JavaScript/jQuery to C# and Blazor</strong> – while maintaining the existing high-end UI design.",
+                    desc: "Complete migration of the application logic from <strong>JavaScript/jQuery to C# and Blazor</strong>, while maintaining the existing high-end UI design.",
                     points: [
                         "Implementation of a <strong>Single-Page-App</strong> based on MVVM architecture",
                         "Implementation of <strong>NATS communication</strong> for real-time data traffic",
@@ -168,7 +168,7 @@ const translations = {
                 feature: {
                     badge: "Production Feature",
                     title: "Development of a Customer-Specific Feature",
-                    desc: "Independent analysis of <strong>third-party code</strong> and complete feature implementation within two weeks – already successfully released and in live operation.",
+                    desc: "Independent analysis of <strong>third-party code</strong> and complete feature implementation within two weeks – successfully released and in live operation.",
                     points: [
                         "Analysis and precise adjustment of <strong>complex third-party logic</strong>",
                         "Development of a <strong>central control</strong> for machine parameters in the frontend",
@@ -189,8 +189,8 @@ const translations = {
                 },
                 database: {
                     badge: "Database Design",
-                    title: "Parameter Database with SQLite and EF-Core",
-                    desc: "Design and construction of a <strong>high-performance central data storage</strong> to replace paper-based or unstructured documentation lists.",
+                    title: "Parameter Database with SQLite and EF Core",
+                    desc: "Design and construction of a <strong>high-performance central data storage</strong> to replace paper-based documentation lists.",
                     points: [
                         "Design of the <strong>relational schema</strong> via Entity Framework Core (Code First)",
                         "Efficient <strong>persistence</strong> of over 5,000 machine parameters",
@@ -201,7 +201,7 @@ const translations = {
                 conversion: {
                     badge: "Automation Tool",
                     title: "Localization Data Conversion (JSON → RESX)",
-                    desc: "Automation of Localization: Development of a tool for <strong>error-free transformation</strong> of legacy data into the modern .NET format.",
+                    desc: "Automation of localization: development of a tool for <strong>error-free transformation</strong> of legacy data into modern .NET format.",
                     points: [
                         "Programmatic analysis of <strong>complex JSON structures</strong> (27 languages)",
                         "Automated generation of <strong>RESX resource files</strong>",
@@ -224,24 +224,24 @@ const translations = {
                 barcode: {
                     badge: "Workflow Optimization",
                     title: "Automated Batch Number Recording",
-                    desc: "Process Optimization in Mask Production: Complete <strong>automation of manual recording</strong> of faulty pallet rolls.",
+                    desc: "Process optimization in mask production: complete <strong>automation of manual recording</strong> of faulty pallet rolls.",
                     points: [
                         "Development of a <strong>specialized web tool</strong> for barcode scanners",
                         "Implementation of an <strong>intelligent parser</strong> for complex barcode strings",
                         "Automated creation of <strong>print-optimized lists</strong> for system cleanup"
                     ],
-                    result: "Result: The recording time per pallet was reduced from approx. 30 minutes to under 5 minutes (83% time saving)."
+                    result: "Result: Recording time per pallet reduced from 30 minutes to under 5 minutes (83% time saving)."
                 },
                 calculator: {
                     badge: "Productivity Tool",
-                    title: "Practical Color-Calculator for Plastic Parts",
-                    desc: "Digitization of Workshop Formulas: Development of a <strong>mobile tool</strong> for precise calculation of color proportions directly in production.",
+                    title: "Practical Color Calculator for Plastic Parts",
+                    desc: "Digitization of workshop formulas: development of a <strong>mobile tool</strong> for precise calculation of color proportions directly on the production floor.",
                     points: [
                         "Mathematical <strong>modeling</strong> of production mixing formulas",
                         "<strong>Mobile-first implementation</strong> for flexible use at the machine",
                         "Design of a <strong>minimalist UI</strong> for error-free entries under time pressure"
                     ],
-                    result: "Result: In daily production use – completely replaces error-prone manual calculation by calculator."
+                    result: "Result: In daily production use — completely replaces error-prone manual calculations."
                 },
                 portfolio: {
                     badge: "Personal Brand",
@@ -258,7 +258,7 @@ const translations = {
         },
         certificates: {
             title: "Certificates & References",
-            subtitle: "Verified evidence of my qualifications and past achievements. Click on a certificate to view the original document.",
+            subtitle: "Verified evidence of my qualifications. Click on a certificate to view the original document.",
             view_pdf: "View Certificate (PDF)",
             view_ref: "View Reference (PDF)",
             items: {
@@ -277,7 +277,7 @@ const translations = {
                     org: "August-Bebel-Schule Offenbach · Jan 2026",
                     badge: "Overall Grade: 1.0",
                     points: [
-                        "Overall Grade: <strong class=\"text-text-DEFAULT\">1.0 (A+)</strong>",
+                        "Overall Grade: <strong class=\"text-text-DEFAULT\">1.0 (highest possible)</strong>",
                         "All Subjects: <strong class=\"text-text-DEFAULT\">Excellent</strong>",
                         "Professional Education: <strong class=\"text-text-DEFAULT\">Excellent</strong>"
                     ]
@@ -308,8 +308,8 @@ const translations = {
             title: "Contact",
             subtitle: "// reach-out",
             heading: "Let's talk.",
-            desc: "I am always looking for interesting projects and technical challenges. Feel free to contact me via email or LinkedIn.",
-            response_time: "I am open to new challenges. I usually respond within 24 hours.",
+            desc: "I am always open to interesting projects and technical challenges. Reach out via email or LinkedIn.",
+            response_time: "I usually respond within 24 hours.",
             social_title: "Connect on Social Networks",
             btn: "Say Hello"
         },
@@ -354,10 +354,10 @@ const translations = {
                 "Blazor Developer",
                 "MAUI Hybrid Developer",
                 "C# Enthusiast",
-                "Application Specialist"
+                "IT Specialist – App Development"
             ],
             loading: "INITIALIZING",
-            enter: "[ CLICK HERE TO ENTER ]",
+            enter: "[ CLICK TO ENTER ]",
             skip: "[ Click anywhere to enter ]"
         }
     },
@@ -379,7 +379,7 @@ const translations = {
                     project: "Projektarbeit: Sehr gut (99/100)",
                     school: "Berufsschule: 1,0"
                 },
-                desc: "Zertifizierter .NET, Blazor & MAUI Entwickler mit Produktionserfahrung bei Karl Mayer, einem Weltmarktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur und liefere echten Mehrwert für den Produktionsalltag.",
+                desc: "Zertifizierter .NET, Blazor & MAUI Entwickler mit Produktionserfahrung bei Karl Mayer, einem Weltmarktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur und schaffe messbaren Mehrwert in realen industriellen Umgebungen.",
                 btn: {
                     projects: "Projekte ansehen",
                     cv: "Lebenslauf PDF"
@@ -419,7 +419,7 @@ const translations = {
                 },
                 school: {
                     title: "Berufsschule",
-                    desc: "Bestmögliche Abschlussnote."
+                    desc: "Bestmögliche Abschlussnote (1,0)."
                 },
                 cert: {
                     title: "IHK Zeugnis",
@@ -441,8 +441,8 @@ const translations = {
                 p2: "Als Quereinsteiger habe ich meine 3-jährige Ausbildung zum Fachinformatiker für Anwendungsentwicklung in nur 2,5 Jahren erfolgreich verkürzt und mit der Gesamtnote \"Gut\" abgeschlossen.",
                 tf: {
                     title: "Technische Praxis, TechniForm GmbH (2017–2023)",
-                    p1: "2013 kam ich nach Deutschland und fing bei Null an, keine Arbeitserlaubnis, die Sprache im Selbststudium gelernt. Bei TechniForm fand ich 2017 meinen ersten echten technischen Einstieg und entwickelte mich in nur 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter mit Verantwortung für ein Team von 10 Personen.",
-                    p2: "Als Verfahrensmechaniker übernahm ich die Programmierung von Roboteranlagen, die Optimierung von Fertigungsprozessen sowie die selbstständige Fehlerdiagnose und -behebung an komplexen Maschinen. Diese Erfahrung schärfte mein systematisches Denken, dieselbe Denkweise, die ich heute im Code anwende.",
+                    p1: "2013 kam ich nach Deutschland und fing bei Null an, lernte die Sprache im Selbststudium und bewältigte den Integrationsprozess eigenständig. Bei TechniForm fand ich 2017 meinen ersten echten technischen Einstieg und entwickelte mich in nur 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter mit Verantwortung für 10 Personen.",
+                    p2: "Als Verfahrensmechaniker übernahm ich die Programmierung von Roboteranlagen, die Optimierung von Fertigungsprozessen sowie die selbstständige Fehlerdiagnose an komplexen Maschinen. Diese Erfahrung schärfte mein systematisches Denken, das ich heute im Code anwende.",
                     tag1: "Roboterprogrammierung",
                     tag2: "Prozessoptimierung",
                     tag3: "Fehlerdiagnose",
@@ -450,7 +450,7 @@ const translations = {
                 },
                 km: {
                     title: "Der Karrierewechsel, Softwareentwicklung bei Karl Mayer (2023–2026)",
-                    p: "2023 fand ich das, wonach ich immer gesucht hatte: eine verkürzte Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei Karl Mayer, einem Weltmarktführer im Textilmaschinenbau. Im Januar 2026 schloss ich ab, mit einer Berufsschulnote von 1,0 und 99 von 100 Punkten in meinem IHK-Projekt (Gesamtnote 1,9 / 87 %).",
+                    p: "2023 fand ich das, wonach ich immer gesucht hatte: eine verkürzte Ausbildung bei Karl Mayer, einem Weltmarktführer im Textilmaschinenbau. Im Januar 2026 schloss ich ab, mit einer Berufsschulnote von 1,0 und 99/100 Punkten in meinem IHK-Projekt (Gesamtnote 1,9).",
                     tag1: "C# · Blazor · .NET",
                     tag2: "MVVM",
                     tag3: "EF Core",
@@ -490,12 +490,12 @@ const translations = {
                     tf: {
                         date: "2017 – 2023",
                         company: "TechniForm GmbH",
-                        desc: "Produktionsmitarbeiter → Schichtleiter → Verfahrensmechaniker. Leitung eines Teams von bis zu 10 Mitarbeitern."
+                        desc: "Produktionsmitarbeiter, Schichtleiter, Verfahrensmechaniker. Leitung eines Teams von bis zu 10 Mitarbeitern."
                     },
                     de: {
                         date: "2013 – 2017",
                         title: "Ankunft in Deutschland",
-                        desc: "Spracherwerb, Orientierung, Bewältigung bürokratischer Prozesse."
+                        desc: "Spracherwerb, Orientierung und eigenständige Bewältigung des Integrationsprozesses."
                     },
                     eg: {
                         date: "2013",
@@ -512,13 +512,13 @@ const translations = {
         },
         projects: {
             title: "Ausgewählte Projekte",
-            subtitle: "Ein Einblick in meine Softwareprojekte: Von industriellen Enterprise-Lösungen bis hin zu innovativen Eigenentwicklungen aus verschiedenen Phasen meiner Laufbahn.",
+            subtitle: "Ein Einblick in meine Softwareprojekte: Von industriellen Enterprise-Lösungen bis hin zu innovativen Eigenentwicklungen.",
             items: {
                 modernization: {
                     badge: "Hauptprojekt",
                     sub: "Ausbildung Karl Mayer",
                     title: "Modernisierung einer Legacy-Anwendung mit C# Blazor",
-                    desc: "Vollständige Migration der Anwendungslogik von <strong>JavaScript/jQuery nach C# und Blazor</strong> – unter Beibehaltung des bestehenden High-End UI-Designs.",
+                    desc: "Vollständige Migration der Anwendungslogik von <strong>JavaScript/jQuery nach C# und Blazor</strong>, unter Beibehaltung des bestehenden High-End UI-Designs.",
                     points: [
                         "Realisierung einer <strong>Single-Page-App</strong> auf Basis der MVVM-Architektur",
                         "Implementierung der <strong>NATS-Kommunikation</strong> für Echtzeit-Datenverkehr",
@@ -530,7 +530,7 @@ const translations = {
                 feature: {
                     badge: "Production Feature",
                     title: "Entwicklung eines kundenspezifischen Features",
-                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen – bereits erfolgreich freigegeben und im Live-Betrieb.",
+                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen – erfolgreich freigegeben und im Live-Betrieb.",
                     points: [
                         "Analyse und präzise Anpassung <strong>komplexer Drittanbieter-Logik</strong>",
                         "Entwicklung einer <strong>zentralen Steuerung</strong> für Maschinen-Parameter im Frontend",
@@ -541,7 +541,7 @@ const translations = {
                 portal: {
                     badge: "Full-Stack Web App",
                     title: "Parameter-Informationsportal im Intranet",
-                    desc: "Eigeninitiative: Identifikation einer Lücke im Entwicklungsprozess and selbstständige <strong>Konzeption sowie Umsetzung</strong> einer zentralen Informationslösung.",
+                    desc: "Eigeninitiative: Identifikation einer Lücke im Entwicklungsprozess und selbstständige <strong>Konzeption sowie Umsetzung</strong> einer zentralen Informationslösung.",
                     points: [
                         "Implementierung einer <strong>Hochleistungs-Suchfunktion</strong> für > 5.000 Parameter",
                         "Visualisierung von <strong>Meta-Informationen</strong> (ID, Min/Max-Werte, Lese-/Schreibrechte)",
@@ -551,8 +551,8 @@ const translations = {
                 },
                 database: {
                     badge: "Database Design",
-                    title: "Parameter-Datenbank mit SQLite and EF-Core",
-                    desc: "Design und Aufbau einer <strong>performanten zentralen Datenhaltung</strong> zur Ablösung papierbasierter oder unstrukturierter Dokumentationslisten.",
+                    title: "Parameter-Datenbank mit SQLite und EF-Core",
+                    desc: "Design und Aufbau einer <strong>performanten zentralen Datenhaltung</strong> zur Ablösung unstrukturierter Dokumentationslisten.",
                     points: [
                         "Entwurf des <strong>relationalen Schemas</strong> via Entity Framework Core (Code First)",
                         "Effiziente <strong>Persistierung</strong> von über 5.000 Maschinenparametern",
@@ -592,7 +592,7 @@ const translations = {
                         "Implementierung eines <strong>intelligenten Parsers</strong> für komplexe Barcode-Strings",
                         "Automatisierte Erstellung <strong>druckoptimierter Listen</strong> zur Systembereinigung"
                     ],
-                    result: "Ergebnis: Die Erfassungszeit pro Palette wurde von ca. 30 Minuten auf unter 5 Minuten reduziert (83% Zeitersparnis)."
+                    result: "Ergebnis: Die Erfassungszeit pro Palette wurde um 83% reduziert (von 30 auf unter 5 Min)."
                 },
                 calculator: {
                     badge: "Productivity Tool",
@@ -600,7 +600,7 @@ const translations = {
                     desc: "Digitalisierung von Werkstatt-Formeln: Entwicklung eines <strong>mobilen Tools</strong> zur präzisen Berechnung von Farbanteilen direkt in der Fertigung.",
                     points: [
                         "Mathematische <strong>Modellierung</strong> produktionstechnischer Mischformeln",
-                        "<strong>Mobile-First Umsetzung</strong> für den flexiblen Einsatz an der Maschine",
+                        "<strong>Mobile-First-Umsetzung</strong> für den flexiblen Einsatz an der Maschine",
                         "Entwurf einer <strong>minimalistischen UI</strong> für fehlerfreie Eingaben unter Zeitdruck"
                     ],
                     result: "Ergebnis: Täglich im Produktionseinsatz – ersetzt die fehleranfällige manuelle Berechnung per Taschenrechner vollständig."
@@ -612,7 +612,7 @@ const translations = {
                     points: [
                         "Fokus auf <strong>Tailwind CSS</strong> für höchste Performance und modulares Design",
                         "Implementierung <strong>dynamischer Animationen</strong> und interaktiver UI-Elemente",
-                        "Automatisierte <strong>CI/CD workflows</strong> via GitHub and Netlify"
+                        "Automatisierte <strong>CI/CD-Workflows</strong> via GitHub und Netlify"
                     ],
                     result: "Ergebnis: Eine performante Online-Präsenz, die als zentraler Anlaufpunkt für meine berufliche Identität dient."
                 }
@@ -620,7 +620,7 @@ const translations = {
         },
         certificates: {
             title: "Zertifikate & Referenzen",
-            subtitle: "Verifizierte Nachweise meiner Qualifikationen und bisherigen Leistungen. Klicken Sie auf ein Zertifikat, um das Originaldokument einzusehen.",
+            subtitle: "Verifizierte Nachweise meiner Qualifikationen. Klicken Sie auf ein Zertifikat, um das Originaldokument einzusehen.",
             view_pdf: "Zertifikat ansehen (PDF)",
             view_ref: "Referenz ansehen (PDF)",
             items: {
@@ -639,7 +639,7 @@ const translations = {
                     org: "August-Bebel-Schule Offenbach · Jan 2026",
                     badge: "Gesamtnote: 1,0",
                     points: [
-                        "Gesamtnote: <strong class=\"text-text-DEFAULT\">1,0 (Eins Komma Null)</strong>",
+                        "Gesamtnote: <strong class=\"text-text-DEFAULT\">1,0 (Bestnote)</strong>",
                         "Alle Fächer: <strong class=\"text-text-DEFAULT\">Sehr gut</strong>",
                         "Berufsbezogener Unterricht: <strong class=\"text-text-DEFAULT\">Sehr gut</strong>"
                     ]
@@ -669,11 +669,11 @@ const translations = {
         contact: {
             title: "Kontakt",
             subtitle: "// reach-out",
-            heading: "Lass uns sprechen.",
-            desc: "Ich bin immer auf der Suche nach interessanten Projekten und technischen Herausforderungen. Kontaktiere mich gerne per E-Mail oder LinkedIn.",
-            response_time: "Ich bin offen für neue Herausforderungen. Ich antworte in der Regel innerhalb von 24 Stunden.",
+            heading: "Lassen Sie uns sprechen.",
+            desc: "Ich bin stets offen für interessante Projekte und technische Herausforderungen. Kontaktieren Sie mich gerne per E-Mail oder LinkedIn.",
+            response_time: "Ich antworte in der Regel innerhalb von 24 Stunden.",
             social_title: "In sozialen Netzwerken vernetzen",
-            btn: "Sag Hallo"
+            btn: "Jetzt Kontakt aufnehmen"
         },
         footer: {
             role: ".NET / Blazor / MAUI Developer",
@@ -693,7 +693,7 @@ const translations = {
             back: "Zurück zur Startseite",
             legal: "// legal",
             privacy: "// privacy",
-            openToWork: "Open to work, ab sofort",
+            openToWork: "Offen für neue Stellen, ab sofort",
             email: "E-Mail",
             phone: "Telefon",
             location: "Standort",
@@ -720,7 +720,7 @@ const translations = {
             ],
             loading: "INITIALISIERUNG",
             enter: "[ KLICKEN ZUM BETRETEN ]",
-            skip: "[ Irgendwo klicken zum Betreten ]"
+            skip: "[ Klicken zum Betreten ]"
         }
     }
 };
