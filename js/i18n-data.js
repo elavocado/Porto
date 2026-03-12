@@ -375,7 +375,7 @@ const translations = {
                 name: "Mena Dawod",
                 title: "Fachinformatiker für Anwendungsentwicklung",
                 badge: {
-                    ihk: "IHK Abschluss: Gut (87 Pkt.)",
+                    ihk: "IHK-Abschluss: Gut (87 Punkte)",
                     project: "Projektarbeit: Sehr gut (99/100)",
                     school: "Berufsschule: 1,0"
                 },
@@ -426,8 +426,8 @@ const translations = {
                     desc: "Note 1,9 (Gut) im Gesamtergebnis."
                 },
                 exp: {
-                    title: "Produktions-Software",
-                    desc: "Entwicklung für Karl Mayer GmbH."
+                    title: "Produktionssoftware",
+                    desc: "Entwicklung bei Karl Mayer GmbH."
                 }
             }
         },
@@ -441,7 +441,7 @@ const translations = {
                 p2: "Als Quereinsteiger habe ich meine 3-jährige Ausbildung zum Fachinformatiker für Anwendungsentwicklung in nur 2,5 Jahren erfolgreich verkürzt und mit der Gesamtnote \"Gut\" abgeschlossen.",
                 tf: {
                     title: "Technische Praxis, TechniForm GmbH (2017–2023)",
-                    p1: "2013 kam ich nach Deutschland und fing bei Null an, lernte die Sprache im Selbststudium und bewältigte den Integrationsprozess eigenständig. Bei TechniForm fand ich 2017 meinen ersten echten technischen Einstieg und entwickelte mich in nur 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter mit Verantwortung für 10 Personen.",
+                    p1: "2013 kam ich nach Deutschland und begann von Grund auf neu, lernte die Sprache im Selbststudium und bewältigte den Integrationsprozess eigenständig. Bei TechniForm fand ich 2017 meinen ersten echten technischen Einstieg und entwickelte mich in nur 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter mit Verantwortung für 10 Personen.",
                     p2: "Als Verfahrensmechaniker übernahm ich die Programmierung von Roboteranlagen, die Optimierung von Fertigungsprozessen sowie die selbstständige Fehlerdiagnose an komplexen Maschinen. Diese Erfahrung schärfte mein systematisches Denken, das ich heute im Code anwende.",
                     tag1: "Roboterprogrammierung",
                     tag2: "Prozessoptimierung",
@@ -476,7 +476,7 @@ const translations = {
                         title: "IHK Zertifizierung",
                         desc: "Fachinformatiker für Anwendungsentwicklung",
                         stats: {
-                            overall: "• IHK Abschluss: Gut (87 Pkt.)",
+                            overall: "• IHK-Abschluss: Gut (87 Punkte)",
                             project: "• Projektarbeit: Sehr gut (99/100)"
                         }
                     },
@@ -500,7 +500,7 @@ const translations = {
                     eg: {
                         date: "2013",
                         title: "Aufbruch aus Ägypten",
-                        desc: "Cairo University, Jura (Auswanderung im letzten Semester)."
+                        desc: "Cairo University – Jurastudium (abgebrochen im letzten Semester, Auswanderung nach Deutschland)"
                     }
                 }
             },
@@ -530,7 +530,7 @@ const translations = {
                 feature: {
                     badge: "Production Feature",
                     title: "Entwicklung eines kundenspezifischen Features",
-                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen – erfolgreich freigegeben und im Live-Betrieb.",
+                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen – erfolgreich freigegeben und produktiv im Einsatz.",
                     points: [
                         "Analyse und präzise Anpassung <strong>komplexer Drittanbieter-Logik</strong>",
                         "Entwicklung einer <strong>zentralen Steuerung</strong> für Maschinen-Parameter im Frontend",
@@ -631,7 +631,7 @@ const translations = {
                     points: [
                         "Gesamtnote: <strong class=\"text-text-DEFAULT\">Gut (87 Punkte / Note 1,9)</strong>",
                         "Betriebliche Projektarbeit: <strong class=\"text-text-DEFAULT\">Sehr gut (99/100)</strong>",
-                        "Qualifikationsniveau: EQR/NQR Level 4"
+                        "Qualifikationsniveau: EQR/NQR Stufe 4"
                     ]
                 },
                 school: {
@@ -672,7 +672,7 @@ const translations = {
             heading: "Lassen Sie uns sprechen.",
             desc: "Ich bin stets offen für interessante Projekte und technische Herausforderungen. Kontaktieren Sie mich gerne per E-Mail oder LinkedIn.",
             response_time: "Ich antworte in der Regel innerhalb von 24 Stunden.",
-            social_title: "In sozialen Netzwerken vernetzen",
+            social_title: "Auf Social Media verbinden",
             btn: "Jetzt Kontakt aufnehmen"
         },
         footer: {
@@ -719,7 +719,7 @@ const translations = {
                 "Fachinformatiker AE"
             ],
             loading: "INITIALISIERUNG",
-            enter: "[ KLICKEN ZUM BETRETEN ]",
+            enter: "[ HIER KLICKEN ]",
             skip: "[ Klicken zum Betreten ]"
         }
     }
