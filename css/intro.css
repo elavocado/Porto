@@ -505,32 +505,77 @@
     .boot-lines {
         top: 8%;
         left: 5%;
+        right: 5%;
         font-size: 10px;
+        gap: 2px;
+    }
+
+    .boot-line {
+        word-break: break-word;
+        line-height: 1.2;
     }
 
     .corner {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
 
     .corner-tl {
-        top: 20px;
-        left: 20px;
+        top: 15px;
+        left: 15px;
     }
 
     .corner-tr {
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 15px;
     }
 
     .corner-bl {
-        bottom: 20px;
-        left: 20px;
+        bottom: 15px;
+        left: 15px;
     }
 
     .corner-br {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .intro-name {
+        font-size: clamp(40px, 12vw, 80px);
+    }
+
+    .intro-divider {
+        width: min(85%, 300px);
+    }
+
+    @keyframes width-expand {
+        to {
+            width: min(85%, 300px);
+        }
+    }
+
+    .progress-container {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    .enter-btn {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    .boot-lines {
+        font-size: 9px;
+    }
+
+    .intro-title {
+        font-size: 14px;
+    }
+
+    .intro-role-container {
+        font-size: 15px;
     }
 }
 
