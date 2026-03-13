@@ -252,7 +252,8 @@ const translations = {
                         "Implementation of <strong>dynamic animations</strong> and interactive UI elements",
                         "Automated <strong>CI/CD workflows</strong> via GitHub and Netlify"
                     ],
-                    result: "Result: A high-performance online presence that serves as a central point for my professional identity."
+                    result: "Result: A high-performance online presence that serves as a central point for my professional identity.",
+                    github: "View on GitHub"
                 }
             }
         },
@@ -614,7 +615,8 @@ const translations = {
                         "Implementierung <strong>dynamischer Animationen</strong> und interaktiver UI-Elemente",
                         "Automatisierte <strong>CI/CD-Workflows</strong> via GitHub und Netlify"
                     ],
-                    result: "Ergebnis: Eine performante Online-Präsenz, die als zentraler Anlaufpunkt für meine berufliche Identität dient."
+                    result: "Ergebnis: Eine performante Online-Präsenz, die als zentraler Anlaufpunkt für meine berufliche Identität dient.",
+                    github: "Auf GitHub ansehen"
                 }
             }
         },
