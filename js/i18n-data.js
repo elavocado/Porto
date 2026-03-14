@@ -241,7 +241,9 @@ const translations = {
                         "<strong>Mobile-first implementation</strong> for flexible use at the machine",
                         "Design of a <strong>minimalist UI</strong> for error-free entries under time pressure"
                     ],
-                    result: "Result: In daily production use — completely replaces error-prone manual calculations."
+                    result: "Result: In daily production use — completely replaces error-prone manual calculations.",
+                    github: "View on GitHub",
+                    live: "Live Demo"
                 },
                 portfolio: {
                     badge: "Personal Brand",
@@ -604,7 +606,9 @@ const translations = {
                         "<strong>Mobile-First-Umsetzung</strong> für den flexiblen Einsatz an der Maschine",
                         "Entwurf einer <strong>minimalistischen UI</strong> für fehlerfreie Eingaben unter Zeitdruck"
                     ],
-                    result: "Ergebnis: Täglich im Produktionseinsatz – ersetzt die fehleranfällige manuelle Berechnung per Taschenrechner vollständig."
+                    result: "Ergebnis: Täglich im Produktionseinsatz – ersetzt die fehleranfällige manuelle Berechnung per Taschenrechner vollständig.",
+                    github: "Auf GitHub ansehen",
+                    live: "Live-Demo"
                 },
                 portfolio: {
                     badge: "Personal Brand",
