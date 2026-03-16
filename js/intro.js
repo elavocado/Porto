@@ -1,329 +1,253 @@
-
+/*
+  intro.js
+  Cinematic intro sequence — runs once per session.
+  Handles boot animation, matrix rain, parallax, typewriter, progress bar.
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const overlay = document.getElementById('intro-overlay');
-    const bootLinesContainer = document.querySelector('.boot-lines');
-    const roleText = document.querySelector('.intro-role-text');
-    const progressFill = document.querySelector('.progress-fill');
+
+    const overlay         = document.getElementById('intro-overlay');
+    const bootContainer   = document.querySelector('.boot-lines');
+    const roleText        = document.querySelector('.intro-role-text');
+    const progressFill    = document.querySelector('.progress-fill');
     const progressPercent = document.querySelector('.progress-percent');
-    const customCursor = document.getElementById('intro-cursor');
-    const introName = document.querySelector('.intro-name');
+    const customCursor    = document.getElementById('intro-cursor');
+    const introName       = document.querySelector('.intro-name');
 
-
-    function checkIntroState() {
-        if (sessionStorage.getItem('introPlayed')) {
-            if (overlay) overlay.style.display = 'none';
-            if (customCursor) customCursor.style.display = 'none';
-            document.body.classList.remove('intro-active');
-            document.body.classList.add('content-fade-in');
-            return true;
-        }
-        return false;
+    function skipIntro() {
+        if (overlay)      overlay.style.display = 'none';
+        if (customCursor) customCursor.style.display = 'none';
+        document.body.classList.remove('intro-active');
+        document.body.classList.add('content-fade-in');
     }
 
+    if (sessionStorage.getItem('introPlayed')) {
+        skipIntro();
+        return;
+    }
 
-    if (checkIntroState()) return;
-
-
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted || sessionStorage.getItem('introPlayed')) {
-            checkIntroState();
-        }
+    window.addEventListener('pageshow', e => {
+        if (e.persisted || sessionStorage.getItem('introPlayed')) skipIntro();
     });
 
-    // Use translations for boot lines
-    const bootLines = window.i18n.getTranslation('intro.boot') || [
-        "Starte Portfolio-System v2.0.26...",
-        "Lade C# .NET Blazor — Blazor.Hybrid.Runtime",
-        "Mounting: /projects /skills /contact",
-        "MVVM-Pattern geladen — DI Container bereit",
-        "Git-Branch: main — letzter Commit: heute",
-        "TonnenWecker.Limeshain → APK bereit",
-        "Alle Systeme betriebsbereit. Willkommen."
-    ];
+    function t(key) {
+        return window.i18n ? window.i18n.getTranslation(key) : null;
+    }
 
-    const lines = bootLines.map((text, i) => ({
-        text,
-        status: i === 4 ? "info" : "ok"
-    }));
+    function renderBootLines() {
+        if (!bootContainer) return;
+        const lines = t('intro.boot') || [
+            'Initializing portfolio system v2.0.26...',
+            'Loading C# .NET Blazor — Blazor.Hybrid.Runtime',
+            'Mounting: /projects /skills /contact',
+            'MVVM pattern loaded — DI container ready',
+            'Git branch: main — last commit: today',
+            'TonnenWecker.Limeshain → APK ready',
+            'All systems operational. Welcome.'
+        ];
 
-    lines.forEach((line, index) => {
-        const div = document.createElement('div');
-        div.className = 'boot-line';
-        div.dataset.status = line.status;
-        div.innerHTML = `<span>[ ${line.status === 'ok' ? ' OK ' : 'INFO'} ]</span> ${line.text}`;
-        bootLinesContainer.appendChild(div);
+        lines.forEach((text, i) => {
+            const div = document.createElement('div');
+            div.className = 'boot-line';
+            div.dataset.status = i === 4 ? 'info' : 'ok';
+            div.innerHTML = `<span>[ ${i === 4 ? 'INFO' : ' OK '} ]</span> ${text}`;
+            bootContainer.appendChild(div);
+            setTimeout(() => div.classList.add('visible'), 300 + i * 300);
+        });
+    }
 
+    if (window.i18n) {
+        renderBootLines();
+    } else {
         setTimeout(() => {
-            div.classList.add('visible');
-        }, 300 + (index * 300));
-    });
+            if (!bootContainer?.children.length) renderBootLines();
+        }, 50);
+    }
 
+    function triggerGlitch() {
+        if (!introName) return;
+        introName.classList.add('glitching');
+        setTimeout(() => introName.classList.remove('glitching'), 450);
+    }
+    setTimeout(triggerGlitch, 3500);
+    setInterval(triggerGlitch, 6000);
 
-    setInterval(() => {
-        if (introName) {
-            introName.classList.add('glitching');
-            setTimeout(() => introName.classList.remove('glitching'), 500);
-        }
-    }, 6000);
-
-    setTimeout(() => {
-        if (introName) {
-            introName.classList.add('glitching');
-            setTimeout(() => introName.classList.remove('glitching'), 500);
-        }
-    }, 3500);
-
-
-    // Use translations for roles
-    const roles = window.i18n.getTranslation('intro.roles') || [
-        "Blazor Developer",
-        "MAUI Hybrid Entwickler",
-        "C# Enthusiast",
-        "Fachinformatiker AE"
+    const roles = t('intro.roles') || [
+        'Blazor Developer',
+        'MAUI Hybrid Developer',
+        'C# Enthusiast',
+        'IT Specialist AE'
     ];
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
+
+    let roleIndex = 0, charIndex = 0, deleting = false, typeSpeed = 100;
 
     function typeRole() {
         if (!roleText) return;
-        const currentRole = roles[currentRoleIndex];
+        const current = roles[roleIndex];
+        roleText.textContent = deleting
+            ? current.substring(0, --charIndex)
+            : current.substring(0, ++charIndex);
 
-        if (isDeleting) {
-            roleText.textContent = currentRole.substring(0, currentCharIndex - 1);
-            currentCharIndex--;
-            typeSpeed = 50;
+        if (!deleting && charIndex === current.length) {
+            deleting = true;
+            typeSpeed = 2000;
+        } else if (deleting && charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
         } else {
-            roleText.textContent = currentRole.substring(0, currentCharIndex + 1);
-            currentCharIndex++;
-            typeSpeed = 100;
+            typeSpeed = deleting ? 50 : 100;
         }
-
-        if (!isDeleting && currentCharIndex === currentRole.length) {
-            isDeleting = true;
-            typeSpeed = 2000; // Pause at end
-        } else if (isDeleting && currentCharIndex === 0) {
-            isDeleting = false;
-            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-            typeSpeed = 500; // Pause before next word
-        }
-
         setTimeout(typeRole, typeSpeed);
     }
-
-
     setTimeout(typeRole, 3800);
 
-
-    let progress = 0;
-    const progressDuration = 1600; // 1.6s from 4s start
-    const startTime = 4000;
-
-    // Update progress labels translation
     const progressLabel = document.querySelector('.progress-labels span:first-child');
     if (progressLabel) {
-        progressLabel.textContent = window.i18n.getTranslation('intro.loading') || "INITIALISIERUNG";
+        progressLabel.textContent = t('intro.loading') || 'INITIALIZING';
     }
 
+    let progress = 0;
     function updateProgress() {
-        if (progress < 100) {
-            progress += Math.random() * 5;
-            if (progress > 100) progress = 100;
+        progress = Math.min(100, progress + Math.random() * 5);
+        if (progressFill)    progressFill.style.width = `${progress}%`;
+        if (progressPercent) progressPercent.textContent = `${Math.floor(progress)}%`;
 
-            if (progressFill) progressFill.style.width = `${progress}%`;
-            if (progressPercent) progressPercent.textContent = `${Math.floor(progress) === 100 ? 100 : Math.floor(progress)}%`;
-
-            if (progress >= 100) {
-                const enterBtn = document.querySelector('.enter-btn');
-                if (enterBtn) {
-                    enterBtn.classList.add('visible');
-                    enterBtn.textContent = window.i18n.getTranslation('intro.enter') || "[ CLICK HERE TO ENTER ]";
-                }
-                return;
+        if (progress >= 100) {
+            const enterBtn = document.querySelector('.enter-btn');
+            if (enterBtn) {
+                enterBtn.textContent = t('intro.enter') || '[ CLICK HERE TO ENTER ]';
+                enterBtn.classList.add('visible');
             }
-
-
-            const nextInterval = Math.random() * 60 + 20;
-            setTimeout(updateProgress, nextInterval);
+            return;
         }
+        setTimeout(updateProgress, Math.random() * 60 + 20);
     }
+    setTimeout(updateProgress, 4000);
 
-    setTimeout(updateProgress, startTime);
+    let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+    let parallaxActive = true;
 
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-
+    document.addEventListener('mousemove', e => {
         if (customCursor) {
             customCursor.style.left = `${e.clientX}px`;
-            customCursor.style.top = `${e.clientY}px`;
+            customCursor.style.top  = `${e.clientY}px`;
         }
-
-
-        targetX = (e.clientX / window.innerWidth) - 0.5;
+        targetX = (e.clientX / window.innerWidth)  - 0.5;
         targetY = (e.clientY / window.innerHeight) - 0.5;
     });
 
-    let parallaxActive = true;
     function applyParallax() {
         if (!parallaxActive) return;
-
         mouseX += (targetX - mouseX) * 0.05;
         mouseY += (targetY - mouseY) * 0.05;
 
-        const matrixCanvas = document.getElementById('matrix-canvas');
-        const introGrid = document.querySelector('.intro-grid');
-
-        if (matrixCanvas) {
-
-            const moveX = mouseX * 60;
-            const moveY = mouseY * 60;
-            matrixCanvas.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        const canvas = document.getElementById('matrix-canvas');
+        const grid   = document.querySelector('.intro-grid');
+        if (canvas) canvas.style.transform = `translate(${mouseX * 60}px, ${mouseY * 60}px)`;
+        if (grid) {
+            grid.style.setProperty('--parallax-x', `${mouseX * -30}px`);
+            grid.style.setProperty('--parallax-y', `${mouseY * -30}px`);
         }
-
-        if (introGrid) {
-            const moveX = mouseX * -30;
-            const moveY = mouseY * -30;
-            introGrid.style.setProperty('--parallax-x', `${moveX}px`);
-            introGrid.style.setProperty('--parallax-y', `${moveY}px`);
-        }
-
         requestAnimationFrame(applyParallax);
     }
     applyParallax();
-
 
     window.enterSite = function () {
         sessionStorage.setItem('introPlayed', 'true');
         overlay.classList.add('hidden');
         document.body.classList.remove('intro-active');
         document.body.classList.add('content-fade-in');
-
-        // Stop animations
         parallaxActive = false;
         if (window.introMatrix) window.introMatrix.stop();
-
-        // Hide custom cursor
-        customCursor.style.opacity = '0';
-
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 800);
+        if (customCursor) customCursor.style.opacity = '0';
+        setTimeout(() => { overlay.style.display = 'none'; }, 900);
     };
 
-
-    let clickShortcutEnabled = false;
     setTimeout(() => {
-        clickShortcutEnabled = true;
-
-
         overlay.style.cursor = 'pointer';
 
-        const skipHint = document.createElement('div');
-        skipHint.className = 'skip-hint';
-        skipHint.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-size:10px; color:var(--text-muted); opacity:0; transition:opacity 0.5s; letter-spacing:0.2em; text-transform:uppercase; z-index:100; pointer-events:none;';
-        skipHint.textContent = window.i18n.getTranslation('intro.skip') || '[ Click anywhere to enter ]';
-        overlay.appendChild(skipHint);
-        setTimeout(() => skipHint.style.opacity = '1', 100);
+        const hint = document.createElement('div');
+        hint.style.cssText = [
+            'position:fixed', 'bottom:24px', 'left:50%',
+            'transform:translateX(-50%)', 'font-size:9px',
+            'color:var(--text-muted)', 'opacity:0',
+            'transition:opacity 0.5s ease', 'letter-spacing:0.25em',
+            'text-transform:uppercase', 'z-index:100', 'pointer-events:none',
+            'font-family:"Share Tech Mono",monospace'
+        ].join(';');
+        hint.textContent = t('intro.skip') || '[ click anywhere to enter ]';
+        overlay.appendChild(hint);
+        setTimeout(() => { hint.style.opacity = '0.6'; }, 100);
+
+        overlay.addEventListener('click', () => window.enterSite());
     }, 800);
-
-    overlay.addEventListener('click', (e) => {
-        if (!clickShortcutEnabled) return;
-        enterSite();
-    });
-
 
     class MatrixRain {
         constructor() {
             this.canvas = document.getElementById('matrix-canvas');
             if (!this.canvas) return;
-            this.ctx = this.canvas.getContext('2d');
-            this.characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]";
+            this.ctx      = this.canvas.getContext('2d');
+            this.chars    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%"\'#&_(),.;:?!\\|{}<>[]';
             this.fontSize = 14;
-            this.columns = 0;
-            this.drops = [];
-            this.animationId = null;
+            this.drops    = [];
             this.mousePos = { x: 0, y: 0 };
+            this.animId   = null;
 
-            this.init();
-            window.addEventListener('resize', () => this.init());
-
-
-            document.addEventListener('mousemove', (e) => {
-                const rect = this.canvas.getBoundingClientRect();
-                this.mousePos.x = e.clientX - rect.left;
-                this.mousePos.y = e.clientY - rect.top;
+            this._resize();
+            window.addEventListener('resize', () => this._resize());
+            document.addEventListener('mousemove', e => {
+                const r = this.canvas.getBoundingClientRect();
+                this.mousePos = { x: e.clientX - r.left, y: e.clientY - r.top };
             });
         }
 
-        init() {
-
-            this.canvas.width = window.innerWidth * 1.1;
+        _resize() {
+            this.canvas.width  = window.innerWidth  * 1.1;
             this.canvas.height = window.innerHeight * 1.1;
             this.columns = Math.floor(this.canvas.width / this.fontSize);
-            this.drops = [];
-            for (let i = 0; i < this.columns; i++) {
-                this.drops[i] = Math.random() * -100;
-            }
+            this.drops   = Array.from({ length: this.columns }, () => Math.random() * -100);
         }
 
         draw() {
             const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-
-            this.ctx.fillStyle = isLight ? "rgba(245, 243, 255, 0.15)" : "rgba(13, 17, 40, 0.15)";
+            this.ctx.fillStyle = isLight ? 'rgba(242,240,253,0.15)' : 'rgba(7,9,26,0.15)';
             this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
             this.ctx.font = `${this.fontSize}px 'Share Tech Mono'`;
 
             for (let i = 0; i < this.drops.length; i++) {
-                const char = this.characters[Math.floor(Math.random() * this.characters.length)];
-
+                const char = this.chars[Math.floor(Math.random() * this.chars.length)];
                 const x = i * this.fontSize;
                 const y = this.drops[i] * this.fontSize;
-
-
                 const dx = x - this.mousePos.x;
                 const dy = y - this.mousePos.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                const isNearMouse = dist < 120;
+                const near = Math.sqrt(dx * dx + dy * dy) < 130;
 
-                if (isNearMouse) {
-                    this.ctx.fillStyle = isLight ? "#0891b2" : "#ffffff";
-                    this.ctx.shadowBlur = 8;
-                    this.ctx.shadowColor = isLight ? "rgba(8, 145, 178, 0.5)" : "#ffffff";
+                if (near) {
+                    this.ctx.fillStyle   = isLight ? '#0369a1' : '#ffffff';
+                    this.ctx.shadowBlur  = 10;
+                    this.ctx.shadowColor = isLight ? 'rgba(3,105,161,0.5)' : 'rgba(255,255,255,0.5)';
                 } else if (Math.random() > 0.98) {
-                    this.ctx.fillStyle = isLight ? "#0891b2" : "#22d3ee";
-                    this.ctx.shadowBlur = 0;
+                    this.ctx.fillStyle   = isLight ? '#0369a1' : '#06d6f0';
+                    this.ctx.shadowBlur  = 0;
                 } else {
-                    this.ctx.fillStyle = isLight ? "rgba(8, 145, 178, 0.35)" : "#00FF41";
-                    this.ctx.shadowBlur = 0;
+                    this.ctx.fillStyle   = isLight ? 'rgba(3,105,161,0.3)' : '#00c846';
+                    this.ctx.shadowBlur  = 0;
                 }
 
                 this.ctx.fillText(char, x, y);
-
-                if (y > this.canvas.height && Math.random() > 0.975) {
-                    this.drops[i] = 0;
-                }
-
+                if (y > this.canvas.height && Math.random() > 0.975) this.drops[i] = 0;
                 this.drops[i]++;
             }
-            this.animationId = requestAnimationFrame(() => this.draw());
+            this.animId = requestAnimationFrame(() => this.draw());
         }
 
         stop() {
-            if (this.animationId) cancelAnimationFrame(this.animationId);
+            if (this.animId) cancelAnimationFrame(this.animId);
         }
     }
 
     const matrix = new MatrixRain();
     if (matrix.canvas) matrix.draw();
-
-
     window.introMatrix = matrix;
 });

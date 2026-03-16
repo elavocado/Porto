@@ -1,109 +1,62 @@
-
+/*
+  main.js
+  Core site interactions — smooth scroll, mobile menu, scroll animations,
+  marquee, active nav highlighting.
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
+            const id = this.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
+            if (target) {
                 e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const menuBtn    = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const body = document.body;
-    const backdrop = document.getElementById('menu-backdrop');
+    const backdrop   = document.getElementById('menu-backdrop');
 
-    if (mobileMenuBtn && mobileMenu) {
-        const toggleMenu = (show) => {
-            const isOpen = show !== undefined ? show : !body.classList.contains('menu-open');
-            body.classList.toggle('menu-open', isOpen);
-            
-            // Re-render lucide icons if needed, or handle icons manually
-            // But we are using CSS for the hamburger now
+    if (menuBtn && mobileMenu) {
+        const toggleMenu = open => {
+            const isOpen = open !== undefined ? open : !document.body.classList.contains('menu-open');
+            document.body.classList.toggle('menu-open', isOpen);
         };
 
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        if (backdrop) {
-            backdrop.addEventListener('click', () => toggleMenu(false));
-        }
-
-        // Close menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => toggleMenu(false));
-        });
-
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && body.classList.contains('menu-open')) {
-                toggleMenu(false);
-            }
+        menuBtn.addEventListener('click', e => { e.stopPropagation(); toggleMenu(); });
+        backdrop?.addEventListener('click', () => toggleMenu(false));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && document.body.classList.contains('menu-open')) toggleMenu(false);
         });
     }
 
+    const scrollObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    const fadeElements = document.querySelectorAll('.fade-up');
-    fadeElements.forEach(el => scrollObserver.observe(el));
-
+    document.querySelectorAll('.fade-up').forEach(el => scrollObserver.observe(el));
 
     const marqueeContent = document.querySelector('.marquee-content');
     if (marqueeContent) {
-        const clone = marqueeContent.innerHTML;
-
-        marqueeContent.innerHTML += clone + clone;
+        const original = marqueeContent.innerHTML;
+        marqueeContent.innerHTML = original + original + original;
     }
 
-    // Highlight Active Navigation Link
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        // Simple match or index.html match for root paths
-        const isMatch = href === currentPath || 
-                       (currentPath === 'index.html' && href === './') ||
-                       (currentPath === 'index.html' && href === '/');
+    document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const isHome = (currentFile === 'index.html' || currentFile === '') &&
+                       (href === './' || href === '/' || href === 'index.html');
+        const isMatch = href === currentFile || isHome;
 
-        if (isMatch) {
-            link.classList.add('nav-link-active');
-            link.classList.remove('text-text-muted');
-        } else {
-            link.classList.remove('nav-link-active');
-        }
+        link.classList.toggle('nav-link-active', isMatch);
+        if (isMatch) link.classList.remove('text-text-muted');
     });
 });

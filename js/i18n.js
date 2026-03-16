@@ -1,88 +1,79 @@
+/*
+  i18n.js
+  Internationalization controller — EN/DE language switching
+  with FOUT prevention and event broadcasting.
+*/
+
 class I18n {
     constructor() {
         this.lang = localStorage.getItem('lang') || 'de';
         this.translations = window.translations;
-        this.init();
+        this._init();
     }
 
-    init() {
+    _init() {
         document.documentElement.setAttribute('lang', this.lang);
-        this.updatePage();
-        this.setupSwitches();
+        this._updatePage();
+        this._setupSwitches();
     }
 
     setLanguage(lang) {
-        if (this.lang === lang) return;
+        if (this.lang === lang || !this.translations[lang]) return;
         this.lang = lang;
         localStorage.setItem('lang', lang);
         document.documentElement.setAttribute('lang', lang);
-        this.updatePage();
-        this.updateSwitches();
-
-        // Custom event for other scripts (like intro.js)
-        const event = new CustomEvent('languageChanged', { detail: { lang: lang } });
-        document.dispatchEvent(event);
+        this._updatePage();
+        this._updateSwitches();
+        document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     }
 
-    updatePage() {
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
+    _updatePage() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            const translation = this.getTranslation(key);
+            const value = this.getTranslation(key);
+            if (value === null) return;
 
-            if (translation) {
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = translation;
-                } else if (el.hasAttribute('data-i18n-attr')) {
-                    const attr = el.getAttribute('data-i18n-attr');
-                    el.setAttribute(attr, translation);
-                } else {
-                    el.innerHTML = translation;
-                }
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = value;
+            } else if (el.hasAttribute('data-i18n-attr')) {
+                el.setAttribute(el.getAttribute('data-i18n-attr'), value);
+            } else {
+                el.innerHTML = value;
             }
         });
 
-        // Update titles and meta descriptions if they have data-i18n
         const titleEl = document.querySelector('title[data-i18n]');
         if (titleEl) {
-            const titleTranslation = this.getTranslation(titleEl.getAttribute('data-i18n'));
-            if (titleTranslation) document.title = titleTranslation;
+            const t = this.getTranslation(titleEl.getAttribute('data-i18n'));
+            if (t) document.title = t;
         }
 
-        // Mark body as ready to prevent FOUT
         document.body.classList.add('i18n-ready');
     }
 
     getTranslation(key) {
-        return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), this.translations[this.lang]);
+        return key.split('.').reduce((obj, segment) => {
+            return obj != null && typeof obj === 'object' ? obj[segment] ?? null : null;
+        }, this.translations[this.lang]);
     }
 
-    setupSwitches() {
-        this.updateSwitches();
-        document.addEventListener('click', (e) => {
+    _setupSwitches() {
+        this._updateSwitches();
+        document.addEventListener('click', e => {
             const btn = e.target.closest('.lang-switch');
-            if (btn) {
-                const lang = btn.getAttribute('data-lang');
-                this.setLanguage(lang);
-            }
+            if (btn) this.setLanguage(btn.getAttribute('data-lang'));
         });
     }
 
-    updateSwitches() {
-        const switches = document.querySelectorAll('.lang-switch');
-        switches.forEach(btn => {
-            if (btn.getAttribute('data-lang') === this.lang) {
-                btn.classList.add('is-active');
-                btn.setAttribute('aria-pressed', 'true');
-            } else {
-                btn.classList.remove('is-active');
-                btn.setAttribute('aria-pressed', 'false');
-            }
+    _updateSwitches() {
+        document.querySelectorAll('.lang-switch').forEach(btn => {
+            const isActive = btn.getAttribute('data-lang') === this.lang;
+            btn.classList.toggle('is-active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
         });
     }
 }
 
-// Initialize when ready
 document.addEventListener('DOMContentLoaded', () => {
     window.i18n = new I18n();
 });
