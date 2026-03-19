@@ -21,8 +21,22 @@
 
     <meta name="description"
         content="Kontaktieren Sie Mena Dawod, .NET Blazor / MAUI Developer. Verfügbar für neue Herausforderungen im Bereich Softwareentwicklung.">
-    <meta property="og:image" content="assets/profile.png">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Mena Dawod | Kontakt">
+    <meta property="og:description" content="Lassen Sie uns sprechen. Ich bin offen für neue Herausforderungen und antworte in der Regel innerhalb von 24 Stunden.">
+    <meta property="og:image" content="https://menadawod.de/assets/og-image.png">
+    <meta property="og:url" content="https://menadawod.de/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mena Dawod Portfolio">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Favicon & Canonical -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="canonical" href="https://menadawod.de/contact.html">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -194,7 +208,14 @@
                             <div class="text-xs text-text-muted uppercase tracking-wider mb-1 font-semibold"
                                 data-i18n="common.phone">Telefon
                             </div>
-                            <div class="text-text-DEFAULT">+49 163 7744572</div>
+                            <div id="phone-display" class="text-text-DEFAULT font-mono"></div>
+                            <script>
+                                (function() {
+                                    const p = ['+', '49', ' 163', ' ', '7744', '572'];
+                                    document.getElementById('phone-display').textContent = p.join('');
+                                })();
+                            </script>
+
                         </div>
                     </div>
 

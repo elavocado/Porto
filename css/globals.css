@@ -361,6 +361,20 @@ body.menu-open #mobile-menu-btn .hamburger-inner              { background-color
 body.menu-open #mobile-menu-btn .hamburger-inner::before      { transform: translateY(8px) rotate(45deg); }
 body.menu-open #mobile-menu-btn .hamburger-inner::after       { transform: translateY(-8px) rotate(-45deg); }
 
+/* Badges & UI Elements */
+.badge-nda {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+}
+
+.badge-development {
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    color: #f59e0b !important;
+}
+
+
 @media (min-width: 768px) {
     #mobile-menu,
     #menu-backdrop,

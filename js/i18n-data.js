@@ -344,24 +344,19 @@ const translations = {
             xing: "Xing Profile"
         },
         intro: {
+            loading: 'INITIALIZING',
+            enter: '[ CLICK HERE TO ENTER ]',
+            skip: '[ click anywhere to enter ]',
+            roles: ['Blazor Developer', 'MAUI Hybrid Developer', 'C# Enthusiast', 'IT Specialist AE'],
             boot: [
-                "Initializing portfolio system v2.0.26...",
-                "Loading C# .NET Blazor — Blazor.Hybrid.Runtime",
-                "Mounting: /projects /skills /contact",
-                "MVVM pattern loaded — DI container ready",
-                "Git branch: main — last commit: today",
-                "TonnenWecker.Limeshain → APK ready",
-                "All systems operational. Welcome."
-            ],
-            roles: [
-                "Blazor Developer",
-                "MAUI Hybrid Developer",
-                "C# Enthusiast",
-                "IT Specialist AE"
-            ],
-            loading: "INITIALIZING",
-            enter: "[ CLICK HERE TO ENTER ]",
-            skip: "[ Click anywhere to enter ]"
+                'Initializing portfolio system v2.0.26...',
+                'Loading C# .NET Blazor — Blazor.Hybrid.Runtime',
+                'Mounting: /projects /skills /contact',
+                'MVVM pattern loaded — DI container ready',
+                'Git branch: main — last commit: today',
+                'TonnenWecker.Limeshain → APK ready',
+                'All systems operational. Welcome.'
+            ]
         }
     },
     de: {
@@ -514,8 +509,13 @@ const translations = {
             }
         },
         projects: {
-            title: "Ausgewählte Projekte",
-            subtitle: "Ein Einblick in meine Softwareprojekte — von industriellen Enterprise-Lösungen bis hin zu innovativen Eigenentwicklungen.",
+            title: 'Ausgewählte Projekte',
+            subtitle: 'Ein Einblick in meine Softwareprojekte: Von industriellen Enterprise-Lösungen bis hin zu innovativen Eigenentwicklungen aus verschiedenen Phasen meiner Laufbahn.',
+            btnAll: 'Alle Projekte ansehen',
+            badges: {
+                nda: 'NDA / Vertraulich',
+                inDevelopment: 'In Entwicklung'
+            },
             items: {
                 modernization: {
                     badge: "Hauptprojekt",
@@ -709,24 +709,19 @@ const translations = {
             xing: "Xing-Profil"
         },
         intro: {
+            loading: 'INITIALISIERIERT',
+            enter: '[ ZUM ENTER KLICKEN ]',
+            skip: '[ zum eintreten klicken ]',
+            roles: ['Blazor Entwickler', 'MAUI Hybrid Entwickler', 'C# Enthusiast', 'Fachinformatiker AE'],
             boot: [
-                "Starte Portfolio-System v2.0.26...",
-                "Lade C# .NET Blazor — Blazor.Hybrid.Runtime",
-                "Mounting: /projects /skills /contact",
-                "MVVM-Pattern geladen — DI Container bereit",
-                "Git-Branch: main — letzter Commit: heute",
-                "TonnenWecker.Limeshain → APK bereit",
-                "Alle Systeme betriebsbereit. Willkommen."
-            ],
-            roles: [
-                "Blazor Entwickler",
-                "MAUI Hybrid Entwickler",
-                "C# Enthusiast",
-                "Fachinformatiker AE"
-            ],
-            loading: "INITIALISIERUNG",
-            enter: "[ HIER KLICKEN ]",
-            skip: "[ Klicken zum Betreten ]"
+                'Initialisiere Portfoliosystem v2.0.26...',
+                'Lade C# .NET Blazor — Blazor.Hybrid.Runtime',
+                'Mounte: /projekte /skills /kontakt',
+                'MVVM Pattern geladen — DI Container bereit',
+                'Git Branch: main — letzter Commit: heute',
+                'TonnenWecker.Limeshain → APK bereit',
+                'Alle Systeme operativ. Willkommen.'
+            ]
         }
     }
 };

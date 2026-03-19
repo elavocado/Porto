@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const customCursor    = document.getElementById('intro-cursor');
     const introName       = document.querySelector('.intro-name');
 
+
     function skipIntro() {
         if (overlay)      overlay.style.display = 'none';
         if (customCursor) customCursor.style.display = 'none';
@@ -25,10 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skipIntro();
         return;
     }
-
-    window.addEventListener('pageshow', e => {
-        if (e.persisted || sessionStorage.getItem('introPlayed')) skipIntro();
-    });
 
     function t(key) {
         return window.i18n ? window.i18n.getTranslation(key) : null;
