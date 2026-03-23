@@ -1,8 +1,4 @@
-/*
-  i18n.js
-  Internationalization controller — EN/DE language switching
-  with FOUT prevention and event broadcasting.
-*/
+
 
 class I18n {
     constructor() {
@@ -66,16 +62,13 @@ class I18n {
             const value = this.getTranslation(key);
             if (!value) continue;
 
-            // Handle standard meta name
             const metaName = document.querySelector(`meta[name="${name}"]`);
             if (metaName) metaName.setAttribute('content', value);
 
-            // Handle open graph property
             const metaProp = document.querySelector(`meta[property="${name}"]`);
             if (metaProp) metaProp.setAttribute('content', value);
         }
 
-        // Update og:locale
         const ogLocale = document.querySelector('meta[property="og:locale"]');
         if (ogLocale) {
             ogLocale.setAttribute('content', this.lang === 'de' ? 'de_DE' : 'en_US');
