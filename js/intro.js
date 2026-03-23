@@ -1,8 +1,4 @@
-/*
-  intro.js
-  Cinematic intro sequence — runs once per session.
-  Handles boot animation, matrix rain, parallax, typewriter, progress bar.
-*/
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -31,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.introSpeedMultiplier = 0.35;
 
-    // Helper to adjust timeouts based on speed multiplier
     function wait(ms) {
         return ms * window.introSpeedMultiplier;
     }

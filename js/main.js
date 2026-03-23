@@ -1,8 +1,4 @@
-/*
-  main.js
-  Core site interactions — smooth scroll, mobile menu, scroll animations,
-  marquee, active nav highlighting.
-*/
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -18,10 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Menu Logic (using event delegation)
     const toggleMenu = (open) => {
         const isOpen = open !== undefined ? open : !document.body.classList.contains('menu-open');
         document.body.classList.toggle('menu-open', isOpen);
+        
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        if (menuBtn) {
+            menuBtn.setAttribute('aria-expanded', isOpen);
+        }
     };
 
     document.addEventListener('click', e => {
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isMatch) link.classList.remove('text-text-muted');
     });
 
-    // Initialize Lucide Icons for static content
     if (window.lucide) {
         window.lucide.createIcons();
     }
