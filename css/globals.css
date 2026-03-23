@@ -1,8 +1,4 @@
-/*
-  globals.css
-  Design system — menadawod.de
-  Aesthetic: deep-space obsidian + electric violet + arctic cyan
-*/
+
 
 :root {
     --bg-color:        #07091a;
@@ -213,9 +209,7 @@ body > * {
 [data-theme="light"] .icon-sun            { display: block; }
 [data-theme="light"] .icon-moon           { display: none; }
 
-[data-i18n]                  { opacity: 0; }
-body.i18n-ready [data-i18n]  { opacity: 1; }
-#intro-overlay [data-i18n]   { opacity: 1; }
+
 
 .lang-switch {
     position: relative;
@@ -361,7 +355,7 @@ body.menu-open #mobile-menu-btn .hamburger-inner              { background-color
 body.menu-open #mobile-menu-btn .hamburger-inner::before      { transform: translateY(8px) rotate(45deg); }
 body.menu-open #mobile-menu-btn .hamburger-inner::after       { transform: translateY(-8px) rotate(-45deg); }
 
-/* Badges & UI Elements */
+
 .badge-nda {
     background-color: rgba(239, 68, 68, 0.1) !important;
     border: 1px solid rgba(239, 68, 68, 0.3) !important;
@@ -415,3 +409,10 @@ body.menu-open #mobile-menu-btn .hamburger-inner::after       { transform: trans
 }
 
 [data-theme="light"] .border-primary\/30   { border-color: rgba(3,105,161,0.3) !important; }
+
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-content { animation-play-state: paused !important; }
+    .profile-glow { animation: none !important; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
