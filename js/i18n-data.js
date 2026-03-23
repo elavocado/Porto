@@ -24,10 +24,16 @@ const translations = {
                     school: "Vocational School: 1.0"
                 },
                 desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments.",
+                value_prop: "I help manufacturing companies modernize legacy systems and build high-performance industrial software with .NET.",
                 story: "From Cairo → Factory Worker → Team Lead → Computer Science Expert",
                 btn: {
                     projects: "View Projects",
+                    contact: "Let's Talk",
                     cv: "Download CV (PDF)"
+                },
+                recruiter: {
+                    roles: ".NET Developer / Full-Stack",
+                    location: "Limeshain & Remote"
                 }
             },
             status: {
@@ -536,6 +542,7 @@ const translations = {
             title: "Contact",
             subtitle: "// reach-out",
             heading: "Let's talk.",
+            target_roles: "Available for .NET Developer / Full-Stack positions — remote or Frankfurt area.",
             desc: "I'm always open to interesting projects and technical challenges. Reach out via email or LinkedIn.",
             response_time: "I typically respond within 24 hours.",
             social_title: "Connect on Social Media",
@@ -718,10 +725,16 @@ const translations = {
                     school: "Berufsschule: 1,0"
                 },
                 desc: "Zertifizierter .NET-, Blazor- & MAUI-Entwickler mit praktischer Produktionserfahrung bei Karl Mayer, einem globalen Marktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur, die in realen industriellen Umgebungen messbaren Mehrwert liefern.",
+                value_prop: "Ich helfe Produktionsunternehmen bei der Modernisierung von Legacy-Systemen und entwickle hochperformante Industriesoftware mit .NET.",
                 story: "Von Kairo → Produktionsmitarbeiter → Schichtleiter → Fachinformatiker AE",
                 btn: {
                     projects: "Projekte ansehen",
+                    contact: "Kontakt aufnehmen",
                     cv: "Lebenslauf herunterladen (PDF)"
+                },
+                recruiter: {
+                    roles: ".NET Entwickler / Full-Stack",
+                    location: "Limeshain & Remote"
                 }
             },
             status: {
@@ -1017,6 +1030,7 @@ const translations = {
             title: "Kontakt",
             subtitle: "// reach-out",
             heading: "Lassen Sie uns sprechen.",
+            target_roles: "Verfügbar für .NET Entwickler / Full-Stack Positionen — Remote oder Rhein-Main-Gebiet.",
             desc: "Ich bin stets offen für interessante Projekte und technische Herausforderungen. Kontaktieren Sie mich gerne per E-Mail oder LinkedIn.",
             response_time: "Ich antworte in der Regel innerhalb von 24 Stunden.",
             social_title: "Auf Social Media verbinden",
