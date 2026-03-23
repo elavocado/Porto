@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const nav = document.querySelector('nav'); // Define nav for scroll effect
+
     document.addEventListener('click', e => {
         const menuBtn = e.target.closest('#mobile-menu-btn');
         const backdrop = e.target.closest('#menu-backdrop');
@@ -79,5 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.lucide) {
         window.lucide.createIcons();
+    }
+
+    // Navbar scroll effect
+    const navScroll = document.getElementById('main-nav');
+    if (navScroll) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navScroll.classList.add('bg-navy-bg/90', 'py-2');
+                navScroll.classList.remove('h-20');
+            } else {
+                navScroll.classList.remove('bg-navy-bg/90', 'py-2');
+                navScroll.classList.add('h-20');
+            }
+        });
     }
 });

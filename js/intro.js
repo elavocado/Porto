@@ -119,6 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (enterBtn) {
                 enterBtn.textContent = t('intro.enter') || '[ CLICK HERE TO ENTER ]';
                 enterBtn.classList.add('visible');
+                
+                // --- AUTO-ENTER TIMEOUT ---
+                setTimeout(() => {
+                    const overlay = document.getElementById('intro-overlay');
+                    if (overlay && overlay.style.display !== 'none') {
+                        enterSite();
+                    }
+                }, 3000);
             }
             return;
         }
