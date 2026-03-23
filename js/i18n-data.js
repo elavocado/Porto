@@ -15,15 +15,16 @@ const translations = {
         },
         index: {
             hero: {
-                subtitle: "< .NET / Blazor / MAUI Developer />",
+                subtitle: "< .NET / Blazor / MAUI Full-Stack Developer />",
                 name: "Mena Dawod",
-                title: "Software Developer",
+                title: "Computer Science Expert · Software Development",
                 badge: {
                     ihk: "IHK Grade: Good (87 Points)",
                     project: "Project Work: Excellent (99/100)",
                     school: "Vocational School: 1.0"
                 },
                 desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments.",
+                story: "From Cairo → Factory Worker → Team Lead → Computer Science Expert",
                 btn: {
                     projects: "View Projects",
                     cv: "Download CV (PDF)"
@@ -65,7 +66,7 @@ const translations = {
                     title: "Vocational School",
                     desc: "Best possible final grade (1.0)."
                 },
-                cert: {
+                ihk_cert: {
                     title: "IHK Certificate",
                     desc: "Grade 1.9 (Good) overall result."
                 },
@@ -440,7 +441,7 @@ const translations = {
                     desc: "Conception and development of a <strong>mobile application</strong> to digitize municipal services for the municipality of Limeshain.",
                     points: [
                         "Cross-platform development with <strong>.NET MAUI (Android/iOS)</strong>",
-                        "Implementation of <strong>reliable push notifications</strong> for waste collection dates",
+                        "Implementierung of <strong>reliable push notifications</strong> for waste collection dates",
                         "Maximum <strong>offline availability</strong> through intelligent local caching"
                     ],
                     result: "Result: A practical everyday companion that strengthens civic engagement and reliably prevents missed collection dates."
@@ -708,15 +709,16 @@ const translations = {
         },
         index: {
             hero: {
-                subtitle: "< .NET / Blazor / MAUI Entwickler />",
+                subtitle: "< .NET / Blazor / MAUI Full-Stack Entwickler />",
                 name: "Mena Dawod",
-                title: "Softwareentwickler",
+                title: "Fachinformatiker für Anwendungsentwicklung",
                 badge: {
                     ihk: "IHK-Note: Gut (87 Punkte)",
                     project: "Projektarbeit: Sehr gut (99/100)",
                     school: "Berufsschule: 1,0"
                 },
                 desc: "Zertifizierter .NET-, Blazor- & MAUI-Entwickler mit praktischer Produktionserfahrung bei Karl Mayer, einem globalen Marktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur, die in realen industriellen Umgebungen messbaren Mehrwert liefern.",
+                story: "Von Kairo → Produktionsmitarbeiter → Schichtleiter → Fachinformatiker AE",
                 btn: {
                     projects: "Projekte ansehen",
                     cv: "Lebenslauf herunterladen (PDF)"
@@ -758,7 +760,7 @@ const translations = {
                     title: "Berufsschule",
                     desc: "Bestmögliche Abschlussnote (1,0)."
                 },
-                cert: {
+                ihk_cert: {
                     title: "IHK-Zeugnis",
                     desc: "Gesamtnote 1,9 (Gut)."
                 },
