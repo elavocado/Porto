@@ -543,7 +543,8 @@ const translations = {
         footer: {
             role: ".NET / Blazor / MAUI Developer",
             impressum: "Legal Notice",
-            privacy: "Privacy Policy"
+            privacy: "Privacy Policy",
+            sitemap: "Sitemap"
         },
         pageTitles: {
             home: "Mena Dawod | .NET Developer",
@@ -1022,7 +1023,8 @@ const translations = {
         footer: {
             role: ".NET / Blazor / MAUI Entwickler",
             impressum: "Impressum",
-            privacy: "Datenschutz"
+            privacy: "Datenschutz",
+            sitemap: "Sitemap"
         },
         pageTitles: {
             home: "Mena Dawod | .NET Entwickler",
