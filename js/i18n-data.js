@@ -5,6 +5,7 @@ const translations = {
             about: "About Me",
             projects: "Projects",
             certificates: "Certificates",
+            ai: "AI",
             contact: "Contact"
         },
         index: {
@@ -32,7 +33,7 @@ const translations = {
             },
             projects: {
                 title: "Featured Projects",
-                subtitle: "Selected software projects — from industrial enterprise applications to modern full-stack solutions.",
+                subtitle: "Selected software projects, from industrial enterprise applications to modern full-stack solutions.",
                 badge: "Featured",
                 btn: "View Project",
                 btnAll: "View All Projects",
@@ -72,15 +73,233 @@ const translations = {
         about: {
             title: "About Me",
             subtitle: "// story",
-            desc: "From Cairo to Germany — my journey into software development.",
+            desc: "From Cairo to Germany, my journey into software development.",
+            ai: {
+                title: "AI Philosophy & Workflow",
+                subtitle: "// philosophy",
+                hero: {
+                    eyebrow: "AI Philosophy & Workflow",
+                    headline: "AI is a tool.<br>Like the calculator,<br>it changes everything.",
+                    subtext: "Just as the calculator didn't make us less capable of math but freed us to solve more complex problems, AI doesn't replace the developer. It automates the routine so we can focus on higher-level system design and creative problem solving."
+                },
+                philosophy: {
+                    card1: {
+                        title: "Tool, not a mind reader",
+                        desc: "AI is an instrument, not a psychic. Just like any professional tool, the quality of the output depends on the clarity of the input. With well-defined context and precise direction, it delivers expert results. It's the classic principle: Input - Processing - Output."
+                    },
+                    card2: {
+                        title: "Systems over prompts",
+                        desc: "Applying the DRY (Don't Repeat Yourself) principle to AI. Instead of manual repetition, I engineer system-level instructions that automate recurring tasks. Delegating routine logic to a structured system saves massive time, allowing me to focus on high-level architecture."
+                    },
+                    card3: {
+                        title: "Understand what you ship",
+                        desc: "Owning the lifecycle from the first requirement to the final commit. Concepts like OOP remain the same across languages; understanding the underlying architecture is more important than the syntax. Since I define the system from the start, I always know exactly what the AI is generating."
+                    },
+                    card4: {
+                        title: "AI literacy is a skill",
+                        desc: "Navigating a landscape of specialized agents and models. It's about knowing exactly which provider to deploy for which task. While others try to use one tool for everything, I leverage individual model strengths to gain a decisive competitive advantage."
+                    }
+                },
+                stack: {
+                    title: "AI Stack",
+                    antigravity: {
+                        name: "Antigravity",
+                        role: "PRIMARY",
+                        desc: "Primary execution layer. Used for complex architecture implementation, deep refactoring, and logical problem solving."
+                    },
+                    claudecode: {
+                        name: "Claude Code",
+                        role: "SECONDARY",
+                        desc: "Primary planning partner. High-level architecture decisions, custom skill engineering, and structured learning."
+                    },
+                    gemini: {
+                        name: "Gemini (Google)",
+                        role: "DEEP SEARCH",
+                        desc: "Specialized in deep research and thematic information gathering. Focal point on intensive data synthesis rather than planning."
+                    },
+                    chatgpt: {
+                        name: "ChatGPT (OpenAI)",
+                        role: "WRITING",
+                        desc: "Expert for clear, coherent writing and extracting well-structured artifacts in its Canvas environment for maximum readability."
+                    },
+                    notebooklm: {
+                        name: "NotebookLM",
+                        role: "EXPLANATIONS",
+                        desc: "Transforming content into presentations, audio, video, or mind maps for deep conceptual understanding."
+                    },
+                    image: {
+                        name: "Nano Banana",
+                        role: "CREATIVE",
+                        desc: "UI mockups and visual ideation leveraging the Google ecosystem for broader cloud space and scalable execution."
+                    }
+                },
+                usecases: {
+                    title: "Workflow Use Cases",
+                    arch: {
+                        title: "Architecture & System Design",
+                        desc: "Architecture-first workflow. For a 90-minute task, I spend 60 minutes defining requirements and best-practice design. Only after the foundation is solid do I delegate execution to AI, followed by a rigorous plan review. High-quality input ensures an optimal output."
+                    },
+                    code: {
+                        title: "Code & Debugging",
+                        desc: "Readable, high-performance code. I prioritize clean structures over cryptic one-liners for maximum maintainability. Every loop is optimized without sacrificing clarity. Structured debugging with strategic breakpoints ensures full control over the execution flow."
+                    },
+                    content: {
+                        title: "Content & Documentation",
+                        desc: "Hybrid documentation strategy. I leverage AI for terminology precision and logical structure, while providing the human touch for simplification. This synergy ensures professional documentation that is both technically precise and remarkably easy to understand."
+                    },
+                    learning: {
+                        title: "Learning & Research",
+                        desc: "First-principles learning approach. While AI makes information accessible, I always cross-verify against reliable sources. By applying <strong>First Principles Thinking</strong>, I deconstruct complex technologies to their core, allowing me to master new systems faster than ever before."
+                    }
+                },
+                stats: {
+                    title: "External Assessment",
+                    intro: "I asked multiple AI systems, Claude, Gemini, and Antigravity, to analyze our full conversation history and give me an honest assessment of how I work. No self-report. No guessing. Raw data from the interactions themselves. All three reached similar conclusions independently.",
+                    items: {
+                        ratio: {
+                            stat: "80%",
+                            label: "DELEGATION RATIO",
+                            desc: "AI as execution layer, I decide, it delivers."
+                        },
+                        skills: {
+                            stat: "5×",
+                            label: "CUSTOM SKILLS BUILT",
+                            desc: "Engineered prompting environments, not just prompts."
+                        },
+                        systems: {
+                            stat: "3",
+                            label: "AI SYSTEMS USED IN PARALLEL",
+                            desc: "Cross-validated results across Claude, Gemini, Antigravity."
+                        },
+                        percentile: {
+                            stat: "Top%",
+                            label: "USAGE PERCENTILE (ALL 3 MODELS)",
+                            desc: "\"Significantly more structured and goal-oriented than average.\""
+                        }
+                    }
+                },
+                quote: {
+                    text: "\"You're a systems-minded developer who uses AI as an execution layer, not a crutch. Where most developers use AI to generate code they don't fully understand, you use it to accelerate work in domains you've already mapped.\"",
+                    source: "Claude (Anthropic), after reviewing full conversation history"
+                }
+            },
+            ai: {
+                title: "KI-Philosophie & Workflow",
+                subtitle: "// philosophy",
+                hero: {
+                    eyebrow: "KI-Philosophie & Workflow",
+                    headline: "KI ist ein Werkzeug.<br>Wie der Taschenrechner,<br>verändert es alles.",
+                    subtext: "Genauso wie der Taschenrechner uns nicht das Rechnen abgewöhnt, sondern den Kopf für komplexere Probleme freigemacht hat, ersetzt KI nicht den Entwickler. Sie automatisiert Routineaufgaben, damit wir uns auf übergeordnetes Systemdesign und kreative Problemlösungen konzentrieren können."
+                },
+                philosophy: {
+                    card1: {
+                        title: "Werkzeug, kein Gedankenleser",
+                        desc: "KI ist ein Instrument, kein Hellseher. Wie bei jedem professionellen Werkzeug hängt die Qualität des Outputs von der Klarheit des Inputs ab. Mit präzisen Vorgaben und klarem Kontext liefert sie erstklassige Ergebnisse. Am Ende folgt alles dem Grundprinzip: Input - Bearbeitung - Output."
+                    },
+                    card2: {
+                        title: "Systeme statt Prompts",
+                        desc: "Anwendung des DRY-Prinzips (Don't Repeat Yourself) auf KI. Anstatt Instruktionen manuell zu wiederholen, entwickle ich System-Prompts für wiederkehrende Aufgaben. Die Delegation von Routine-Logik an ein strukturiertes System spart massiv Zeit für das Wesentliche."
+                    },
+                    card3: {
+                        title: "Verstehe, was du auslieferst",
+                        desc: "Besitz des gesamten Lebenszyklus, von der ersten Anforderung bis zum Commit. Konzepte wie OOP bleiben sprachübergreifend gleich; das Verständnis der Architektur ist wichtiger als die Syntax. Da ich das System definiere, weiß ich immer genau, was die KI generiert."
+                    },
+                    card4: {
+                        title: "KI-Kompetenz ist eine Fähigkeit",
+                        desc: "Souveränität in einer Welt spezialisierter Agenten und Provider. Es geht darum, genau zu wissen, welches Modell für welches Ziel am besten geeignet ist. Die gezielte Auswahl des richtigen Tools für jede Aufgabe verschafft mir einen entscheidenden strategischen Vorsprung."
+                    }
+                },
+                stack: {
+                    title: "KI-Stack",
+                    antigravity: {
+                        name: "Antigravity",
+                        role: "PRIMARY",
+                        desc: "Primäre Ausführungsebene. Genutzt für komplexe Architektur-Implementierung, tiefgreifendes Refactoring und logische Problemlösungen."
+                    },
+                    claudecode: {
+                        name: "Claude Code",
+                        role: "SECONDARY",
+                        desc: "Primärer Planungspartner. High-Level Architekturentscheidungen, Custom-Skill-Engineering und strukturierte Workflows."
+                    },
+                    gemini: {
+                        name: "Gemini (Google)",
+                        role: "DEEP SEARCH",
+                        desc: "Spezialisiert auf Tiefenrecherche und thematische Informationsbeschaffung. Fokus auf intensiver Datensynthese anstelle von Planung."
+                    },
+                    chatgpt: {
+                        name: "ChatGPT (OpenAI)",
+                        role: "SCHREIBEN",
+                        desc: "Experte für klares, kohärentes Schreiben und die Extraktion strukturierter Artefakte in der Canvas-Umgebung für optimale Lesbarkeit."
+                    },
+                    notebooklm: {
+                        name: "NotebookLM",
+                        role: "ERKLÄRUNGEN",
+                        desc: "Transformation von Inhalten in Präsentationen, Audio, Video oder Mindmaps für ein tiefes konzeptionelles Verständnis."
+                    },
+                    image: {
+                        name: "Nano Banana",
+                        role: "KREATIV",
+                        desc: "UI-Mockups und visuelle Ideenfindung unter Nutzung des Google-Ökosystems für mehr Cloud-Speicher und skalierbare Ausführung."
+                    }
+                },
+                usecases: {
+                    title: "Workflow Use Cases",
+                    arch: {
+                        title: "Architektur & System Design",
+                        desc: "Architektur-fokussierter Workflow. Bei einer 90-minütigen Aufgabe verbringe ich 60 Minuten mit der Anforderungsdefinition und dem Best-Practice Design. Erst bei solidem Fundament delegiere ich die Ausführung an die KI, gefolgt von einem detaillierten Plan-Review."
+                    },
+                    code: {
+                        title: "Code & Debugging",
+                        desc: "Lesbarer, performanter Code. Ich bevorzuge saubere Strukturen gegenüber kryptischen Einzeilern für maximale Wartbarkeit. Jede Schleife wird optimiert, ohne die Klarheit zu opfern. Strategische Breakpoints garantieren die volle Kontrolle beim Debugging."
+                    },
+                    content: {
+                        title: "Content & Dokumentation",
+                        desc: "Hybride Dokumentationsstrategie. Ich nutze KI für terminologische Präzision und logische Struktur, während ich für die Vereinfachung und Klarheit sorge. So erstelle ich Dokumente, die sowohl fachlich exakt als auch leicht verständlich sind."
+                    },
+                    learning: {
+                        title: "Lernen & Recherche",
+                        desc: "Lernen nach dem <strong>First-Principles-Prinzip</strong>. KI erleichtert den Zugang zu Wissen, doch ich verifiziere Informationen stets durch verlässliche Quellen. So dekonstruiere ich komplexe Technologien bis zu ihrem Kern und meistere sie schneller als je zuvor."
+                    }
+                },
+                stats: {
+                    title: "Externe Einschätzung",
+                    intro: "Ich habe mehrere KI-Systeme, Claude, Gemini und Antigravity, gebeten, unsere vollständige Konversationsgeschichte zu analysieren und mir eine ehrliche Einschätzung meiner Arbeitsweise zu geben. Kein Selbstbericht. Kein Raten. Rohdaten aus den Interaktionen selbst. Alle drei kamen unabhängig voneinander zu ähnlichen Schlussfolgerungen.",
+                    items: {
+                        ratio: {
+                            stat: "80%",
+                            label: "DELEGATIONS-QUOTE",
+                            desc: "KI als Ausführungsebene, ich entscheide, sie liefert."
+                        },
+                        skills: {
+                            stat: "5×",
+                            label: "ERSTELLTE CUSTOM SKILLS",
+                            desc: "Engineerte Prompt-Umgebungen, nicht nur Prompts."
+                        },
+                        systems: {
+                            stat: "3",
+                            label: "PARALLELE KI-SYSTEME",
+                            desc: "Ergebnisse über Claude, Gemini, Antigravity validiert."
+                        },
+                        percentile: {
+                            stat: "Top%",
+                            label: "NUTZUNGS-PERZENTILE (ALLE 3 MODELLE)",
+                            desc: "\"Deutlich strukturierter und zielorientierter als der Durchschnitt.\""
+                        }
+                    }
+                },
+                quote: {
+                    text: "\"Du bist ein systemorientierter Entwickler, der KI als Ausführungsebene nutzt, nicht als Krücke. Während die meisten Entwickler KI nutzen, um Code zu generieren, den sie nicht vollständig verstehen, nutzt du sie, um Arbeit in Bereichen zu beschleunigen, die du bereits durchdacht hast.\"",
+                    source: "Claude (Anthropic), nach Analyse der vollständigen Konversationsgeschichte"
+                }
+            },
             intro: {
                 title: "The Beginnings",
                 p1: "My journey into software development began in 2022. I intentionally chose a path that combines theoretical depth with practical application.",
                 p2: "As a career changer, I successfully completed my 3-year vocational training as an 'IT Specialist for Application Development' ahead of schedule in just 2.5 years, graduating with an overall grade of 'Good'.",
                 tf: {
                     title: "Technical Practice, TechniForm GmbH (2017–2023)",
-                    p1: "In 2013, I came to Germany and started from scratch — learning the language entirely through self-study while navigating the integration process independently. At TechniForm, I found my first real technical foothold in 2017 and advanced from production worker to shift leader with responsibility for a team of 10 people in just 12 months.",
-                    p2: "As a process mechanic, I specialized in robot programming, manufacturing process optimization, and independent fault diagnosis on complex machinery. This experience sharpened my systematic thinking — the same mindset I apply to code today.",
+                    p1: "In 2013, I came to Germany and started from scratch, learning the language entirely through self-study while navigating the integration process independently. At TechniForm, I found my first real technical foothold in 2017 and advanced from production worker to shift leader with responsibility for a team of 10 people in just 12 months.",
+                    p2: "As a process mechanic, I specialized in robot programming, manufacturing process optimization, and independent fault diagnosis on complex machinery. This experience sharpened my systematic thinking, the same mindset I apply to code today.",
                     tag1: "Robot Programming",
                     tag2: "Process Optimization",
                     tag3: "Fault Diagnosis",
@@ -138,7 +357,7 @@ const translations = {
                     eg: {
                         date: "2013",
                         title: "Departure from Egypt",
-                        desc: "Cairo University, Law — emigrated in the final semester."
+                        desc: "Cairo University, Law, emigrated in the final semester."
                     }
                 }
             },
@@ -150,7 +369,7 @@ const translations = {
         },
         projects: {
             title: "Selected Projects",
-            subtitle: "An insight into my software projects — from industrial enterprise solutions to innovative in-house developments.",
+            subtitle: "An insight into my software projects, from industrial enterprise solutions to innovative in-house developments.",
             items: {
                 modernization: {
                     badge: "Main Project",
@@ -168,7 +387,7 @@ const translations = {
                 feature: {
                     badge: "Production Feature",
                     title: "Customer-Specific Feature Development",
-                    desc: "Independent analysis of <strong>third-party code</strong> and complete feature implementation within two weeks — successfully released and live in production.",
+                    desc: "Independent analysis of <strong>third-party code</strong> and complete feature implementation within two weeks, successfully released and live in production.",
                     points: [
                         "Analysis and precise adjustment of <strong>complex third-party logic</strong>",
                         "Development of a <strong>central control panel</strong> for machine parameters in the frontend",
@@ -207,7 +426,7 @@ const translations = {
                         "Automated generation of <strong>RESX resource files</strong>",
                         "Integrated <strong>consistency validation</strong> of translated strings"
                     ],
-                    result: "Result: 27 languages automatically migrated — manual effort reduced from several working days to minutes."
+                    result: "Result: 27 languages automatically migrated, manual effort reduced from several working days to minutes."
                 },
                 tonnenwecker: {
                     badge: "App Development",
@@ -230,7 +449,7 @@ const translations = {
                         "Implementation of an <strong>intelligent parser</strong> for complex barcode strings",
                         "Automated creation of <strong>print-optimized lists</strong> for system cleanup"
                     ],
-                    result: "Result: Recording time per pallet reduced from 30 minutes to under 5 minutes — 83% time saving."
+                    result: "Result: Recording time per pallet reduced from 30 minutes to under 5 minutes, 83% time saving."
                 },
                 calculator: {
                     badge: "Productivity Tool",
@@ -241,7 +460,7 @@ const translations = {
                         "<strong>Mobile-first implementation</strong> for flexible use at the machine",
                         "Design of a <strong>minimalist UI</strong> for error-free input under time pressure"
                     ],
-                    result: "Result: In daily production use — completely replaces error-prone manual calculations.",
+                    result: "Result: In daily production use, completely replaces error-prone manual calculations.",
                     github: "View on GitHub",
                     live: "Live Demo"
                 },
@@ -326,6 +545,7 @@ const translations = {
             about: "About Me | Mena Dawod",
             projects: "Projects | Mena Dawod",
             certificates: "Certificates | Mena Dawod",
+            ai: "AI Philosophy & Workflow | Mena Dawod",
             contact: "Contact | Mena Dawod",
             impressum: "Legal Notice | Mena Dawod",
             privacy: "Privacy Policy | Mena Dawod"
@@ -343,6 +563,113 @@ const translations = {
             linkedin: "LinkedIn Profile",
             xing: "Xing Profile"
         },
+        ai: {
+            hero: {
+                eyebrow: "AI Philosophy & Workflow",
+                headline: "AI is a tool.<br>Like the calculator,<br>it changes everything.",
+                subtext: "Just as the calculator didn't make us less capable of math but freed us to solve more complex problems, AI doesn't replace the developer. It automates the routine so we can focus on higher-level system design and creative problem solving."
+            },
+            philosophy: {
+                card1: {
+                    title: "Tool, not a mind reader",
+                    desc: "AI is a tool, not a psychic. Just like any professional instrument, the quality of the output depends on the clarity of the input. With well-defined context and precise direction, it delivers expert results. It's the classic principle: Input - Processing - Output."
+                },
+                card2: {
+                    title: "Systems over prompts",
+                    desc: "Applying the DRY (Don't Repeat Yourself) principle to AI. Instead of manual repetition, I engineer system-level instructions that automate recurring tasks. Delegating routine logic to a structured system saves massive time, allowing me to focus on high-level architecture."
+                },
+                card3: {
+                    title: "Understand what you ship",
+                    desc: "Owning the lifecycle from the first requirement to the final commit. Concepts like OOP remain the same across languages; understanding the underlying architecture is more important than the syntax. Since I define the system from the start, I always know exactly what the AI is generating."
+                },
+                card4: {
+                    title: "AI literacy is a skill",
+                    desc: "Navigating a landscape of specialized agents and models. It's about knowing exactly which provider to deploy for which task. While others try to use one tool for everything, I leverage individual model strengths to gain a decisive competitive advantage."
+                }
+            },
+            stack: {
+                title: "AI Stack",
+                antigravity: {
+                    name: "Antigravity",
+                    role: "PRIMARY",
+                    desc: "Primary execution layer. Used for complex architecture implementation, deep refactoring, and generating production code."
+                },
+                claudecode: {
+                    name: "Claude Code",
+                    role: "SECONDARY",
+                    desc: "Primary planning partner. Used for high-level architecture decisions, custom skill engineering, and structuring workflows."
+                },
+                gemini: {
+                    name: "Gemini (Google)",
+                    role: "DEEP SEARCH",
+                    desc: "Specialized in deep research and thematic information gathering. Focal point on intensive data synthesis rather than planning."
+                },
+                chatgpt: {
+                    name: "ChatGPT (OpenAI)",
+                    role: "WRITING",
+                    desc: "Expert for clear, coherent writing and extracting well-structured artifacts in its Canvas environment."
+                },
+                notebooklm: {
+                    name: "NotebookLM",
+                    role: "EXPLANATIONS",
+                    desc: "Multimedia explanations via audio, video, presentations or mind maps for complex topic synthesis."
+                },
+                image: {
+                    name: "Nano Banana",
+                    role: "CREATIVE",
+                    desc: "UI mockups and asset generation integrated within the Google ecosystem, utilizing advanced cloud execution."
+                }
+            },
+            usecases: {
+                title: "Workflow Use Cases",
+                arch: {
+                    title: "Architecture & System Design",
+                    desc: "Architecture-first workflow. For a 90-minute task, I spend 60 minutes defining requirements and best-practice design. Only after the foundation is solid do I delegate execution to AI, followed by a rigorous plan review. High-quality input ensures an optimal output."
+                },
+                code: {
+                    title: "Code & Debugging",
+                    desc: "Readable, high-performance code. I prioritize clean structures over cryptic one-liners for maximum maintainability. Every loop is optimized without sacrificing clarity. Structured debugging with strategic breakpoints ensures full control over the execution flow."
+                },
+                content: {
+                    title: "Content & Documentation",
+                    desc: "Hybrid documentation strategy. I leverage AI for terminology precision and logical structure, while providing the human touch for simplification. This synergy ensures professional documentation that is both technically precise and remarkably easy to understand."
+                },
+                learning: {
+                    title: "Learning & Research",
+                    desc: "First-principles learning approach. While AI makes information accessible, I always cross-verify against reliable sources. By applying <strong>First Principles Thinking</strong>, I deconstruct complex technologies to their core, allowing me to master new systems faster than ever before."
+                }
+            },
+            stats: {
+                title: "External Assessment",
+                intro: "I asked multiple AI systems (Claude, Gemini, Antigravity) to analyze my GitHub repositories, code style, and system prompts. Here is the consensus:",
+                items: {
+                    ratio: {
+                        stat: "80%",
+                        label: "DELEGATION RATIO",
+                        desc: "AI as execution layer for repetitive tasks, allowing focus on high-level architecture."
+                    },
+                    skills: {
+                        stat: "5x",
+                        label: "CUSTOM SKILLS BUILT",
+                        desc: "Engineered prompting systems and API tools created specifically for my workflow."
+                    },
+                    systems: {
+                        stat: "3",
+                        label: "AI SYSTEMS USED IN PARALLEL",
+                        desc: "Cross-validated results using Claude, Gemini, and Antigravity depending on the task."
+                    },
+                    percentile: {
+                        stat: "Top%",
+                        label: "USAGE PERCENTILE (3 MODELS)",
+                        desc: "\"Significantly more advanced AI integration than average developer setups.\""
+                    }
+                }
+            },
+            quote: {
+                text: "\"You're a systems-minded developer who uses AI as an execution layer, not a crutch. Your approach shows a deep understanding of abstraction boundaries and maintaining code sovereignty.\"",
+                source: "Claude (Anthropic) after analyzing my workflow"
+            }
+        },
         intro: {
             loading: 'INITIALIZING',
             enter: '[ CLICK HERE TO ENTER ]',
@@ -350,10 +677,10 @@ const translations = {
             roles: ['Blazor Developer', 'MAUI Hybrid Developer', 'C# Enthusiast', 'IT Specialist AE'],
             boot: [
                 'Initializing portfolio system v2.0.26...',
-                'Loading C# .NET Blazor — Blazor.Hybrid.Runtime',
+                'Loading C# .NET Blazor, Blazor.Hybrid.Runtime',
                 'Mounting: /projects /skills /contact',
-                'MVVM pattern loaded — DI container ready',
-                'Git branch: main — last commit: today',
+                'MVVM pattern loaded, DI container ready',
+                'Git branch: main, last commit: today',
                 'TonnenWecker.Limeshain → APK ready',
                 'All systems operational. Welcome.'
             ]
@@ -365,6 +692,7 @@ const translations = {
             about: "Über Mich",
             projects: "Projekte",
             certificates: "Zertifikate",
+            ai: "KI",
             contact: "Kontakt"
         },
         index: {
@@ -392,7 +720,7 @@ const translations = {
             },
             projects: {
                 title: "Ausgewählte Projekte",
-                subtitle: "Ausgewählte Softwareprojekte — von industriellen Enterprise-Anwendungen bis hin zu modernen Full-Stack-Lösungen.",
+                subtitle: "Ausgewählte Softwareprojekte, von industriellen Enterprise-Anwendungen bis hin zu modernen Full-Stack-Lösungen.",
                 badge: "Featured",
                 btn: "Projekt ansehen",
                 btnAll: "Alle Projekte ansehen",
@@ -432,15 +760,15 @@ const translations = {
         about: {
             title: "Über Mich",
             subtitle: "// story",
-            desc: "Von Kairo nach Deutschland — mein Weg in die Softwareentwicklung.",
+            desc: "Von Kairo nach Deutschland, mein Weg in die Softwareentwicklung.",
             intro: {
                 title: "Die Anfänge",
                 p1: "Mein Weg in die Softwareentwicklung begann 2022. Ich habe bewusst einen Pfad gewählt, der theoretische Tiefe mit praktischer Anwendung verbindet.",
                 p2: "Als Quereinsteiger habe ich meine 3-jährige Berufsausbildung zum 'Fachinformatiker für Anwendungsentwicklung' in nur 2,5 Jahren erfolgreich abgeschlossen und mit der Gesamtnote 'Gut' abgeschlossen.",
                 tf: {
                     title: "Technische Praxis, TechniForm GmbH (2017–2023)",
-                    p1: "2013 kam ich nach Deutschland und fing von vorn an — ich lernte die Sprache vollständig im Selbststudium und navigierte den Integrationsprozess eigenständig. Bei TechniForm fand ich 2017 meinen ersten echten technischen Halt und stieg innerhalb von 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter auf — mit Verantwortung für ein Team von 10 Personen.",
-                    p2: "Als Verfahrensmechaniker spezialisierte ich mich auf Roboterprogrammierung, Optimierung von Fertigungsprozessen und eigenständige Fehlerdiagnose an komplexen Maschinen. Diese Erfahrung schärfte mein systematisches Denken — dieselbe Denkweise, die ich heute beim Programmieren anwende.",
+                    p1: "2013 kam ich nach Deutschland und fing von vorn an, ich lernte die Sprache vollständig im Selbststudium und navigierte den Integrationsprozess eigenständig. Bei TechniForm fand ich 2017 meinen ersten echten technischen Halt und stieg innerhalb von 12 Monaten vom Produktionsmitarbeiter zum Schichtleiter auf, mit Verantwortung für ein Team von 10 Personen.",
+                    p2: "Als Verfahrensmechaniker spezialisierte ich mich auf Roboterprogrammierung, Optimierung von Fertigungsprozessen und eigenständige Fehlerdiagnose an komplexen Maschinen. Diese Erfahrung schärfte mein systematisches Denken, dieselbe Denkweise, die ich heute beim Programmieren anwende.",
                     tag1: "Roboterprogrammierung",
                     tag2: "Prozessoptimierung",
                     tag3: "Fehlerdiagnose",
@@ -504,7 +832,7 @@ const translations = {
             },
             cta: {
                 title: "Möchten Sie das Gesamtbild sehen?",
-                desc: "Laden Sie meinen vollständigen Lebenslauf herunter — mit allen Details zu meiner Erfahrung und Laufbahn.",
+                desc: "Laden Sie meinen vollständigen Lebenslauf herunter, mit allen Details zu meiner Erfahrung und Laufbahn.",
                 btn: "Vollständigen CV herunterladen (PDF)"
             }
         },
@@ -533,7 +861,7 @@ const translations = {
                 feature: {
                     badge: "Production Feature",
                     title: "Entwicklung eines kundenspezifischen Features",
-                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen — erfolgreich freigegeben und produktiv im Einsatz.",
+                    desc: "Eigenständige Analyse von <strong>Fremdcode</strong> und vollständige Feature-Implementierung innerhalb von zwei Wochen, erfolgreich freigegeben und produktiv im Einsatz.",
                     points: [
                         "Analyse und präzise Anpassung <strong>komplexer Drittanbieter-Logik</strong>",
                         "Entwicklung einer <strong>zentralen Steuerung</strong> für Maschinenparameter im Frontend",
@@ -572,7 +900,7 @@ const translations = {
                         "Automatisierte Generierung von <strong>RESX-Ressourcendateien</strong>",
                         "Integrierte <strong>Konsistenz-Validierung</strong> der übersetzten Strings"
                     ],
-                    result: "Ergebnis: 27 Sprachen automatisch migriert — manueller Aufwand von mehreren Arbeitstagen auf wenige Minuten reduziert."
+                    result: "Ergebnis: 27 Sprachen automatisch migriert, manueller Aufwand von mehreren Arbeitstagen auf wenige Minuten reduziert."
                 },
                 tonnenwecker: {
                     badge: "App Development",
@@ -595,7 +923,7 @@ const translations = {
                         "Implementierung eines <strong>intelligenten Parsers</strong> für komplexe Barcode-Strings",
                         "Automatisierte Erstellung <strong>druckoptimierter Listen</strong> zur Systembereinigung"
                     ],
-                    result: "Ergebnis: Erfassungszeit pro Palette von 30 auf unter 5 Minuten reduziert — 83 % Zeitersparnis."
+                    result: "Ergebnis: Erfassungszeit pro Palette von 30 auf unter 5 Minuten reduziert, 83 % Zeitersparnis."
                 },
                 calculator: {
                     badge: "Productivity Tool",
@@ -606,7 +934,7 @@ const translations = {
                         "<strong>Mobile-First-Umsetzung</strong> für den flexiblen Einsatz an der Maschine",
                         "Entwurf einer <strong>minimalistischen UI</strong> für fehlerfreie Eingaben unter Zeitdruck"
                     ],
-                    result: "Ergebnis: Täglich im Produktionseinsatz — ersetzt die fehleranfällige manuelle Berechnung vollständig.",
+                    result: "Ergebnis: Täglich im Produktionseinsatz, ersetzt die fehleranfällige manuelle Berechnung vollständig.",
                     github: "Auf GitHub ansehen",
                     live: "Live-Demo"
                 },
@@ -691,6 +1019,7 @@ const translations = {
             about: "Über Mich | Mena Dawod",
             projects: "Projekte | Mena Dawod",
             certificates: "Zertifikate | Mena Dawod",
+            ai: "KI-Philosophie & Workflow | Mena Dawod",
             contact: "Kontakt | Mena Dawod",
             impressum: "Impressum | Mena Dawod",
             privacy: "Datenschutz | Mena Dawod"
@@ -708,6 +1037,113 @@ const translations = {
             linkedin: "LinkedIn-Profil",
             xing: "Xing-Profil"
         },
+        ai: {
+            hero: {
+                eyebrow: "KI-Philosophie & Workflow",
+                headline: "KI ist ein Werkzeug.<br>Wie der Taschenrechner,<br>verändert es alles.",
+                subtext: "Genauso wie der Taschenrechner uns nicht das Rechnen abgewöhnt, sondern den Kopf für komplexere Probleme freigemacht hat, ersetzt KI nicht den Entwickler. Sie automatisiert Routineaufgaben, damit wir uns auf übergeordnetes Systemdesign und kreative Problemlösungen konzentrieren können."
+            },
+            philosophy: {
+                card1: {
+                    title: "Werkzeug, kein Gedankenleser",
+                    desc: "KI ist ein Werkzeug, kein Hellseher. Wie bei jedem professionellen Instrument hängt die Qualität des Outputs von der Klarheit des Inputs ab. Mit präzisen Vorgaben und klarem Kontext liefert sie erstklassige Ergebnisse. Am Ende folgt alles dem Grundprinzip: Input - Bearbeitung - Output."
+                },
+                card2: {
+                    title: "Systeme statt Prompts",
+                    desc: "Anwendung des DRY-Prinzips (Don't Repeat Yourself) auf KI. Anstatt Instruktionen manuell zu wiederholen, entwickle ich System-Prompts für wiederkehrende Aufgaben. Die Delegation von Routine-Logik an ein strukturiertes System spart massiv Zeit für das Wesentliche."
+                },
+                card3: {
+                    title: "Verstehe was du veröffentlichst",
+                    desc: "Besitz des gesamten Lebenszyklus, von der ersten Anforderung bis zum Commit. Konzepte wie OOP bleiben sprachübergreifend gleich; das Verständnis der Architektur ist wichtiger als die Syntax. Da ich das System definiere, weiß ich immer genau, was die KI generiert."
+                },
+                card4: {
+                    title: "KI-Kompetenz ist ein Handwerk",
+                    desc: "Souveränität in einer Welt spezialisierter Agenten und Provider. Es geht darum, genau zu wissen, welches Modell für welches Ziel am besten geeignet ist. Die gezielte Auswahl des richtigen Tools für jede Aufgabe verschafft mir einen entscheidenden strategischen Vorsprung."
+                }
+            },
+            stack: {
+                title: "KI Stack",
+                antigravity: {
+                    name: "Antigravity",
+                    role: "PRIMÄR",
+                    desc: "Primäre Ausführungsebene. Wird für komplexe Implementierungen, tiefgreifendes Refactoring und Code-Erstellung eingesetzt."
+                },
+                claudecode: {
+                    name: "Claude Code",
+                    role: "SEKUNDÄR",
+                    desc: "Primärer Planungspartner. Genutzt für High-Level Architekturdesign, Workflows und Problemanalyse."
+                },
+                gemini: {
+                    name: "Gemini (Google)",
+                    role: "DEEP SEARCH",
+                    desc: "Spezialisiert auf Tiefenrecherche und thematische Informationsbeschaffung. Fokus auf intensiver Datensynthese anstelle von Planung."
+                },
+                chatgpt: {
+                    name: "ChatGPT (OpenAI)",
+                    role: "SCHREIBEN",
+                    desc: "Experte für klares Schreiben und das Extrahieren strukturierter Artefakte in der Canvas-Umgebung."
+                },
+                notebooklm: {
+                    name: "NotebookLM",
+                    role: "ERKLÄRUNGEN",
+                    desc: "Multimedia-Erklärungen via Audio, Video, Präsentationen oder Mindmaps für komplexe Themen."
+                },
+                image: {
+                    name: "Nano Banana",
+                    role: "KREATIV",
+                    desc: "UI-Mockups und Asset-Generierung eingebunden in das Google-Ökosystem, unter Nutzung skalierbarer Cloud-Ressourcen."
+                }
+            },
+            usecases: {
+                title: "Anwendungsfälle im Workflow",
+                arch: {
+                    title: "Architektur & Systemdesign",
+                    desc: "Architektur-fokussierter Workflow. Bei einer 90-minütigen Aufgabe verbringe ich 60 Minuten mit der Anforderungsdefinition und dem Best-Practice Design. Erst bei solidem Fundament delegiere ich die Ausführung an die KI, gefolgt von einem detaillierten Plan-Review."
+                },
+                code: {
+                    title: "Code & Debugging",
+                    desc: "Lesbarer, performanter Code. Ich bevorzuge saubere Strukturen gegenüber kryptischen Einzeilern für maximale Wartbarkeit. Jede Schleife wird optimiert, ohne die Klarheit zu opfern. Strategische Breakpoints garantieren die volle Kontrolle beim Debugging."
+                },
+                content: {
+                    title: "Inhalte & Dokumentation",
+                    desc: "Hybride Dokumentationsstrategie. Ich nutze KI für terminologische Präzision und logische Struktur, während ich für die Vereinfachung und Klarheit sorge. So erstelle ich Dokumente, die sowohl fachlich exakt als auch leicht verständlich sind."
+                },
+                learning: {
+                    title: "Lernen & Recherche",
+                    desc: "Lernen nach dem <strong>First-Principles-Prinzip</strong>. KI erleichtert den Zugang zu Wissen, doch ich verifiziere Informationen stets durch verlässliche Quellen. So dekonstruiere ich komplexe Technologien bis zu ihrem Kern und meistere sie schneller als je zuvor."
+                }
+            },
+            stats: {
+                title: "Externe Einschätzung",
+                intro: "Ich habe mehrere KI-Systeme (Claude, Gemini, Antigravity) gebeten, meine Repositories und meinen Code-Stil zu analysieren. Der Konsens:",
+                items: {
+                    ratio: {
+                        stat: "80%",
+                        label: "DELEGATIONSRATE",
+                        desc: "KI als Execution-Layer für repetitive Aufgaben, um Fokus auf High-Level Architektur zu lenken."
+                    },
+                    skills: {
+                        stat: "5x",
+                        label: "EIGENE SKILLS GEBAUT",
+                        desc: "Engineered Prompting-Systeme und API-Tools, speziell für meinen Workflow entwickelt."
+                    },
+                    systems: {
+                        stat: "3",
+                        label: "PARALLELE KI SYSTEME",
+                        desc: "Kreuzvalidierung von Ergebnissen mit Claude, Gemini und Antigravity, je nach Aufgabe."
+                    },
+                    percentile: {
+                        stat: "Top%",
+                        label: "NUTZUNGS-PROZENTIL",
+                        desc: "\"Deutlich fortschrittlichere KI-Integration als in durchschnittlichen Entwickler-Setups.\""
+                    }
+                }
+            },
+            quote: {
+                text: "\"Du bist ein systemisch denkender Entwickler, der KI als Umsetzungsebene und nicht als Krücke nutzt. Dein Ansatz zeigt ein tiefes Verständnis für Abstraktionsgrenzen.\"",
+                source: "Claude (Anthropic) nach Analyse meines Workflows"
+            }
+        },
         intro: {
             loading: 'INITIALISIERIERT',
             enter: '[ ZUM ENTER KLICKEN ]',
@@ -715,10 +1151,10 @@ const translations = {
             roles: ['Blazor Entwickler', 'MAUI Hybrid Entwickler', 'C# Enthusiast', 'Fachinformatiker AE'],
             boot: [
                 'Initialisiere Portfoliosystem v2.0.26...',
-                'Lade C# .NET Blazor — Blazor.Hybrid.Runtime',
+                'Lade C# .NET Blazor, Blazor.Hybrid.Runtime',
                 'Mounte: /projekte /skills /kontakt',
-                'MVVM Pattern geladen — DI Container bereit',
-                'Git Branch: main — letzter Commit: heute',
+                'MVVM Pattern geladen, DI Container bereit',
+                'Git Branch: main, letzter Commit: heute',
                 'TonnenWecker.Limeshain → APK bereit',
                 'Alle Systeme operativ. Willkommen.'
             ]
