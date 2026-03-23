@@ -20,11 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (customCursor) customCursor.style.display = 'none';
         document.body.classList.remove('intro-active');
         document.body.classList.add('content-fade-in');
+        parallaxActive = false;
     }
 
-    if (sessionStorage.getItem('introPlayed')) {
-        skipIntro();
+    const introSeen = sessionStorage.getItem('introPlayed');
+    if (introSeen) {
+        skipIntro(); 
         return;
+    }
+
+    window.introSpeedMultiplier = 0.35;
+
+    // Helper to adjust timeouts based on speed multiplier
+    function wait(ms) {
+        return ms * window.introSpeedMultiplier;
     }
 
     function t(key) {
@@ -49,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             div.dataset.status = i === 4 ? 'info' : 'ok';
             div.innerHTML = `<span>[ ${i === 4 ? 'INFO' : ' OK '} ]</span> ${text}`;
             bootContainer.appendChild(div);
-            setTimeout(() => div.classList.add('visible'), 300 + i * 300);
+            setTimeout(() => div.classList.add('visible'), wait(300 + i * 300));
         });
     }
 
@@ -66,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         introName.classList.add('glitching');
         setTimeout(() => introName.classList.remove('glitching'), 450);
     }
-    setTimeout(triggerGlitch, 3500);
+    setTimeout(triggerGlitch, wait(3500));
     setInterval(triggerGlitch, 6000);
 
     const roles = t('intro.roles') || [
@@ -97,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         setTimeout(typeRole, typeSpeed);
     }
-    setTimeout(typeRole, 3800);
+    setTimeout(typeRole, wait(3800));
 
     const progressLabel = document.querySelector('.progress-labels span:first-child');
     if (progressLabel) {
@@ -120,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         setTimeout(updateProgress, Math.random() * 60 + 20);
     }
-    setTimeout(updateProgress, 4000);
+    setTimeout(updateProgress, wait(4000));
 
     let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
     let parallaxActive = true;
@@ -151,11 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
     applyParallax();
 
     window.enterSite = function () {
+        if (!parallaxActive) return;
+        parallaxActive = false;
+
         sessionStorage.setItem('introPlayed', 'true');
         overlay.classList.add('hidden');
         document.body.classList.remove('intro-active');
         document.body.classList.add('content-fade-in');
-        parallaxActive = false;
         if (window.introMatrix) window.introMatrix.stop();
         if (customCursor) customCursor.style.opacity = '0';
         setTimeout(() => { overlay.style.display = 'none'; }, 900);
@@ -178,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { hint.style.opacity = '0.6'; }, 100);
 
         overlay.addEventListener('click', () => window.enterSite());
-    }, 800);
+    }, wait(800));
 
     class MatrixRain {
         constructor() {
