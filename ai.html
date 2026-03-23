@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<script>
+    (function () {
+        const lang = localStorage.getItem('lang') || 'de';
+        document.documentElement.setAttribute('lang', lang);
+
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+    })();
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitles.ai">AI Philosophy & Workflow | Mena Dawod</title>
+    <meta name="google-site-verification" content="tIlueLxGTyNdkYp76OEByFZRDY49dBRrVAmIeiVA9Ms" />
+
+    <meta name="description"
+        content="Mena Dawod's AI Philosophy & Workflow. Explore how AI acts as an execution layer to build better systems faster.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Mena Dawod | AI Philosophy & Workflow">
+    <meta property="og:description" content="Mena Dawod's AI Philosophy & Workflow. Explore how AI acts as an execution layer to build better systems faster.">
+    <meta property="og:image" content="https://menadawod.de/assets/og-image.png">
+    <meta property="og:url" content="https://menadawod.de/ai.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mena Dawod Portfolio">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Favicon & Canonical -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="canonical" href="https://menadawod.de/ai.html">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Nunito:wght@400;600;700&family=Sora:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { bg: 'var(--bg-color)', surface: 'var(--surface-color)', border: 'var(--border-color)' },
+                        primary: { DEFAULT: 'var(--primary-color)', glow: 'var(--shadow-color)' },
+                        accent: { DEFAULT: 'var(--accent-color)' },
+                        text: { DEFAULT: 'var(--text-color)', muted: 'var(--text-muted)' },
+                        success: {
+                            DEFAULT: '#2ECC71',
+                            bg: 'rgba(46, 204, 113, 0.12)'
+                        },
+                        'on-primary': 'var(--on-primary)'
+                    },
+                    fontFamily: { sora: ['Sora', 'sans-serif'], nunito: ['Nunito', 'sans-serif'], mono: ['"Fira Code"', 'monospace'] },
+                    maxWidth: { 'content': '1100px' }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/globals.css">
+    <script src="js/i18n-data.js"></script>
+    <script src="js/i18n.js"></script>
+</head>
+
+<body class="bg-navy-bg text-text-DEFAULT font-nunito antialiased selection:bg-primary selection:text-white pt-20 flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="md:hidden">
+        <div class="flex items-center justify-between mb-10">
+            <span class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</span>
+        </div>
+        <div class="flex flex-col gap-6 font-medium">
+            <a href="index.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.home">
+                <i data-lucide="home" class="w-5 h-5"></i> Home
+            </a>
+            <a href="projects.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.projects">
+                <i data-lucide="code-2" class="w-5 h-5"></i> Projekte
+            </a>
+            <a href="ai.html"
+                class="text-text-DEFAULT hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.ai">
+                <i data-lucide="bot" class="w-5 h-5"></i> AI
+            </a>
+            <a href="certificates.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.certificates">
+                <i data-lucide="award" class="w-5 h-5"></i> Zertifikate
+            </a>
+            <a href="about.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.about">
+                <i data-lucide="user" class="w-5 h-5"></i> Über Mich
+            </a>
+            <a href="contact.html"
+                class="text-text-muted hover:text-primary transition-colors text-lg flex items-center gap-3"
+                data-i18n="nav.contact">
+                <i data-lucide="mail" class="w-5 h-5"></i> Kontakt
+            </a>
+        </div>
+
+        <div class="mt-auto pt-10 border-t border-navy-border flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/elavocado" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://linkedin.com/in/menadawod/" target="_blank" class="text-text-muted hover:text-primary transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="menu-backdrop" class="md:hidden"></div>
+
+    <div id="app-wrapper" class="flex flex-col min-h-screen">
+
+
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-bg/80 backdrop-blur-xl border-b border-navy-border">
+        <div class="max-w-content mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-sora font-bold text-2xl text-primary tracking-tighter">MD</a>
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                    <a href="index.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.home">Home</a>
+                    <a href="projects.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.projects">Projekte</a>
+                    <a href="ai.html" class="text-text-DEFAULT transition-colors hover:text-primary"
+                        data-i18n="nav.ai">AI</a>
+                    <a href="certificates.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.certificates">Zertifikate</a>
+                    <a href="about.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.about">Über Mich</a>
+                    <a href="contact.html" class="text-text-muted transition-colors hover:text-primary"
+                        data-i18n="nav.contact">Kontakt</a>
+                </div>
+
+
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-navy-surface/50 border border-navy-border rounded-lg p-1">
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="en">EN</button>
+                    <div class="w-px h-3 bg-navy-border"></div>
+                    <button class="lang-switch px-2 py-1 text-xs font-bold rounded transition-all hover:text-primary"
+                        data-lang="de">DE</button>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                    <span class="theme-toggle__track">
+                        <span class="theme-toggle__thumb">
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
+                    </span>
+                </button>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-text-DEFAULT hover:text-primary transition-colors">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+
+    </nav>
+
+    <main class="w-full flex-grow flex flex-col items-center pb-20 pt-16">
+        <div class="max-w-content mx-auto px-6 w-full">
+            
+            <section class="fade-up mb-24 text-center mt-12">
+                <div class="font-mono text-accent text-sm font-medium tracking-wider uppercase mb-4" data-i18n="ai.hero.eyebrow">AI Philosophy & Workflow</div>
+                <h1 class="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-text-DEFAULT mb-8 leading-tight" data-i18n="[html]ai.hero.headline">
+                    AI is a tool.<br>Like every tool,<br>it changes everything.
+                </h1>
+                <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed" data-i18n="ai.hero.subtext">
+                    We write less code than we used to. But that's not the point. The point is that we now build better systems, faster. AI isn't replacing developers, it's raising the floor on what one developer can ship alone.
+                </p>
+            </section>
+
+            <section class="fade-up stagger-1 mb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-primary/5">
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-4" data-i18n="ai.philosophy.card1.title">Tool, not crutch</h3>
+                        <p class="text-text-muted leading-relaxed text-lg" data-i18n="ai.philosophy.card1.desc">A hammer doesn't build houses. A developer with a hammer does...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-primary/5">
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-4" data-i18n="ai.philosophy.card2.title">Systems over prompts</h3>
+                        <p class="text-text-muted leading-relaxed text-lg" data-i18n="ai.philosophy.card2.desc">...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-primary/5">
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-4" data-i18n="ai.philosophy.card3.title">Understand what you ship</h3>
+                        <p class="text-text-muted leading-relaxed text-lg" data-i18n="ai.philosophy.card3.desc">...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-primary/5">
+                        <h3 class="font-sora text-xl font-bold text-text-DEFAULT mb-4" data-i18n="ai.philosophy.card4.title">AI literacy is a skill</h3>
+                        <p class="text-text-muted leading-relaxed text-lg" data-i18n="ai.philosophy.card4.desc">...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fade-up stagger-2 mb-24">
+                <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-10 text-center" data-i18n="ai.stack.title">AI Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.antigravity.name">Antigravity</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-primary/30 text-primary bg-primary/10 tracking-widest" data-i18n="ai.stack.antigravity.role">PRIMARY</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.antigravity.desc">Execution Layer...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.claudecode.name">Claude Code</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-accent/30 text-accent bg-accent/10 tracking-widest" data-i18n="ai.stack.claudecode.role">PLANNING</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.claudecode.desc">Planning Partner...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.gemini.name">Gemini (Google)</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-success/30 text-success bg-success/10 tracking-widest" data-i18n="ai.stack.gemini.role">DEEP SEARCH</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.gemini.desc">Research & Gathering...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.chatgpt.name">ChatGPT</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-sky-500/30 text-sky-400 bg-sky-500/10 tracking-widest" data-i18n="ai.stack.chatgpt.role">WRITING</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.chatgpt.desc">Canvas & Artifacts...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.notebooklm.name">NotebookLM</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-indigo-500/30 text-indigo-400 bg-indigo-500/10 tracking-widest" data-i18n="ai.stack.notebooklm.role">EXPLANATIONS</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.notebooklm.desc">Deep Understanding...</p>
+                    </div>
+                    <div class="bg-navy-surface border border-navy-border rounded-xl p-6 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT" data-i18n="ai.stack.image.name">Nano Banana</h3>
+                            <span class="text-xs font-bold leading-none py-1.5 px-2.5 rounded-full border border-orange-500/30 text-orange-400 bg-orange-500/10 tracking-widest" data-i18n="ai.stack.image.role">CREATIVE</span>
+                        </div>
+                        <p class="text-text-muted text-[15px] leading-relaxed" data-i18n="ai.stack.image.desc">Visual Ideation...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fade-up stagger-3 mb-24">
+                <h2 class="font-sora text-3xl font-bold text-text-DEFAULT mb-10 text-center" data-i18n="ai.usecases.title">Workflow Use Cases</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4 p-6 bg-navy-surface/50 border border-navy-border rounded-xl hover:bg-navy-surface transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6 text-primary shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT mb-2" data-i18n="ai.usecases.arch.title">Architecture & System Design</h3>
+                            <p class="text-text-muted text-[15px]" data-i18n="ai.usecases.arch.desc">I define the structure...</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-navy-surface/50 border border-navy-border rounded-xl hover:bg-navy-surface transition-colors">
+                        <i data-lucide="code" class="w-6 h-6 text-primary shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT mb-2" data-i18n="ai.usecases.code.title">Code & Debugging</h3>
+                            <p class="text-text-muted text-[15px]" data-i18n="ai.usecases.code.desc">Writing boilerplate...</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-navy-surface/50 border border-navy-border rounded-xl hover:bg-navy-surface transition-colors">
+                        <i data-lucide="file-text" class="w-6 h-6 text-primary shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT mb-2" data-i18n="ai.usecases.content.title">Content & Documentation</h3>
+                            <p class="text-text-muted text-[15px]" data-i18n="ai.usecases.content.desc">READMEs...</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-navy-surface/50 border border-navy-border rounded-xl hover:bg-navy-surface transition-colors">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-primary shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-sora text-lg font-bold text-text-DEFAULT mb-2" data-i18n="ai.usecases.learning.title">Learning & Research</h3>
+                            <p class="text-text-muted text-[15px]" data-i18n="ai.usecases.learning.desc">First-principles...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fade-up stagger-4 mb-24">
+                <div class="bg-primary/5 border border-primary/20 rounded-2xl p-8 lg:p-12 shadow-inner">
+                    <h2 class="font-sora text-2xl font-bold text-text-DEFAULT mb-6 text-center md:text-left" data-i18n="ai.stats.title">External Assessment</h2>
+                    <p class="text-text-muted text-lg leading-relaxed mb-10 max-w-3xl text-center md:text-left" data-i18n="ai.stats.intro">I asked multiple AI systems...</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="flex flex-col text-center md:text-left">
+                            <span class="text-4xl md:text-5xl font-sora font-bold text-primary mb-2 drop-shadow-sm" data-i18n="ai.stats.items.ratio.stat">80%</span>
+                            <span class="text-[11px] text-text-DEFAULT font-bold tracking-widest mb-3 uppercase" data-i18n="ai.stats.items.ratio.label">DELEGATION RATIO</span>
+                            <p class="text-sm text-text-muted" data-i18n="ai.stats.items.ratio.desc">AI as execution layer...</p>
+                        </div>
+                        <div class="flex flex-col text-center md:text-left">
+                            <span class="text-4xl md:text-5xl font-sora font-bold text-primary mb-2 drop-shadow-sm" data-i18n="ai.stats.items.skills.stat">5×</span>
+                            <span class="text-[11px] text-text-DEFAULT font-bold tracking-widest mb-3 uppercase" data-i18n="ai.stats.items.skills.label">CUSTOM SKILLS BUILT</span>
+                            <p class="text-sm text-text-muted" data-i18n="ai.stats.items.skills.desc">Engineered prompting...</p>
+                        </div>
+                        <div class="flex flex-col text-center md:text-left">
+                            <span class="text-4xl md:text-5xl font-sora font-bold text-primary mb-2 drop-shadow-sm" data-i18n="ai.stats.items.systems.stat">3</span>
+                            <span class="text-[11px] text-text-DEFAULT font-bold tracking-widest mb-3 uppercase" data-i18n="ai.stats.items.systems.label">AI SYSTEMS USED IN PARALLEL</span>
+                            <p class="text-sm text-text-muted" data-i18n="ai.stats.items.systems.desc">Cross-validated results...</p>
+                        </div>
+                        <div class="flex flex-col text-center md:text-left">
+                            <span class="text-4xl md:text-5xl font-sora font-bold text-primary mb-2 drop-shadow-sm" data-i18n="ai.stats.items.percentile.stat">Top%</span>
+                            <span class="text-[11px] text-text-DEFAULT font-bold tracking-widest mb-3 uppercase" data-i18n="ai.stats.items.percentile.label">USAGE PERCENTILE (3 MODELS)</span>
+                            <p class="text-sm text-text-muted" data-i18n="ai.stats.items.percentile.desc">"Significantly more..."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fade-up stagger-5 mb-12">
+                <blockquote class="relative p-8 md:p-12 text-center bg-navy-surface/30 rounded-2xl border border-navy-border overflow-hidden">
+                    <div class="absolute -top-6 -left-2 text-[150px] text-primary/10 font-sora leading-none flex items-center justify-center pointer-events-none">"</div>
+                    <div class="absolute -bottom-24 -right-2 text-[150px] text-primary/10 font-sora leading-none flex items-center justify-center pointer-events-none rotate-180">"</div>
+                    <div class="relative z-10">
+                        <p class="font-sora text-xl md:text-2xl font-medium text-text-DEFAULT leading-relaxed italic mb-8 mx-auto max-w-3xl" data-i18n="ai.quote.text">
+                            "You're a systems-minded developer who uses AI as an execution layer, not a crutch..."
+                        </p>
+                        <footer class="text-text-muted text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-3">
+                            <div class="w-8 h-px bg-navy-border"></div>
+                            <span data-i18n="ai.quote.source">Claude (Anthropic)</span>
+                            <div class="w-8 h-px bg-navy-border"></div>
+                        </footer>
+                    </div>
+                </blockquote>
+            </section>
+
+        </div>
+    </main>
+<footer class="bg-navy-bg border-t border-navy-border pt-16 pb-8 mt-auto">
+        <div class="max-w-content mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
+                <div class="text-center md:text-left">
+                    <div class="font-sora font-bold text-2xl text-text-DEFAULT tracking-tighter mb-2">Mena Dawod</div>
+                    <div class="text-text-muted text-sm ml-1" data-i18n="footer.role">.NET / Blazor / MAUI Developer
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/elavocado" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="GitHub"><i
+                            data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="https://linkedin.com/in/menadawod/" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="LinkedIn"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="https://xing.com/profile/Mena_Dawod/" target="_blank" rel="noopener noreferrer"
+                        class="text-text-muted hover:text-text-DEFAULT transition-colors" aria-label="Xing">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path
+                                d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346 0-.485l-4.851-8.928c.235-.419 7.727-13.752 7.727-13.752.087-.147.087-.344 0-.485-.087-.144-.213-.22-.463-.22h-3.587zM2.147 6.113c-.227 0-.374.077-.463.221-.088.148-.088.344 0 .485l3.155 5.814c-.232.404-3.155 5.814-3.155 5.814-.088.146-.088.344 0 .485.089.144.214.22.463.22h3.454c.546 0 .759-.322.924-.66l3.125-5.859c-.012-.02-3.146-5.864-3.146-5.864-.188-.336-.457-.66-.974-.66H2.147z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="flex justify-between items-center text-xs text-text-muted pt-8 border-t border-navy-surface flex-col md:flex-row gap-4">
+                <div>&copy; 2026 Mena Dawod &middot; menadawod.de</div>
+                <div class="flex gap-4">
+                    <a href="impressum.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.impressum">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-text-DEFAULT transition-colors"
+                        data-i18n="footer.privacy">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>lucide.createIcons();</script>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        toggle.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+    </div>
+</body>
+
+</html>
