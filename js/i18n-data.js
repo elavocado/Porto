@@ -8,6 +8,11 @@ const translations = {
             ai: "AI",
             contact: "Contact"
         },
+        seo: {
+            description: "Software Developer C#, .NET Blazor / MAUI. IHK certified, Vocational School 1.0. 1.5 years production experience at Karl Mayer GmbH.",
+            ogTitle: "Mena Dawod | .NET Blazor & MAUI Developer",
+            ogDescription: "Certified .NET developer focused on Blazor & MAUI. Production experience at Karl Mayer.",
+        },
         index: {
             hero: {
                 subtitle: "< .NET / Blazor / MAUI Developer />",
@@ -694,6 +699,11 @@ const translations = {
             certificates: "Zertifikate",
             ai: "KI",
             contact: "Kontakt"
+        },
+        seo: {
+            description: "Softwareentwickler C#, .NET Blazor / MAUI. IHK-zertifiziert, Berufsschule 1,0. 1,5 Jahre Produktionserfahrung bei Karl Mayer GmbH.",
+            ogTitle: "Mena Dawod | .NET Blazor & MAUI Developer",
+            ogDescription: "Zertifizierter .NET Entwickler mit Fokus auf Blazor & MAUI. Produktionserfahrung bei Karl Mayer.",
         },
         index: {
             hero: {
