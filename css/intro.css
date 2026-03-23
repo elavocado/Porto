@@ -1,7 +1,4 @@
-/*
-  intro.css
-  Cinematic intro sequence — menadawod.de
-*/
+
 
 #intro-overlay {
     position: fixed;
@@ -451,12 +448,19 @@
 
 body.intro-active { overflow: hidden; }
 
-main, nav, footer { opacity: 0; }
+
+body.intro-active main,
+body.intro-active nav,
+body.intro-active footer {
+    opacity: 0;
+    pointer-events: none;
+}
 
 body.content-fade-in main,
 body.content-fade-in nav,
 body.content-fade-in footer {
     opacity: 1 !important;
+    pointer-events: auto !important;
     transition: opacity 1.5s ease;
 }
 

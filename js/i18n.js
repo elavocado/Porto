@@ -1,20 +1,19 @@
-/*
-  i18n.js
-  Internationalization controller — EN/DE language switching
-  with FOUT prevention and event broadcasting.
-*/
+
 
 class I18n {
     constructor() {
         this.lang = localStorage.getItem('lang') || 'de';
         this.translations = window.translations;
-        this._init();
+        this.initialized = false;
+        this.init();
     }
 
-    _init() {
+    init() {
         document.documentElement.setAttribute('lang', this.lang);
         this._updatePage();
+        this._updateMetaTags();
         this._setupSwitches();
+        this.initialized = true;
     }
 
     setLanguage(lang) {
@@ -23,6 +22,7 @@ class I18n {
         localStorage.setItem('lang', lang);
         document.documentElement.setAttribute('lang', lang);
         this._updatePage();
+        this._updateMetaTags();
         this._updateSwitches();
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     }
@@ -51,6 +51,30 @@ class I18n {
         document.body.classList.add('i18n-ready');
     }
 
+    _updateMetaTags() {
+        const metaMap = {
+            'description': 'seo.description',
+            'og:title': 'seo.ogTitle',
+            'og:description': 'seo.ogDescription'
+        };
+
+        for (const [name, key] of Object.entries(metaMap)) {
+            const value = this.getTranslation(key);
+            if (!value) continue;
+
+            const metaName = document.querySelector(`meta[name="${name}"]`);
+            if (metaName) metaName.setAttribute('content', value);
+
+            const metaProp = document.querySelector(`meta[property="${name}"]`);
+            if (metaProp) metaProp.setAttribute('content', value);
+        }
+
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
+        if (ogLocale) {
+            ogLocale.setAttribute('content', this.lang === 'de' ? 'de_DE' : 'en_US');
+        }
+    }
+
     getTranslation(key) {
         return key.split('.').reduce((obj, segment) => {
             return obj != null && typeof obj === 'object' ? obj[segment] ?? null : null;
@@ -59,6 +83,8 @@ class I18n {
 
     _setupSwitches() {
         this._updateSwitches();
+        if (this.initialized) return; // Don't add multiple listeners
+
         document.addEventListener('click', e => {
             const btn = e.target.closest('.lang-switch');
             if (btn) this.setLanguage(btn.getAttribute('data-lang'));

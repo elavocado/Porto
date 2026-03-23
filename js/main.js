@@ -1,8 +1,4 @@
-/*
-  main.js
-  Core site interactions — smooth scroll, mobile menu, scroll animations,
-  marquee, active nav highlighting.
-*/
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -18,23 +14,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const menuBtn    = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const backdrop   = document.getElementById('menu-backdrop');
+    const toggleMenu = (open) => {
+        const isOpen = open !== undefined ? open : !document.body.classList.contains('menu-open');
+        document.body.classList.toggle('menu-open', isOpen);
+        
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        if (menuBtn) {
+            menuBtn.setAttribute('aria-expanded', isOpen);
+        }
+    };
 
-    if (menuBtn && mobileMenu) {
-        const toggleMenu = open => {
-            const isOpen = open !== undefined ? open : !document.body.classList.contains('menu-open');
-            document.body.classList.toggle('menu-open', isOpen);
-        };
+    document.addEventListener('click', e => {
+        const menuBtn = e.target.closest('#mobile-menu-btn');
+        const backdrop = e.target.closest('#menu-backdrop');
+        const navLink = e.target.closest('#mobile-menu a');
+        const themeBtn = e.target.closest('#theme-toggle');
 
-        menuBtn.addEventListener('click', e => { e.stopPropagation(); toggleMenu(); });
-        backdrop?.addEventListener('click', () => toggleMenu(false));
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && document.body.classList.contains('menu-open')) toggleMenu(false);
-        });
-    }
+        if (menuBtn) {
+            e.stopPropagation();
+            toggleMenu();
+        } else if (backdrop || navLink) {
+            toggleMenu(false);
+        } else if (themeBtn) {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+            toggleMenu(false);
+        }
+    });
 
     const scrollObserver = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -59,4 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.toggle('nav-link-active', isMatch);
         if (isMatch) link.classList.remove('text-text-muted');
     });
+
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
 });
