@@ -1,7 +1,4 @@
-/*
-  intro.css
-  Cinematic intro sequence — menadawod.de
-*/
+
 
 #intro-overlay {
     position: fixed;
@@ -451,7 +448,7 @@
 
 body.intro-active { overflow: hidden; }
 
-/* Revised reveal logic */
+
 body.intro-active main,
 body.intro-active nav,
 body.intro-active footer {
