@@ -9,36 +9,32 @@ const translations = {
             contact: "Contact"
         },
         seo: {
-            description: "Software Developer C#, .NET Blazor / MAUI. IHK certified, Vocational School 1.0. 1.5 years production experience at Karl Mayer GmbH.",
-            ogTitle: "Mena Dawod | .NET Blazor & MAUI Developer",
-            ogDescription: "Certified .NET developer focused on Blazor & MAUI. Production experience at Karl Mayer.",
+            description: "Software Developer C# / .NET with SQL & AI focus. IHK certified, Vocational School 1.0. 1.5 years production experience at Karl Mayer GmbH.",
+            ogTitle: "Mena Dawod | Software Developer C# / .NET",
+            ogDescription: "Certified .NET developer with AI focus and SQL. Production experience at Karl Mayer.",
         },
         index: {
             hero: {
-                subtitle: "< .NET / Blazor / MAUI Full-Stack Developer />",
+                subtitle: "< Software Developer C# / .NET / SQL / AI />",
                 name: "Mena Dawod",
-                title: "Computer Science Expert · Software Development",
+                title: "Software Developer C# / .NET with SQL & AI focus",
                 badge: {
                     ihk: "IHK Grade: Good (87 Points)",
-                    project: "Project Work: Excellent (99/100)",
+                    project: "Project: 99/100",
                     school: "Vocational School: 1.0"
                 },
-                desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments.",
-                value_prop: "I help manufacturing companies modernize legacy systems and build high-performance industrial software with .NET.",
+                desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments, helping manufacturing companies modernize legacy systems and build high-performance industrial software with .NET.",
+                value_prop: "",
                 story: "From Cairo → Factory Worker → Team Lead → Computer Science Expert",
                 btn: {
                     projects: "View Projects",
                     contact: "Let's Talk",
                     cv: "Download CV (PDF)"
-                },
-                recruiter: {
-                    roles: ".NET Developer / Full-Stack",
-                    location: "Limeshain & Remote"
                 }
             },
             status: {
                 location: "Limeshain, DE",
-                availability: "Open to work"
+                availability: ""
             },
             tech: {
                 title: "Technologies in Use"
@@ -542,20 +538,20 @@ const translations = {
             title: "Contact",
             subtitle: "// reach-out",
             heading: "Let's talk.",
-            target_roles: "Available for .NET Developer / Full-Stack positions — remote or Frankfurt area.",
+            target_roles: "Software Developer C# / .NET with SQL & AI focus",
             desc: "I'm always open to interesting projects and technical challenges. Reach out via email or LinkedIn.",
             response_time: "I typically respond within 24 hours.",
             social_title: "Connect on Social Media",
             btn: "Get in Touch"
         },
         footer: {
-            role: ".NET / Blazor / MAUI Developer",
+            role: "Software Developer C# / .NET / SQL / AI Focus",
             impressum: "Legal Notice",
             privacy: "Privacy Policy",
             sitemap: "Sitemap"
         },
         pageTitles: {
-            home: "Mena Dawod | .NET Developer",
+            home: "Mena Dawod | Software Developer C# / .NET",
             about: "About Me | Mena Dawod",
             projects: "Projects | Mena Dawod",
             certificates: "Certificates | Mena Dawod",
@@ -568,7 +564,7 @@ const translations = {
             back: "Back to Home",
             legal: "// legal",
             privacy: "// privacy",
-            openToWork: "Open to new positions, available immediately",
+            openToWork: "",
             email: "Email",
             phone: "Phone",
             location: "Location",
@@ -688,7 +684,7 @@ const translations = {
             loading: 'INITIALIZING',
             enter: '[ CLICK HERE TO ENTER ]',
             skip: '[ click anywhere to enter ]',
-            roles: ['Blazor Developer', 'MAUI Hybrid Developer', 'C# Enthusiast', 'IT Specialist AE'],
+            roles: ['Software Developer C# / .NET', 'SQL & AI Focus', 'Industrial Software', 'IT Specialist AE'],
             boot: [
                 'Initializing portfolio system v2.0.26...',
                 'Loading C# .NET Blazor, Blazor.Hybrid.Runtime',
@@ -710,36 +706,32 @@ const translations = {
             contact: "Kontakt"
         },
         seo: {
-            description: "Softwareentwickler C#, .NET Blazor / MAUI. IHK-zertifiziert, Berufsschule 1,0. 1,5 Jahre Produktionserfahrung bei Karl Mayer GmbH.",
-            ogTitle: "Mena Dawod | .NET Blazor & MAUI Developer",
-            ogDescription: "Zertifizierter .NET Entwickler mit Fokus auf Blazor & MAUI. Produktionserfahrung bei Karl Mayer.",
+            description: "Softwareentwickler C# / .NET mit SQL & KI-Fokus. IHK-zertifiziert, Berufsschule 1,0. 1,5 Jahre Produktionserfahrung bei Karl Mayer GmbH.",
+            ogTitle: "Mena Dawod | Softwareentwickler C# / .NET",
+            ogDescription: "Zertifizierter .NET Entwickler mit KI-Fokus und SQL. Produktionserfahrung bei Karl Mayer.",
         },
         index: {
             hero: {
-                subtitle: "< .NET / Blazor / MAUI Full-Stack Entwickler />",
+                subtitle: "< Softwareentwickler C# / .NET / SQL / KI />",
                 name: "Mena Dawod",
-                title: "Fachinformatiker für Anwendungsentwicklung",
+                title: "Softwareentwickler C# / .NET mit SQL & KI-Fokus",
                 badge: {
                     ihk: "IHK-Note: Gut (87 Punkte)",
-                    project: "Projektarbeit: Sehr gut (99/100)",
+                    project: "Projekt: 99/100",
                     school: "Berufsschule: 1,0"
                 },
-                desc: "Zertifizierter .NET-, Blazor- & MAUI-Entwickler mit praktischer Produktionserfahrung bei Karl Mayer, einem globalen Marktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur, die in realen industriellen Umgebungen messbaren Mehrwert liefern.",
-                value_prop: "Ich helfe Produktionsunternehmen bei der Modernisierung von Legacy-Systemen und entwickle hochperformante Industriesoftware mit .NET.",
+                desc: "Zertifizierter .NET-, Blazor- & MAUI-Entwickler mit praktischer Produktionserfahrung bei Karl Mayer, einem globalen Marktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur, die in realen industriellen Umgebungen messbaren Mehrwert liefern, und helfe Produktionsunternehmen bei der Modernisierung von Legacy-Systemen sowie der Entwicklung hochperformanter Industriesoftware mit .NET.",
+                value_prop: "",
                 story: "Von Kairo → Produktionsmitarbeiter → Schichtleiter → Fachinformatiker AE",
                 btn: {
                     projects: "Projekte ansehen",
                     contact: "Kontakt aufnehmen",
                     cv: "Lebenslauf herunterladen (PDF)"
-                },
-                recruiter: {
-                    roles: ".NET Entwickler / Full-Stack",
-                    location: "Limeshain & Remote"
                 }
             },
             status: {
                 location: "Limeshain, DE",
-                availability: "Offen für Stellen"
+                availability: ""
             },
             tech: {
                 title: "Technologien im Einsatz"
@@ -1030,20 +1022,20 @@ const translations = {
             title: "Kontakt",
             subtitle: "// reach-out",
             heading: "Lassen Sie uns sprechen.",
-            target_roles: "Verfügbar für .NET Entwickler / Full-Stack Positionen — Remote oder Rhein-Main-Gebiet.",
+            target_roles: "Softwareentwickler C# / .NET mit SQL & KI-Fokus",
             desc: "Ich bin stets offen für interessante Projekte und technische Herausforderungen. Kontaktieren Sie mich gerne per E-Mail oder LinkedIn.",
             response_time: "Ich antworte in der Regel innerhalb von 24 Stunden.",
             social_title: "Auf Social Media verbinden",
             btn: "Jetzt Kontakt aufnehmen"
         },
         footer: {
-            role: ".NET / Blazor / MAUI Entwickler",
+            role: "Softwareentwickler C# / .NET mit SQL & KI-Fokus",
             impressum: "Impressum",
             privacy: "Datenschutz",
             sitemap: "Sitemap"
         },
         pageTitles: {
-            home: "Mena Dawod | .NET Entwickler",
+            home: "Mena Dawod | Softwareentwickler C# / .NET",
             about: "Über Mich | Mena Dawod",
             projects: "Projekte | Mena Dawod",
             certificates: "Zertifikate | Mena Dawod",
@@ -1056,7 +1048,7 @@ const translations = {
             back: "Zurück zur Startseite",
             legal: "// legal",
             privacy: "// privacy",
-            openToWork: "Offen für neue Stellen, ab sofort verfügbar",
+            openToWork: "",
             email: "E-Mail",
             phone: "Telefon",
             location: "Standort",
@@ -1176,7 +1168,7 @@ const translations = {
             loading: 'INITIALISIERIERT',
             enter: '[ ZUM ENTER KLICKEN ]',
             skip: '[ zum eintreten klicken ]',
-            roles: ['Blazor Entwickler', 'MAUI Hybrid Entwickler', 'C# Enthusiast', 'Fachinformatiker AE'],
+            roles: ['Softwareentwickler C# / .NET', 'SQL & KI-Fokus', 'Industriesoftware', 'Fachinformatiker AE'],
             boot: [
                 'Initialisiere Portfoliosystem v2.0.26...',
                 'Lade C# .NET Blazor, Blazor.Hybrid.Runtime',
