@@ -515,11 +515,21 @@ const translations = {
                 karlmayer: {
                     title: "Interim Reference Letter",
                     org: "KARL MAYER Textilmaschinenfabrik GmbH · Jul 2025",
-                    badge: "Karl Mayer · World Market Leader",
+                    badge: "Karl Mayer · Intermediate",
                     points: [
                         "\"Outstanding and comprehensive technical expertise\"",
                         "\"Extremely reliable and enjoys our complete trust\"",
                         "All tasks completed \"to our fullest satisfaction\""
+                    ]
+                },
+                karlmayer_final: {
+                    title: "Employment Reference Letter",
+                    org: "KARL MAYER Textilmaschinenfabrik GmbH · Jan 2026",
+                    badge: "Karl Mayer · Final Reference",
+                    points: [
+                        "\"Consistently delivered high-quality software solutions\"",
+                        "\"Strong analytical skills and systematic approach\"",
+                        "\"Excellent integration into the development team\""
                     ]
                 },
                 techniform: {
@@ -999,11 +1009,21 @@ const translations = {
                 karlmayer: {
                     title: "Zwischenzeugnis",
                     org: "KARL MAYER Textilmaschinenfabrik GmbH · Jul 2025",
-                    badge: "Karl Mayer · Weltmarktführer",
+                    badge: "Karl Mayer · Zwischenzeugnis",
                     points: [
                         "\"Hervorragendes und umfassendes Fachwissen\"",
                         "\"Äußerst zuverlässig und genießt unser absolutes Vertrauen\"",
                         "Alle Aufgaben \"zu vollster Zufriedenheit\" erledigt"
+                    ]
+                },
+                karlmayer_final: {
+                    title: "Arbeitszeugnis",
+                    org: "KARL MAYER Textilmaschinenfabrik GmbH · Jan 2026",
+                    badge: "Karl Mayer · Abschlusszeugnis",
+                    points: [
+                        "\"Stets hochwertige Softwarelösungen geliefert\"",
+                        "\"Starke analytische Fähigkeiten und systematische Arbeitsweise\"",
+                        "\"Hervorragende Integration in das Entwicklungsteam\""
                     ]
                 },
                 techniform: {
