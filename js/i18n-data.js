@@ -378,6 +378,11 @@ const translations = {
         projects: {
             title: "Selected Projects",
             subtitle: "An insight into my software projects, from industrial enterprise solutions to innovative in-house developments.",
+            badges: {
+                nda: "NDA / Confidential",
+                inDevelopment: "In Development",
+                productionReady: "Production Ready"
+            },
             items: {
                 modernization: {
                     badge: "Main Project",
@@ -483,6 +488,19 @@ const translations = {
                     ],
                     result: "Result: A high-performance online presence serving as the central hub for my professional identity.",
                     github: "View on GitHub"
+                },
+                forexbot: {
+                    badge: "Algorithmic Trading",
+                    sub: "MT4 Expert Advisor",
+                    title: "ForexBot – Trading Algorithm",
+                    desc: "Automated trading system for MetaTrader 4 based on a sophisticated <strong>multi-indicator engine</strong> for precise market execution.",
+                    points: [
+                        "Implementation of a complex signal engine with <strong>6 entry/exit conditions</strong>",
+                        "Integration of advanced technical indicator stacks for signal confirmation",
+                        "Advanced <strong>Risk Management</strong> with automated lot size calculation",
+                        "Modular architecture for easy indicator swapping and backtesting"
+                    ],
+                    result: "Result: A production-ready Expert Advisor that automates a complete trading strategy with strict risk control."
                 }
             }
         },
@@ -870,7 +888,8 @@ const translations = {
             btnAll: 'Alle Projekte ansehen',
             badges: {
                 nda: 'NDA / Vertraulich',
-                inDevelopment: 'In Entwicklung'
+                inDevelopment: 'In Entwicklung',
+                productionReady: 'Einsatzbereit'
             },
             items: {
                 modernization: {
@@ -977,6 +996,19 @@ const translations = {
                     ],
                     result: "Ergebnis: Eine performante Online-Präsenz als zentraler Anlaufpunkt für meine berufliche Identität.",
                     github: "Auf GitHub ansehen"
+                },
+                forexbot: {
+                    badge: "Algorithmic Trading",
+                    sub: "MT4 Expert Advisor",
+                    title: "ForexBot – Trading-Algorithmus",
+                    desc: "Automatisiertes Handelssystem für MetaTrader 4 basierend auf einer hochentwickelten <strong>Multi-Indikatoren-Engine</strong> für präzise Marktausführung.",
+                    points: [
+                        "Implementierung einer komplexen Signal-Engine mit <strong>6 Ein- und Ausstiegsbedingungen</strong>",
+                        "Integration fortschrittlicher technischer Indikatoren-Stacks zur Signalbestätigung",
+                        "Fortgeschrittenes <strong>Risikomanagement</strong> mit automatisierter Positionsgrößenberechnung",
+                        "Modulare Architektur für einfachen Austausch von Indikatoren und Backtesting"
+                    ],
+                    result: "Ergebnis: Ein einsatzbereiter Expert Advisor, der eine vollständige Handelsstrategie mit strikter Risikokontrolle automatisiert."
                 }
             }
         },
