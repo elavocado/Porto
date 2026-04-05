@@ -20,7 +20,7 @@ const translations = {
                 name: "Mena Dawod",
                 title: "Software Developer C# / .NET with SQL & AI focus",
                 badge: {
-                    ihk: "IHK Grade: Good (87 Points)",
+                    ihk: "IHK Grade: Good (1.9 / 87 Points)",
                     project: "Project: 99/100",
                     school: "Vocational School: 1.0"
                 },
@@ -355,8 +355,9 @@ const translations = {
                         title: "IHK Certification",
                         desc: "IT Specialist for Application Development",
                         stats: {
-                            overall: "• IHK Grade: Good (87 Pts.)",
-                            project: "• Project Work: Excellent (99/100)"
+                            overall: "• IHK Grade: Good (1.9 / 87 Pts.)",
+                            project: "• Project Work: Excellent (99/100)",
+                            school: "• Vocational School: Excellent (1.0)"
                         }
                     },
                     km: {
@@ -771,7 +772,7 @@ const translations = {
                 name: "Mena Dawod",
                 title: "Softwareentwickler C# / .NET mit SQL & KI-Fokus",
                 badge: {
-                    ihk: "IHK-Note: Gut (87 Punkte)",
+                    ihk: "IHK-Note: Gut (1,9 / 87 Punkte)",
                     project: "Projekt: 99/100",
                     school: "Berufsschule: 1,0"
                 },
@@ -888,8 +889,9 @@ const translations = {
                         title: "IHK-Zertifizierung",
                         desc: "Fachinformatiker für Anwendungsentwicklung",
                         stats: {
-                            overall: "• IHK-Abschluss: Gut (87 Punkte)",
-                            project: "• Projektarbeit: Sehr gut (99/100)"
+                            overall: "• IHK-Abschluss: Gut (1,9 / 87 Punkte)",
+                            project: "• Projektarbeit: Sehr gut (99/100)",
+                            school: "• Berufsschule: Sehr gut (1,0)"
                         }
                     },
                     km: {
