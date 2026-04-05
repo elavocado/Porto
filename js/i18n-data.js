@@ -9,12 +9,13 @@ const translations = {
             contact: "Contact"
         },
         seo: {
-            description: "Software Developer C# / .NET with SQL & AI focus. IHK certified, Vocational School 1.0. 1.5 years production experience at Karl Mayer GmbH.",
+            description: "Currently C# / .NET Developer at BleTec Software GmbH — ERP/PPS with SQL, Blazor & AI tools",
             ogTitle: "Mena Dawod | Software Developer C# / .NET",
-            ogDescription: "Certified .NET developer with AI focus and SQL. Production experience at Karl Mayer.",
+            ogDescription: ".NET Developer at BleTec Software GmbH — ERP/PPS, SQL, Blazor, AI",
         },
         index: {
             hero: {
+                currentJob: "Currently @ BleTec Software GmbH · C# / .NET Developer · bletec.de",
                 subtitle: "< Software Developer C# / .NET / SQL / AI />",
                 name: "Mena Dawod",
                 title: "Software Developer C# / .NET with SQL & AI focus",
@@ -23,13 +24,12 @@ const translations = {
                     project: "Project: 99/100",
                     school: "Vocational School: 1.0"
                 },
-                desc: "Certified .NET, Blazor & MAUI developer with hands-on production experience at Karl Mayer, a global leader in textile machinery. I build modern, scalable applications with clean architecture that deliver measurable value in real industrial environments, helping manufacturing companies modernize legacy systems and build high-performance industrial software with .NET.",
+                desc: "C# / .NET Developer at <strong>BleTec Software GmbH</strong> in Dieburg. I build modern ERP/PPS software with SQL, Blazor and AI-powered development tools. Prior: 1.5 years .NET development at Karl Mayer (textile machinery, IHK certified).",
                 value_prop: "",
                 story: "From Cairo → Factory Worker → Team Lead → Computer Science Expert",
                 btn: {
                     projects: "View Projects",
-                    contact: "Let's Talk",
-                    cv: "Download CV (PDF)"
+                    contact: "Let's Talk"
                 }
             },
             status: {
@@ -320,6 +320,13 @@ const translations = {
                     tag2: "MVVM",
                     tag3: "EF Core",
                     tag4: "IHK Grade 1.9"
+                },
+                bletec: {
+                    title: "Professional Practice, .NET Development at BleTec (2026–Present)",
+                    p: "Since April 2026, I have been working as a Software Developer at BleTec Software GmbH. My focus is on the development and modernization of ERP/PPS software solutions using Blazor, SQL, and AI-assisted development tools.",
+                    tag1: "ERP/PPS",
+                    tag2: "Blazor · SQL",
+                    tag3: "AI Tools"
                 }
             },
             skills: {
@@ -336,6 +343,13 @@ const translations = {
                 title: "My Career Path",
                 subtitle: "// experience",
                 items: {
+                    bletec: {
+                        date: "Apr 2026 – Present",
+                        company: "BleTec Software GmbH",
+                        role: "C# / .NET Developer (Full-time Position)",
+                        sub: "Dieburg · Full-time · Hybrid",
+                        desc: "Developing ERP / PPS software with a focus on SQL, Blazor and AI-powered development tools. Backend architecture, database modeling and modern UI components for industrial planning and control processes."
+                    },
                     ihk: {
                         date: "January 2026",
                         title: "IHK Certification",
@@ -501,6 +515,18 @@ const translations = {
                         "Modular architecture for easy indicator swapping and backtesting"
                     ],
                     result: "Result: A production-ready Expert Advisor that automates a complete trading strategy with strict risk control."
+                },
+                bletec_erp: {
+                    badge: "NDA / Confidential",
+                    sub: "BleTec Software GmbH",
+                    title: "Modern ERP & PPS System Extensions",
+                    desc: "Contributing to the development and modernization of core modules for industrial planning and steering processes.",
+                    points: [
+                        "Optimization of backend architecture with C# and .NET",
+                        "Implementing responsive Blazor UI components",
+                        "Database modeling and performance tuning"
+                    ],
+                    result: "Result: Ongoing development for high-quality enterprise software."
                 }
             }
         },
@@ -712,7 +738,7 @@ const translations = {
             loading: 'INITIALIZING',
             enter: '[ CLICK HERE TO ENTER ]',
             skip: '[ click anywhere to enter ]',
-            roles: ['Software Developer C# / .NET', 'SQL & AI Focus', 'Industrial Software', 'IT Specialist AE'],
+            roles: ['C# / .NET Developer', 'ERP / PPS Software', 'Blazor · SQL · AI Tools', 'BleTec Software GmbH'],
             boot: [
                 'Initializing portfolio system v2.0.26...',
                 'Loading C# .NET Blazor, Blazor.Hybrid.Runtime',
@@ -734,12 +760,13 @@ const translations = {
             contact: "Kontakt"
         },
         seo: {
-            description: "Softwareentwickler C# / .NET mit SQL & KI-Fokus. IHK-zertifiziert, Berufsschule 1,0. 1,5 Jahre Produktionserfahrung bei Karl Mayer GmbH.",
+            description: "Derzeit C# / .NET Entwickler bei BleTec Software GmbH — ERP/PPS mit SQL, Blazor & KI-Tools",
             ogTitle: "Mena Dawod | Softwareentwickler C# / .NET",
-            ogDescription: "Zertifizierter .NET Entwickler mit KI-Fokus und SQL. Produktionserfahrung bei Karl Mayer.",
+            ogDescription: ".NET Entwickler bei BleTec Software GmbH — ERP/PPS, SQL, Blazor, KI",
         },
         index: {
             hero: {
+                currentJob: "Aktuell @ BleTec Software GmbH · C# / .NET Entwickler · bletec.de",
                 subtitle: "< Softwareentwickler C# / .NET / SQL / KI />",
                 name: "Mena Dawod",
                 title: "Softwareentwickler C# / .NET mit SQL & KI-Fokus",
@@ -748,13 +775,12 @@ const translations = {
                     project: "Projekt: 99/100",
                     school: "Berufsschule: 1,0"
                 },
-                desc: "Zertifizierter .NET-, Blazor- & MAUI-Entwickler mit praktischer Produktionserfahrung bei Karl Mayer, einem globalen Marktführer im Textilmaschinenbau. Ich entwickle moderne, skalierbare Anwendungen mit sauberer Architektur, die in realen industriellen Umgebungen messbaren Mehrwert liefern, und helfe Produktionsunternehmen bei der Modernisierung von Legacy-Systemen sowie der Entwicklung hochperformanter Industriesoftware mit .NET.",
+                desc: "C# / .NET Entwickler bei <strong>BleTec Software GmbH</strong> — ERP/PPS-Software mit SQL, Blazor & AI-Tools. Zuvor 1,5 Jahre .NET-Entwicklung bei Karl Mayer (Textilmaschinenbau, IHK-zertifiziert).",
                 value_prop: "",
                 story: "Von Kairo → Produktionsmitarbeiter → Schichtleiter → Fachinformatiker AE",
                 btn: {
                     projects: "Projekte ansehen",
-                    contact: "Kontakt aufnehmen",
-                    cv: "Lebenslauf herunterladen (PDF)"
+                    contact: "Kontakt aufnehmen"
                 }
             },
             status: {
@@ -827,6 +853,13 @@ const translations = {
                     tag2: "MVVM",
                     tag3: "EF Core",
                     tag4: "IHK-Note 1,9"
+                },
+                bletec: {
+                    title: "Berufspraxis, .NET-Entwicklung bei BleTec (2026–heute)",
+                    p: "Seit April 2026 bin ich als Softwareentwickler bei der BleTec Software GmbH tätig. Mein Fokus liegt auf der Neu- und Weiterentwicklung von ERP/PPS-Softwarelösungen auf Basis von Blazor, SQL und KI-gestützten Entwicklungswerkzeugen.",
+                    tag1: "ERP/PPS",
+                    tag2: "Blazor · SQL",
+                    tag3: "KI-Tools"
                 }
             },
             skills: {
@@ -843,6 +876,13 @@ const translations = {
                 title: "Mein Werdegang",
                 subtitle: "// experience",
                 items: {
+                    bletec: {
+                        date: "Apr 2026 – heute",
+                        company: "BleTec Software GmbH",
+                        role: "C# / .NET Developer (Festanstellung)",
+                        sub: "Dieburg · Vollzeit · Hybrid",
+                        desc: "Entwicklung von ERP / PPS-Software mit Fokus auf SQL, Blazor und KI-gestützten Entwicklungswerkzeugen. Backend-Architektur, Datenbank-Modellierung und moderne UI-Komponenten für industrielle Planungs- und Steuerungsprozesse."
+                    },
                     ihk: {
                         date: "Januar 2026",
                         title: "IHK-Zertifizierung",
@@ -1009,6 +1049,18 @@ const translations = {
                         "Modulare Architektur für einfachen Austausch von Indikatoren und Backtesting"
                     ],
                     result: "Ergebnis: Ein einsatzbereiter Expert Advisor, der eine vollständige Handelsstrategie mit strikter Risikokontrolle automatisiert."
+                },
+                bletec_erp: {
+                    badge: "NDA / Vertraulich",
+                    sub: "BleTec Software GmbH",
+                    title: "Modernisierung von ERP- & PPS-Modulen",
+                    desc: "Mitarbeit an der Neu- und Weiterentwicklung von Kernmodulen für industrielle Planungs- und Steuerungsprozesse.",
+                    points: [
+                        "Optimierung der Backend-Architektur mit C# und .NET",
+                        "Umsetzung responsiver Blazor UI-Komponenten",
+                        "Datenbank-Modellierung und Performance-Tuning"
+                    ],
+                    result: "Ergebnis: Laufende Entwicklung von Enterprise-Software auf höchstem technischem Niveau."
                 }
             }
         },
@@ -1220,7 +1272,7 @@ const translations = {
             loading: 'INITIALISIERIERT',
             enter: '[ ZUM ENTER KLICKEN ]',
             skip: '[ zum eintreten klicken ]',
-            roles: ['Softwareentwickler C# / .NET', 'SQL & KI-Fokus', 'Industriesoftware', 'Fachinformatiker AE'],
+            roles: ['C# / .NET Developer', 'ERP/PPS Software', 'Blazor · SQL · AI Tools', 'BleTec Software GmbH'],
             boot: [
                 'Initialisiere Portfoliosystem v2.0.26...',
                 'Lade C# .NET Blazor, Blazor.Hybrid.Runtime',
