@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="https://menadawod.de">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=8B5CF6&center=true&vCenter=true&width=600&lines=Certified+.NET+%2F+Blazor+%2F+MAUI+Developer;IHK+Projektarbeit%3A+99+%2F+100+%E2%80%94+Sehr+gut;Berufsschule+Abschlussnote%3A+1%2C0;1.5+Years+Production+Software+%40+Karl+Mayer;" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=8B5CF6&center=true&vCenter=true&width=600&lines=Software+Developer+%40+BleTec+Software+GmbH;C%23+%2F+.NET+%2F+Blazor+%2F+SQL+%2F+AI;IHK+Projektarbeit%3A+99+%2F+100+%E2%80%94+Sehr+gut;Berufsschule+Abschlussnote%3A+1%2C0;" alt="Typing SVG" />
   </a>
 </div>
 
@@ -48,14 +48,14 @@
 
 <img align="right" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="280" />
 
-Ich bin **Mena**, frisch zertifizierter **Fachinformatiker für Anwendungsentwicklung** und .NET Developer mit echter Produktionserfahrung.
+Ich bin **Mena**, C# / .NET Developer bei **BleTec Software GmbH**, frisch zertifizierter **Fachinformatiker für Anwendungsentwicklung** mit Fokus auf ERP/PPS-Systeme, Blazor & KI-Integration.
 
 Mein Weg war alles andere als gerade:
 
 🇪🇬 **2013**, Aus Kairo nach Deutschland, von null angefangen  
 🏭 **2015–2023**, Produktion, Roboterprogrammierung, Schichtleiter  
 💻 **2023–2026**, Ausbildung @ **Karl Mayer GmbH**, Weltmarktführer  
-🚀 **2026**, IHK bestanden. Nächstes Level.
+🚀 **2026–heute**, Software Developer @ **BleTec Software GmbH** (ERP/PPS)
 
 Ich habe keine Shortcuts genommen. Alles was ich kann, habe ich mir erkämpft.
 
@@ -94,6 +94,16 @@ Ich habe keine Shortcuts genommen. Alles was ich kann, habe ich mir erkämpft.
 <tr>
 <td width="50%">
 
+**🏢 ERP & PPS System Extensions**
+*BleTec Software GmbH · Current*
+
+Contributing to the development and modernization of core modules for industrial planning and steering processes. Modular architecture, Blazor UI and SQL performance tuning.
+
+`C#` `Blazor` `SQL` `AI-Tools` `ERP`
+
+</td>
+<td width="50%">
+
 **🏭 Legacy-App Modernisierung**
 *Karl Mayer GmbH · Hauptprojekt*
 
@@ -102,6 +112,8 @@ Vollständige Migration einer Textilmaschinen-UI von JavaScript/jQuery → **C# 
 `C#` `Blazor` `MVVM` `NATS` `DI`
 
 </td>
+</tr>
+<tr>
 <td width="50%">
 
 **🔍 Parameter-Informationsportal**
@@ -110,18 +122,6 @@ Vollständige Migration einer Textilmaschinen-UI von JavaScript/jQuery → **C# 
 Such- und Verwaltungsportal für **5.000+ Maschinenparameter**, ersetzt manuellen Prozess durch eine strukturierte, durchsuchbare Web-App für Ingenieure im Produktionsalltag.
 
 `ASP.NET Core` `SQLite` `EF Core`
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-**📚 Digitale Bibliothek**
-*Ausbildungsprojekt*
-
-Webanwendung mit Fokus auf Datenbankmodellierung, EF Core Entity-Design und Blazor-Komponentenarchitektur mit SQLite Backend.
-
-`C#` `Blazor` `EF Core` `SQLite`
 
 </td>
 <td width="50%">
